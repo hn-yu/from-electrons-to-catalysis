@@ -78,3 +78,15 @@ def test_real_dft_reference_and_honest_tolerance():
     assert s['force_max_eV_A']<.051
     expected=all(abs(x['delta_from_baseline_eV'])<r['tolerance_eV'] for x in r['sweep'])
     assert r['all_variations_within_tolerance']==expected
+
+def test_pbe_adsorption_sites_reference():
+    path=ROOT/'06_catalysis/02_adsorption/output/dft/result.json'
+    if not path.exists():pytest.skip('Optional four-site PBE comparison not generated')
+    r=json.loads(path.read_text())['result']
+    assert r['backend']=='gpaw'
+    assert {s['initial_site'] for s in r['sites']}=={'ontop','bridge','fcc','hcp'}
+    assert r['coverage_ML']==.25
+    for s in r['sites']:
+        assert s['adsorption_eV']==pytest.approx(s['total_eV']-r['clean_eV']-.5*r['H2_eV'])
+        assert s['force_max_eV_A']<.041
+        assert np.all(np.isfinite(s['final_H_position_A']))

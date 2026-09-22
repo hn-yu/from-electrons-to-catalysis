@@ -1,0 +1,98 @@
+{
+  "project": "02_adsorption",
+  "input": {
+    "experiment": "adsorption",
+    "parameters": {
+      "backend": "gpaw",
+      "size": [
+        2,
+        2,
+        3
+      ],
+      "vacuum_A": 8.0,
+      "fixed_layers": 1,
+      "sites": [
+        "ontop",
+        "bridge",
+        "fcc",
+        "hcp"
+      ],
+      "fmax": 0.04,
+      "cutoff_eV": 300,
+      "kpts": [
+        3,
+        3,
+        1
+      ]
+    }
+  },
+  "input_sha256": "697c2798d5ecd44dd0bd48a4125a905f4c678dac4414c41da18aa1bdac0e852e",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "3debe472dc994603ae71a8fe3bcb56ef9605f253",
+  "slurm_job_id": "705303",
+  "result": {
+    "backend": "gpaw",
+    "reference": "E(slab+H)-E(slab)-0.5 E(H2)",
+    "coverage_ML": 0.25,
+    "clean_eV": -36.842150445181304,
+    "H2_eV": -6.5923090093646906,
+    "sites": [
+      {
+        "initial_site": "ontop",
+        "total_eV": -39.607194000190844,
+        "adsorption_eV": 0.5311109496728044,
+        "final_H_position_A": [
+          -7.267431589112657e-20,
+          2.448636292354312e-20,
+          13.691902634303924
+        ],
+        "force_max_eV_A": 0.03319100046610585
+      },
+      {
+        "initial_site": "bridge",
+        "total_eV": -40.09024201123972,
+        "adsorption_eV": 0.04806293862393218,
+        "final_H_position_A": [
+          1.2763114620834413,
+          0.007814039663266006,
+          13.24892898471376
+        ],
+        "force_max_eV_A": 0.03947402080376796
+      },
+      {
+        "initial_site": "fcc",
+        "total_eV": -40.228088167018846,
+        "adsorption_eV": -0.08978321715519755,
+        "final_H_position_A": [
+          1.2762839764553353,
+          0.7368628973688949,
+          13.102710845056679
+        ],
+        "force_max_eV_A": 0.027254049959165787
+      },
+      {
+        "initial_site": "hcp",
+        "total_eV": -40.221039884685624,
+        "adsorption_eV": -0.0827349348219748,
+        "final_H_position_A": [
+          2.5526554800834367,
+          1.4737763285745453,
+          13.105647535565705
+        ],
+        "force_max_eV_A": 0.03248747849902858
+      }
+    ],
+    "scope": "PBE slab calculation; inspect convergence sweep before interpreting chemistry."
+  },
+  "legacy_completion_revision": "45a5694132e65bd736245ce48961073e91c098e7",
+  "source_sha256": "d732a5aa74830666cf5366af14399471ca1d4b9afd086b4fd6fc13da126d2a3d",
+  "source_dirty": false,
+  "provenance_note": "Legacy runner captured HEAD at completion. Launch revision and source digest reconstructed from the committed tree and Slurm start record; numerical results unchanged. Current slab code disables point-group symmetry during relaxation."
+}

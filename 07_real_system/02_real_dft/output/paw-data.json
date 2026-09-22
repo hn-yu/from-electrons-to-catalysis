@@ -1,0 +1,8 @@
+{
+  "gpaw_data_version": "1.1.0",
+  "PBE_setup_sha256": {
+    "Cu": "5f05336f6214de8c722613f1c8367e6ff357338c695a6b45cdbe01f385d20aae",
+    "H": "dc38bbe908566ee60f456d11ea7c95e76b266c69548ea8d01c588418d05eb30c"
+  },
+  "audit_note": "Dataset audit in the unchanged reference environment after the slab sweep; new restart checkpoints record these hashes prospectively."
+}

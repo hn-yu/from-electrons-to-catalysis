@@ -76,6 +76,18 @@ def adsorption(config, workdir):
             'scope':'EMT is a workflow emulator, not a DFT adsorption prediction.' if config['backend']=='emt' else 'PBE slab calculation; inspect convergence sweep before interpreting chemistry.'}
 
 
+def paw_fingerprints(config):
+    """Fingerprint the actual PAW data selected by GPAW, including custom setup paths."""
+    if config['backend'] != 'gpaw':
+        return {}
+    from gpaw.setup_data import search_for_file
+    fingerprints = {}
+    for element in ['Cu','H']:
+        _, contents = search_for_file(element+'.PBE')
+        fingerprints[element] = hashlib.sha256(contents).hexdigest()
+    return fingerprints
+
+
 def cached_adsorption(config, workdir):
     """Restart only a completed task with identical input, implementation and libraries."""
     workdir = Path(workdir); workdir.mkdir(parents=True,exist_ok=True)
@@ -83,7 +95,7 @@ def cached_adsorption(config, workdir):
     if config['backend'] == 'gpaw':
         versions['gpaw'] = importlib.metadata.version('gpaw')
     stamp = {'input':config, 'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-             'versions':versions}
+             'versions':versions, 'paw_setup_sha256':paw_fingerprints(config)}
     cache = workdir/'completed.json'
     if cache.exists():
         stored = json.loads(cache.read_text())

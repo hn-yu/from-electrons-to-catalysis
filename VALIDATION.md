@@ -41,3 +41,13 @@ The initial core/quantum runs were Slurm jobs 705291 and 705292; the first NEB r
 ## Completed suite
 
 After publishing all 26 computational results, Slurm job 705323 reported **49 passed, no skips**. The separate project audit verified all **37** project directories, required documents, computational inputs and output hashes. These tests passed before the main implementation/output commit was pushed. Later optional artifacts are checked separately when added.
+
+The project CLI now captures the Git revision before launching a long calculation, alongside the source digest. This prevents later commits made while a Slurm calculation is running from being mistaken for its launch revision. The entrypoint/provenance regression test passed in job 705324.
+
+Restart validation was extended to the actual Cu/H PAW dataset contents, including replacement at the same file path. The input/dataset invalidation regression passed in Slurm job 705327. The unchanged reference environment's dataset hashes are archived in `07_real_system/02_real_dft/output/paw-data.json`; new checkpoints record these hashes at execution time.
+
+## Final supplemental audit
+
+The four-site PBE comparison completed in job 705303 and was archived by 705325. It reports adsorption energies of +0.531111 (atop), +0.048063 (bridge), -0.089783 (fcc), and -0.082735 eV (hcp) on the stated 2×2×3 slab. The source at launch is reconstructed and explicitly distinguished from the legacy runner's completion-time revision. Force convergence and energy-reference bookkeeping pass; the separate thickness failure still limits physical interpretation.
+
+After adding those outputs and the restart-invalidation regression, Slurm job **705326 reported 51 passed with no skips**. The 37-project structure/input-hash audit also passed. The first published implementation already passed GitHub Actions run [35690457450](https://github.com/hn-yu/from-electrons-to-catalysis/actions/runs/35690457450); subsequent pushes automatically rerun the complete suite.

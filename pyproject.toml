@@ -11,7 +11,7 @@ dependencies = ["numpy>=1.24", "scipy>=1.10", "ase>=3.23"]
 
 [project.optional-dependencies]
 quantum = ["pyscf>=2.8"]
-periodic = ["gpaw>=25.1", "gpaw-data"]
+periodic = ["gpaw>=25.7,<26", "gpaw-data"]
 test = ["pytest>=8"]
 
 [tool.setuptools.packages.find]

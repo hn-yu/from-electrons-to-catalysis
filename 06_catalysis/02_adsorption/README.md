@@ -31,3 +31,7 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 Energy reference; force convergence; final-site inspection.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+## Executed PBE comparison
+
+The optional GPAW input has also been executed. See [the four-site result](output/dft/result.json), [measured energies and limitations](output/dft/analysis.md), and the four final extxyz structures in `output/dft/`. This is a transfer check of the teaching workflow. The recorded initial site-ordering prediction was for EMT; the PBE ranking was not separately preregistered as a blind quantitative prediction.

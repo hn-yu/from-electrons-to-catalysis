@@ -58,3 +58,7 @@ sbatch scripts/slurm.sh 07_real_system/02_real_dft/run.py --output runs/real_dft
 ```
 
 Adjust the array range if you change the sweep. Use a dependency on the array job when submitting the assembly automatically. The aggregator recalculates any missing or incompatible checkpoint, so it cannot silently turn an incomplete array into a complete result.
+
+GPAW result convention: the project energy differences use ASE's default extrapolated electronic energy consistently for every reference. A force-consistent electronic free energy may appear in optimizer logs. Record smearing separately from the gas/surface thermodynamic temperature; do not substitute an electronic entropy correction for RRHO or configurational thermochemistry.
+
+Restart checkpoints also fingerprint the actual Cu and H PBE PAW dataset contents selected by GPAW. Replacing a dataset at the same path invalidates the cache even if the package version is unchanged. This prevents a restart from silently mixing different electronic-structure models.

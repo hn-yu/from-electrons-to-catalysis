@@ -14,3 +14,7 @@ The calculation separates six assertions:
 6. **Claim supported:** the present scan does not justify a coverage-independent or finite-temperature statement about favorable H adsorption, and certainly not a catalytic rate.
 
 The cheapest next step is a same-coverage layer sequence beyond four layers, followed by k-point checks on that thicker slab. Only after the target difference is stable should one compare other sites at common settings and add vibrational and gas chemical-potential terms. This order follows the observed failure, rather than assuming a large calculation automatically resolves it.
+
+## Electronic energy convention
+
+In the tested GPAW implementation, ASE's default `get_potential_energy()` returns the extrapolated electronic energy, whereas the force-consistent energy is the finite-occupation electronic free energy. The workflow uses the same default energy convention for the adsorbed slab, clean slab and H2 reference; optimizer log energies can therefore differ from the extrapolated energies in JSON or extxyz. The 0.1 eV Fermi–Dirac width is an electronic occupation setting, not the gas temperature and not a substitute for molecular/surface thermochemistry. Its variation is included in the real-system sweep.
