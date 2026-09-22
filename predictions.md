@@ -158,3 +158,6 @@ PBE H/Cu(111) adsorption relative to half H2 expected -0.8 to +0.3 eV; low confi
 
 Reason and model: Carry one H/Cu(111) adsorption subproblem through an explicit DFT convergence audit. The stated checks are the falsification criteria: Relaxed forces; matching H2 and slab references; all numerical axes versus 0.05 eV.
 
+## Atomic continuation of the NEB project
+
+Before execution: the fixed-substrate EMT H/Cu(111) fcc-to-hcp barrier should be positive and below 1 eV, low confidence. Reason: neighboring high-coordination sites should connect over a lower-coordination bridge. Falsifier: endpoints collapse, no saddle, or barrier outside this range. This tests the workflow, not DFT chemistry.

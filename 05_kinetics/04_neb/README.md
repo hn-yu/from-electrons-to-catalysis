@@ -32,3 +32,7 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 Fixed stationary endpoints; NEB residual; independent ASE barrier.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+## Continue to an atomic hop
+
+After the 2D band passes its ASE comparison, use `--input 05_kinetics/04_neb/input/atom_diffusion.json`. This runs a climbing-image ASE band for H hopping between fcc/hcp sites on a fixed Cu(111) substrate with EMT. Prediction before execution: a small positive barrier below 1 eV, low confidence; collapsed endpoints or a barrier outside this range falsifies the expectation. Structures and a separate reference result live in `output/atom_diffusion/`. This emulation does not establish the DFT diffusion mechanism.

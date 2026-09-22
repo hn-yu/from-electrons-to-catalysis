@@ -77,9 +77,14 @@ def neb(potential, start, end, images=19, spring=5., tolerance=2e-4, maxiter=400
                 de1, de2 = abs(energies[i+1]-energies[i]), abs(energies[i-1]-energies[i])
                 hi, lo = max(de1,de2), min(de1,de2)
                 tangent = forward*hi+backward*lo if energies[i+1] > energies[i-1] else forward*lo+backward*hi
+            # Do not normalize forward/backward in-place: their lengths enter springs.
+            tangent = tangent.copy()
             norm = np.linalg.norm(tangent)
             if norm < 1e-14:
-                raise RuntimeError('Collapsed NEB images')
+                tangent = forward + backward
+                norm = np.linalg.norm(tangent)
+                if norm < 1e-14:
+                    raise RuntimeError('Collapsed NEB images')
             tangent /= norm
             true = potential.force(path[i])
             forces[i] = true-(true@tangent)*tangent+spring*(np.linalg.norm(forward)-np.linalg.norm(backward))*tangent

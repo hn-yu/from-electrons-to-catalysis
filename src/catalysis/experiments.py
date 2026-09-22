@@ -203,6 +203,40 @@ def adsorption(c, work):
     return run(c,work)
 
 
+def atom_diffusion(c, work):
+    """An actual atomic hop with ASE/EMT after the 2D NEB benchmark."""
+    from ase.build import fcc111, add_adsorbate
+    from ase.calculators.emt import EMT
+    from ase.constraints import FixAtoms
+    from ase.optimize import BFGS, FIRE
+    from ase.mep import NEB
+    from ase.io import write
+    endpoints = []
+    for site in ['fcc','hcp']:
+        atoms = fcc111('Cu',size=(2,2,3),a=3.61,vacuum=7.)
+        add_adsorbate(atoms,'H',1.2,site)
+        # A fixed substrate isolates the adatom coordinate for this first atomic band.
+        atoms.set_constraint(FixAtoms(indices=range(len(atoms)-1)))
+        atoms.calc = EMT()
+        if not BFGS(atoms,logfile=str(Path(work)/f'{site}-opt.txt')).run(fmax=.001,steps=300):
+            raise RuntimeError('Atomic endpoint failed')
+        endpoints.append(atoms)
+    images = [endpoints[0]]+[endpoints[0].copy() for _ in range(c['images']-2)]+[endpoints[1]]
+    for atoms in images:
+        atoms.calc = EMT()
+    band = NEB(images,k=1.,climb=True,method='improvedtangent')
+    band.interpolate(mic=True)
+    if not FIRE(band,logfile=str(Path(work)/'atomic-neb.txt')).run(fmax=.005,steps=4000):
+        raise RuntimeError('Atomic NEB failed')
+    energies = [a.get_potential_energy() for a in images]
+    for i,atoms in enumerate(images):
+        write(Path(work)/f'image-{i:02}.extxyz',atoms)
+    return {'backend':'EMT','energies_eV':energies,'barrier_eV':max(energies)-energies[0],
+            'H_positions_A':[a.positions[-1].tolist() for a in images],
+            'endpoint_force_max':[float(np.linalg.norm(a.get_forces(),axis=1).max()) for a in endpoints],
+            'scope':'Fixed Cu substrate and EMT; a workflow example, not a physical DFT diffusion barrier.'}
+
+
 def slab(c, work):
     from .surfaces import convergence
     return convergence(c,work)
@@ -225,4 +259,4 @@ def molecular_thermo(c, work):
 
 EXPERIMENTS = {f.__name__:f for f in [units_experiment,forces,finite_differences,schrodinger,lcao,scf,
     partition,chemical_potential,surface_phase,optimizer,dynamics,hessian,neb,tst,umbrella,mep_fes,
-    reaction_network,microkinetics,rate_control,periodic,adsorption,slab,hf_failures,dft,molecular_thermo]}
+    reaction_network,microkinetics,rate_control,periodic,adsorption,atom_diffusion,slab,hf_failures,dft,molecular_thermo]}
