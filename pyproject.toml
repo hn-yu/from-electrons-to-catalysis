@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "from-electrons-to-catalysis"
+version = "0.1.0"
+description = "Executable computational chemistry teaching projects"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "ase>=3.23"]
+
+[project.optional-dependencies]
+quantum = ["pyscf>=2.8"]
+periodic = ["gpaw>=25.1", "gpaw-data"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["quantum: requires PySCF", "periodic: requires GPAW"]

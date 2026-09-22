@@ -1,0 +1,38 @@
+{
+  "experiment": "units_experiment",
+  "parameters": {
+    "temperatures_K": [
+      300,
+      600,
+      1000,
+      1500
+    ],
+    "conversions": [
+      {
+        "value": 1,
+        "from": "eV",
+        "to": "kJ/mol"
+      },
+      {
+        "value": 1,
+        "from": "Hartree",
+        "to": "eV"
+      },
+      {
+        "value": 1000,
+        "from": "cm^-1",
+        "to": "eV"
+      },
+      {
+        "value": 1,
+        "from": "bar",
+        "to": "Pa"
+      },
+      {
+        "value": 1,
+        "from": "ps",
+        "to": "fs"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "experiment": "adsorption",
+  "parameters": {
+    "backend": "emt",
+    "size": [
+      2,
+      2,
+      3
+    ],
+    "vacuum_A": 8.0,
+    "fixed_layers": 1,
+    "sites": [
+      "ontop",
+      "bridge",
+      "fcc",
+      "hcp"
+    ],
+    "fmax": 0.04
+  }
+}

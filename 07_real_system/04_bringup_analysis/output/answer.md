@@ -1,0 +1,3 @@
+# Worked analysis: Bringup analysis
+
+Read the real_dft output/result.json, retaining the input hash and software versions. Report the baseline adsorption energy, every single-axis change and the maximum unresolved deviation. If any axis exceeds 0.05 eV, the numerical convergence claim fails and must remain open. A lateral-cell change also changes coverage, so separate this physical effect from a same-coverage numerical test. Next test: competing hcp/atop states at the best converged common settings, then vibrational and H2 chemical-potential corrections before a finite-temperature adsorption claim.

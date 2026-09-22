@@ -1,0 +1,15 @@
+{
+  "experiment": "dynamics",
+  "parameters": {
+    "timesteps": [
+      0.01,
+      0.05,
+      0.1,
+      0.5,
+      1.0,
+      1.9,
+      2.01
+    ],
+    "steps": 300
+  }
+}

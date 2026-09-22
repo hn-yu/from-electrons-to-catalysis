@@ -1,0 +1,10 @@
+{
+  "experiment": "dft",
+  "parameters": {
+    "basis": "sto-3g",
+    "bond_lengths_A": [
+      0.74,
+      2.5
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "experiment": "surface_phase",
+  "parameters": {
+    "states": [
+      {
+        "name": "clean",
+        "energy_eV": 0.0,
+        "adsorbates": 0
+      },
+      {
+        "name": "quarter",
+        "energy_eV": -0.5,
+        "adsorbates": 1
+      },
+      {
+        "name": "half",
+        "energy_eV": -0.7,
+        "adsorbates": 2
+      }
+    ],
+    "mu_grid_eV": [
+      -1.0,
+      0.2,
+      121
+    ]
+  }
+}

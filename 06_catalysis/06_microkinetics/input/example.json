@@ -1,0 +1,33 @@
+{
+  "experiment": "microkinetics",
+  "parameters": {
+    "model": {
+      "states_eV": [
+        0.0,
+        -0.3,
+        -0.15
+      ],
+      "product_eV": -0.1,
+      "transition_states_eV": [
+        0.15,
+        0.45,
+        0.55
+      ]
+    },
+    "temperature_K": 600,
+    "pA_bar": 1.0,
+    "pB_bar": 0.01,
+    "temperatures_K": [
+      400,
+      600,
+      800,
+      1000
+    ],
+    "pressures_bar": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  }
+}

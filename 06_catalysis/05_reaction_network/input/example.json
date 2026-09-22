@@ -1,0 +1,19 @@
+{
+  "experiment": "reaction_network",
+  "parameters": {
+    "model": {
+      "states_eV": [
+        0.0,
+        -0.3,
+        -0.15
+      ],
+      "product_eV": -0.1,
+      "transition_states_eV": [
+        0.15,
+        0.45,
+        0.55
+      ]
+    },
+    "temperature_K": 600
+  }
+}

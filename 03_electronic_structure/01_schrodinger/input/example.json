@@ -1,0 +1,8 @@
+{
+  "experiment": "schrodinger",
+  "parameters": {
+    "n": 400,
+    "length": 12.0,
+    "states": 4
+  }
+}

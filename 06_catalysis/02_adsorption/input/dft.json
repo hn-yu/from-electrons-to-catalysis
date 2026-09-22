@@ -1,0 +1,26 @@
+{
+  "experiment": "adsorption",
+  "parameters": {
+    "backend": "gpaw",
+    "size": [
+      2,
+      2,
+      3
+    ],
+    "vacuum_A": 8.0,
+    "fixed_layers": 1,
+    "sites": [
+      "ontop",
+      "bridge",
+      "fcc",
+      "hcp"
+    ],
+    "fmax": 0.04,
+    "cutoff_eV": 300,
+    "kpts": [
+      3,
+      3,
+      1
+    ]
+  }
+}

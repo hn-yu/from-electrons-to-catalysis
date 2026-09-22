@@ -1,0 +1,213 @@
+[
+  {
+    "path": "02_bringup/01_units",
+    "title": "Units and physical scales",
+    "tier": "core",
+    "experiment": "units_experiment"
+  },
+  {
+    "path": "02_bringup/02_forces",
+    "title": "An energy/force interface",
+    "tier": "core",
+    "experiment": "forces"
+  },
+  {
+    "path": "02_bringup/03_finite_differences",
+    "title": "Break finite differences",
+    "tier": "core",
+    "experiment": "finite_differences"
+  },
+  {
+    "path": "03_electronic_structure/01_schrodinger",
+    "title": "A 1D Schrodinger solver",
+    "tier": "core",
+    "experiment": "schrodinger"
+  },
+  {
+    "path": "03_electronic_structure/02_lcao",
+    "title": "Nonorthogonal LCAO",
+    "tier": "core",
+    "experiment": "lcao"
+  },
+  {
+    "path": "03_electronic_structure/03_rhf",
+    "title": "Write restricted Hartree-Fock",
+    "tier": "quantum",
+    "experiment": "scf"
+  },
+  {
+    "path": "03_electronic_structure/04_break_hf",
+    "title": "Break Hartree-Fock",
+    "tier": "quantum",
+    "experiment": "hf_failures"
+  },
+  {
+    "path": "03_electronic_structure/05_dft",
+    "title": "HF, density functionals and FCI",
+    "tier": "quantum",
+    "experiment": "dft"
+  },
+  {
+    "path": "03_electronic_structure/06_periodic",
+    "title": "Periodic equation of state",
+    "tier": "core",
+    "experiment": "periodic"
+  },
+  {
+    "path": "04_thermodynamics/01_partition",
+    "title": "Partition functions",
+    "tier": "core",
+    "experiment": "partition"
+  },
+  {
+    "path": "04_thermodynamics/02_molecular_thermochemistry",
+    "title": "Molecular thermochemistry",
+    "tier": "quantum",
+    "experiment": "molecular_thermo"
+  },
+  {
+    "path": "04_thermodynamics/03_chemical_potential",
+    "title": "Pressure and chemical potential",
+    "tier": "core",
+    "experiment": "chemical_potential"
+  },
+  {
+    "path": "04_thermodynamics/04_surface_phase",
+    "title": "Surface phase diagram",
+    "tier": "core",
+    "experiment": "surface_phase"
+  },
+  {
+    "path": "05_kinetics/01_optimizer",
+    "title": "Optimization",
+    "tier": "core",
+    "experiment": "optimizer"
+  },
+  {
+    "path": "05_kinetics/02_dynamics",
+    "title": "Velocity Verlet",
+    "tier": "core",
+    "experiment": "dynamics"
+  },
+  {
+    "path": "05_kinetics/03_hessian",
+    "title": "Hessians and normal modes",
+    "tier": "core",
+    "experiment": "hessian"
+  },
+  {
+    "path": "05_kinetics/04_neb",
+    "title": "Nudged elastic band",
+    "tier": "core",
+    "experiment": "neb"
+  },
+  {
+    "path": "05_kinetics/05_tst",
+    "title": "Barrier-to-timescale map",
+    "tier": "core",
+    "experiment": "tst"
+  },
+  {
+    "path": "06_catalysis/01_slab",
+    "title": "Converge a slab observable",
+    "tier": "core",
+    "experiment": "slab"
+  },
+  {
+    "path": "06_catalysis/02_adsorption",
+    "title": "Adsorption site competition",
+    "tier": "core",
+    "experiment": "adsorption"
+  },
+  {
+    "path": "06_catalysis/03_umbrella",
+    "title": "Umbrella sampling and WHAM",
+    "tier": "core",
+    "experiment": "umbrella"
+  },
+  {
+    "path": "06_catalysis/04_mep_fes",
+    "title": "MEP versus free energy",
+    "tier": "core",
+    "experiment": "mep_fes"
+  },
+  {
+    "path": "06_catalysis/05_reaction_network",
+    "title": "Detailed-balance reaction network",
+    "tier": "core",
+    "experiment": "reaction_network"
+  },
+  {
+    "path": "06_catalysis/06_microkinetics",
+    "title": "Microkinetics and observables",
+    "tier": "core",
+    "experiment": "microkinetics"
+  },
+  {
+    "path": "06_catalysis/07_rate_control",
+    "title": "Break rate-determining-step intuition",
+    "tier": "core",
+    "experiment": "rate_control"
+  },
+  {
+    "path": "07_real_system/02_real_dft",
+    "title": "Real DFT bringup",
+    "tier": "periodic",
+    "experiment": "slab"
+  },
+  {
+    "path": "01_intro/01_hamiltonian",
+    "title": "The electron-nuclear Hamiltonian",
+    "tier": "written"
+  },
+  {
+    "path": "01_intro/02_emulation",
+    "title": "Emulation and environment",
+    "tier": "written"
+  },
+  {
+    "path": "01_intro/03_prediction_log",
+    "title": "The prediction log",
+    "tier": "written"
+  },
+  {
+    "path": "03_electronic_structure/07_checkpoint",
+    "title": "Electronic-structure checkpoint",
+    "tier": "written"
+  },
+  {
+    "path": "04_thermodynamics/05_checkpoint",
+    "title": "Thermodynamics checkpoint",
+    "tier": "written"
+  },
+  {
+    "path": "05_kinetics/06_checkpoint",
+    "title": "Kinetics checkpoint",
+    "tier": "written"
+  },
+  {
+    "path": "06_catalysis/08_checkpoint",
+    "title": "Catalysis checkpoint",
+    "tier": "written"
+  },
+  {
+    "path": "07_real_system/01_calculation_memo",
+    "title": "Talking to the catalyst",
+    "tier": "written"
+  },
+  {
+    "path": "07_real_system/03_blind_prediction",
+    "title": "Blind prediction",
+    "tier": "written"
+  },
+  {
+    "path": "07_real_system/04_bringup_analysis",
+    "title": "Bringup analysis",
+    "tier": "written"
+  },
+  {
+    "path": "07_real_system/05_advisor_defense",
+    "title": "The internal-advisor defense",
+    "tier": "written"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "experiment": "scf",
+  "parameters": {
+    "basis": "sto-3g",
+    "molecules": [
+      {
+        "name": "H2",
+        "atom": "H 0 0 0; H 0 0 .74"
+      },
+      {
+        "name": "HeH+",
+        "atom": "He 0 0 0; H 0 0 .77",
+        "charge": 1
+      },
+      {
+        "name": "LiH",
+        "atom": "Li 0 0 0; H 0 0 1.6"
+      }
+    ]
+  }
+}

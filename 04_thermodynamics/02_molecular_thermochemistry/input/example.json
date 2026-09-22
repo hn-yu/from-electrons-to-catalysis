@@ -1,0 +1,106 @@
+{
+  "experiment": "molecular_thermo",
+  "parameters": {
+    "basis": "sto-3g",
+    "temperature_K": 298.15,
+    "pressure_bar": 1.0,
+    "molecules": [
+      {
+        "name": "H2",
+        "symbols": [
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.74
+          ]
+        ],
+        "symmetry": 2,
+        "linear": true
+      },
+      {
+        "name": "CO",
+        "symbols": [
+          "C",
+          "O"
+        ],
+        "positions_A": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1.13
+          ]
+        ],
+        "symmetry": 1,
+        "linear": true
+      },
+      {
+        "name": "CO2",
+        "symbols": [
+          "O",
+          "C",
+          "O"
+        ],
+        "positions_A": [
+          [
+            0,
+            0,
+            -1.16
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1.16
+          ]
+        ],
+        "symmetry": 2,
+        "linear": true
+      },
+      {
+        "name": "H2O",
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "positions_A": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0.758,
+            0,
+            0.504
+          ],
+          [
+            -0.758,
+            0,
+            0.504
+          ]
+        ],
+        "symmetry": 2,
+        "linear": false
+      }
+    ]
+  }
+}

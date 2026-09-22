@@ -1,0 +1,10 @@
+{
+  "experiment": "umbrella",
+  "parameters": {
+    "temperature": 600.0,
+    "windows": 13,
+    "steps": 16000,
+    "burn": 2000,
+    "seed": 2026
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "experiment": "finite_differences",
+  "parameters": {
+    "position_A": 1.1,
+    "log10_step_range": [
+      -15,
+      -1,
+      50
+    ]
+  }
+}

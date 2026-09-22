@@ -1,0 +1,19 @@
+{
+  "experiment": "chemical_potential",
+  "parameters": {
+    "temperatures_K": [
+      300,
+      600,
+      1000
+    ],
+    "pressures_bar": [
+      1e-09,
+      1e-06,
+      0.001,
+      1.0,
+      100.0
+    ],
+    "gas_entropy_eV_K": 0.0015,
+    "adsorption_energy_eV": -0.6
+  }
+}

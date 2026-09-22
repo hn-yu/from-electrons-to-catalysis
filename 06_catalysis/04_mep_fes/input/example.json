@@ -1,0 +1,10 @@
+{
+  "experiment": "mep_fes",
+  "parameters": {
+    "temperatures_K": [
+      300,
+      600,
+      1000
+    ]
+  }
+}

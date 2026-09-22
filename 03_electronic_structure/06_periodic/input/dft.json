@@ -1,0 +1,46 @@
+{
+  "experiment": "periodic",
+  "parameters": {
+    "backend": "gpaw",
+    "element": "Al",
+    "lattice_constants_A": [
+      3.9,
+      3.98,
+      4.06,
+      4.14,
+      4.22
+    ],
+    "cutoff_eV": 250,
+    "kpts": [
+      4,
+      4,
+      4
+    ],
+    "smearing_eV": 0.1,
+    "sweeps": {
+      "cutoff_eV": [
+        300
+      ],
+      "kpts": [
+        [
+          6,
+          6,
+          6
+        ]
+      ],
+      "smearing_eV": [
+        0.05
+      ],
+      "lattice_constants_A": [
+        [
+          3.94,
+          3.98,
+          4.02,
+          4.06,
+          4.1,
+          4.14
+        ]
+      ]
+    }
+  }
+}

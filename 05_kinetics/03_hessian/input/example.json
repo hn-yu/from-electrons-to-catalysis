@@ -1,0 +1,14 @@
+{
+  "experiment": "hessian",
+  "parameters": {
+    "minimum_start": [
+      -0.6,
+      1.4
+    ],
+    "saddle_start": [
+      -0.8,
+      0.6
+    ],
+    "morse_mass_amu": 0.5039
+  }
+}

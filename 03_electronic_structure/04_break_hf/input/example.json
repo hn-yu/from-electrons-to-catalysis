@@ -1,0 +1,18 @@
+{
+  "experiment": "hf_failures",
+  "parameters": {
+    "bond_lengths_A": [
+      0.74,
+      1.5,
+      2.0,
+      3.0,
+      5.0
+    ],
+    "bases": [
+      "sto-3g",
+      "6-31g",
+      "cc-pvdz",
+      "cc-pvtz"
+    ]
+  }
+}

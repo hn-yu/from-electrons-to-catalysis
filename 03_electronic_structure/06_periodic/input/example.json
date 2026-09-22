@@ -1,0 +1,15 @@
+{
+  "experiment": "periodic",
+  "parameters": {
+    "backend": "emt",
+    "element": "Al",
+    "lattice_constants_A": [
+      3.8,
+      3.9,
+      4.0,
+      4.1,
+      4.2,
+      4.3
+    ]
+  }
+}
