@@ -13,7 +13,15 @@
 
 非相对论、无外场的原子单位 Hamiltonian：
 
-$$\hat H=-\sum_i\frac12\nabla_i^2-\sum_A\frac1{2M_A}\nabla_A^2-\sum_{iA}\frac{Z_A}{r_{iA}}+\sum_{i<j}\frac1{r_{ij}}+\sum_{A<B}\frac{Z_AZ_B}{R_{AB}}.$$
+```math
+\begin{aligned}
+\hat{H} ={}& -\frac{1}{2}\sum_{i}\nabla_i^2
+             -\sum_{A}\frac{1}{2M_A}\nabla_A^2 \\
+           & -\sum_{i,A}\frac{Z_A}{r_{iA}}
+             +\sum_{i \lt j}\frac{1}{r_{ij}}
+             +\sum_{A \lt B}\frac{Z_A Z_B}{R_{AB}}.
+\end{aligned}
+```
 
 电子索引用 i,j，核索引用 A,B；$M_A$ 以电子质量为单位。输入 H2.xyz 的坐标是 Å，代入原子单位核排斥项前必须换成 bohr。
 
