@@ -1,5 +1,8 @@
 """Identical ASE workflows for explicitly labelled EMT emulation and GPAW DFT."""
 from pathlib import Path
+import hashlib
+import importlib.metadata
+import json
 import numpy as np
 
 
@@ -13,6 +16,7 @@ def calculator(config, log):
         return GPAW(mode=PW(config.get('cutoff_eV',300)), xc='PBE',
                     kpts=tuple(config.get('kpts',[3,3,1])),
                     occupations=FermiDirac(config.get('smearing_eV',.1)),
+                    symmetry={'point_group': config.get('point_group',True)},
                     convergence={'energy':1e-6}, txt=str(log))
     raise ValueError('backend must be emt or gpaw; no silent fallback')
 
@@ -38,6 +42,8 @@ def adsorption(config, workdir):
     from ase.constraints import FixAtoms
     from ase.optimize import BFGS
     from ase.io import write
+    # Relaxation can destroy the initial point group; retain time-reversal symmetry.
+    config = {**config, 'point_group': False}
     workdir = Path(workdir); workdir.mkdir(parents=True,exist_ok=True)
     size = tuple(config.get('size',[2,2,3])); layers = size[2]
     clean = fcc111('Cu',size=size,a=config.get('lattice_A',3.61),vacuum=config.get('vacuum_A',8.))
@@ -70,15 +76,42 @@ def adsorption(config, workdir):
             'scope':'EMT is a workflow emulator, not a DFT adsorption prediction.' if config['backend']=='emt' else 'PBE slab calculation; inspect convergence sweep before interpreting chemistry.'}
 
 
+def cached_adsorption(config, workdir):
+    """Restart only a completed task with identical input, implementation and libraries."""
+    workdir = Path(workdir); workdir.mkdir(parents=True,exist_ok=True)
+    versions = {name: importlib.metadata.version(name) for name in ['numpy','scipy','ase']}
+    if config['backend'] == 'gpaw':
+        versions['gpaw'] = importlib.metadata.version('gpaw')
+    stamp = {'input':config, 'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+             'versions':versions}
+    cache = workdir/'completed.json'
+    if cache.exists():
+        stored = json.loads(cache.read_text())
+        if stored['stamp'] == stamp:
+            return stored['result']
+    result = adsorption(config,workdir)
+    temporary = workdir/'completed.tmp'
+    temporary.write_text(json.dumps({'stamp':stamp,'result':result},indent=2,allow_nan=False)+'\n')
+    temporary.replace(cache)
+    return result
+
+
+def slab_tasks(config):
+    yield 'baseline', config['baseline']
+    for parameter,values in config['sweeps'].items():
+        for i,value in enumerate(values):
+            yield f'{parameter}-{i}', {**config['baseline'],parameter:value}
+
+
 def convergence(config, workdir):
     baseline = config['baseline']; runs = []
     # Independently vary one setting, retaining reference energies in each evaluation.
-    reference = adsorption(baseline,Path(workdir)/'baseline')
+    reference = cached_adsorption(baseline,Path(workdir)/'baseline')
     base_energy = reference['sites'][0]['adsorption_eV']
     for parameter, values in config['sweeps'].items():
         for i,value in enumerate(values):
             setting = {**baseline,parameter:value}
-            result = adsorption(setting,Path(workdir)/f'{parameter}-{i}')
+            result = cached_adsorption(setting,Path(workdir)/f'{parameter}-{i}')
             energy = result['sites'][0]['adsorption_eV']
             runs.append({'parameter':parameter,'value':value,'adsorption_eV':energy,
                          'delta_from_baseline_eV':energy-base_energy})

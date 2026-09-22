@@ -22,6 +22,12 @@ def execute(project,input_path,output):
     from .experiments import EXPERIMENTS
     raw = Path(input_path).read_bytes(); config = json.loads(raw)
     output = Path(output); output.mkdir(parents=True,exist_ok=True)
+    source_hash = hashlib.sha256()
+    for source in sorted(Path(__file__).parent.glob('*.py')):
+        source_hash.update(source.name.encode())
+        source_hash.update(source.read_bytes())
+    dirty = subprocess.run(['git','status','--porcelain','--','src'],
+                           capture_output=True,text=True,cwd=project)
     result = EXPERIMENTS[config['experiment']](config['parameters'],output)
     versions = {'python':platform.python_version()}
     for package in ['numpy','scipy','ase','pyscf','gpaw']:
@@ -32,6 +38,7 @@ def execute(project,input_path,output):
     git = subprocess.run(['git','rev-parse','HEAD'],capture_output=True,text=True,cwd=project)
     payload = {'project':str(Path(project).name), 'input':config, 'input_sha256':hashlib.sha256(raw).hexdigest(),
                'versions':versions, 'source_revision':git.stdout.strip() if git.returncode == 0 else None,
+               'source_sha256':source_hash.hexdigest(), 'source_dirty':bool(dirty.stdout.strip()),
                'slurm_job_id':os.environ.get('SLURM_JOB_ID'), 'result':result}
     target = output/'result.json'
     target.write_text(json.dumps(payload,indent=2,allow_nan=False)+'\n')
