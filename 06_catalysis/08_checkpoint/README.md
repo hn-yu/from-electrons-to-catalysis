@@ -1,6 +1,29 @@
 # 08 · 从一个势垒到催化观测量
 
-吸附能、NEB 势垒、FES 和微观动力学输出放在同一报告里，并不自动组成一致机制。请检查它们之间的连接。
+本项目检查一份催化解释是否把表面状态、自由能、反应网络与宏观响应一致地连接起来。
+
+## 背景：为什么需要这一步
+
+前面得到的吸附能、自由能剖面和速率表属于不同层次。若它们使用不同覆盖度、参考态或物理模型，即使每项计算内部正确，也不能直接拼成同一个真实催化机制。
+
+本检查点从可观测量往回追问：TOF 需要哪些人口和基元反应，人口由哪些自由能与储库决定，状态和通道又由哪些结构与采样支持。这样可以找出最值得补的证据，而不是机械地增加更多计算类型。
+
+## 开始前需要理解的概念
+
+- **网络一致性**：计量、自由能参考、正逆速率及储库条件应相互匹配。
+- **稳态通量守恒**：当前串联循环各步净通量相同，不要求正向通量相同。
+- **整体响应**：反应级数和表观活化能包含随条件变化的覆盖度。
+- **机制遗漏**：未列入的稳定状态、逃逸通道或慢变量可能改变结论。
+
+## 本次任务：从什么得到什么
+
+读取 kinetics-report.txt，核对覆盖度和通量；解释驱动非零 TOF 的储库条件。再分别为隐藏变量未平衡、遗漏位点和 slab 厚度未收敛设计后续检查，把每项检查与它可能改变的结论对应起来。
+
+## 先用一个小例子走通思路
+
+稳态中若 A* 人口不变，需要流入 A* 的净速率等于流出 A* 的净速率，而不需要这两个净速率都为零。持续进料和移除产物可以维持这样的非平衡稳态。
+
+如果声称“加快某步让 TOF 降低”，先明确是否只改变该过渡态且保持详细平衡，还是同时稳定了中间体、改变储库或引入了竞争通道。没有扰动定义，就无法比较这个结论与 DRC。
 
 ## 这个项目应该自己完成什么
 
@@ -10,12 +33,15 @@
 
 - [kinetics-report.txt](input/kinetics-report.txt)
 
+```math
+\dot\theta=S r(\theta,T,p),\qquad \mathrm{TOF}=r_{product},
+```
 
-$$\dot\theta=S r(\theta,T,p),\qquad \mathrm{TOF}=r_{product},$$
-$$n_A=\frac{\partial\ln\mathrm{TOF}}{\partial\ln p_A},\quad E_{app}=-k_B\frac{\partial\ln\mathrm{TOF}}{\partial(1/T)}.$$
+```math
+n_A=\frac{\partial\ln\mathrm{TOF}}{\partial\ln p_A},\quad E_{app}=-k_B\frac{\partial\ln\mathrm{TOF}}{\partial(1/T)}.
+```
 
 这些整体响应包含覆盖度和储库条件。它们一般不等于某一步显式压力幂或局部电子能垒。
-
 
 ## 作业步骤
 
@@ -29,3 +55,13 @@ $$n_A=\frac{\partial\ln\mathrm{TOF}}{\partial\ln p_A},\quad E_{app}=-k_B\frac{\p
 ## 提示
 
 [逐步提示](hints/README.md) 给出三个具体推理环节。完整课程的 [实现边界表](../../docs/IMPLEMENTATION_BOUNDARIES.md) 解释哪些工作应交给库。
+
+## 完成后应能解释什么
+
+先完成自己的守恒检查和证据关系，再读 output/answer.md。完成后应能审查一个催化报告中的跨层推断，指出需要新的物理信息还是只需修正已有后处理。
+
+## 与前后项目的关系
+
+汇总本章 [slab](../01_slab/README.md) 至 [速率控制](../07_rate_control/README.md)；下一章 [真实体系](../../07_real_system/README.md) 用 H/Cu 的实际计算练习形成范围明确的研究判断。
+
+[输入文件说明](input/README.md) · [输出阅读指南](output/README.md) · [分步提示](hints/README.md) · [全课程实现边界](../../docs/IMPLEMENTATION_BOUNDARIES.md)

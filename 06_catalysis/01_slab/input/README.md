@@ -1,6 +1,16 @@
-# 输入文件、格式与单位
+# 输入说明
 
-从 [项目正文](../README.md) 的物理模型开始。`run.py --input` 接收本目录的副本，而不是一个 JSON 文件。
+本项目用有限厚度的周期薄板代表 Cu(111) 表面，围绕 H 吸附能设计收敛实验，判断这个表面模型是否足够可靠。
+
+## 这些输入用于哪项任务
+
+cases.csv 为每个变体指定独立的 clean/fcc POSCAR、H₂ EXTXYZ 与 calculator.toml。默认读取真实 PBE energies.csv，手写吸附能与相对基准差，按 0.05 eV 容限审核。需要新增证据时才用 --calculate 经 ASE/GPAW 在 Slurm 上重算所有列出的案例。
+
+## 阅读文件前先核对一个具体例子
+
+当前三层基准约为 +0.0456 eV，四层约为 −0.3018 eV，差约 −0.3474 eV。既超过 0.05 eV 容限，又改变符号，所以不能从基准宣称吸附必然吸热。
+
+1×1 表面胞放一个 H 是 1 ML；2×2 放一个 H 是 0.25 ML。即使软件参数完全一致，这两项也在比较不同覆盖度，因此其差异不能全部归为“超胞数值误差”。
 
 ## [DATA_SOURCE.md](DATA_SOURCE.md)
 
@@ -157,3 +167,5 @@ VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标�
 ## [vacuum_A-0/fcc.POSCAR](vacuum_A-0/fcc.POSCAR)
 
 VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标明 Direct/Cartesian 的坐标。
+
+[返回完整背景与公式](../README.md) · [查看结果怎样解释](../output/README.md)

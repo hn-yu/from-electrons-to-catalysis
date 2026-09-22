@@ -1,7 +1,7 @@
 {
   "project": "01_schrodinger",
   "input_files_sha256": {
-    "README.md": "45f338a7777d8361a070476cd61ee2a132f69a7066d46093a15834bee6cdba80",
+    "README.md": "51d4cf1f076da522c38f5aac849694fef1828470e03315b984d0835ca5021864",
     "box.dat": "1de4c15794fced951807361d7a100f1505c8cf68b49bd13e22ce17dd954c9298",
     "control.toml": "5ea0c4d97931b42db76fdd570a8096259197b654334870e28a483ed7d23924cc",
     "double_well.dat": "de2644c3c52f0d42921379dd0dfd7c770a95355065a8145c4a9a5ef45f685899",
@@ -17,7 +17,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "03_electronic_structure/01_schrodinger/run.py": "1f679d8807ac9fbda8278ee9dbd14ec333534a20f4632b6513d21279c744317f",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -37,7 +37,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "box": {
       "energies_Hartree": [

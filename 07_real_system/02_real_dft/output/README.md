@@ -1,4 +1,14 @@
-# 怎样阅读输出
+# 输出说明
+
+本项目用真实 GPAW/PBE 数据检验一个具体的 H/Cu(111) 吸附假设，并保留从原生结构、软件日志到误差判断的完整证据。
+
+## 应先读什么、回答什么
+
+先读每个 case 的结构/参数与原始总能，再读收敛差值和结论。完成后应能独立复核报告，并将“接口已通”“几何已优化”“目标量已收敛”“物理模型适用”分别对应到实际证据。
+
+## 用于理解这些结果的背景
+
+前面在解析模型上可以用已知答案判断算法。真实材料没有这样的通用标准答案，需要用结构核对、独立参考、软件收敛和参数扫描逐层建立可信度。本项目把这些步骤合在同一个有限问题上，而不是把“调用 DFT 成功”作为终点。
 
 [report.txt](report.txt) 给出运行模式、关键量及独立对照。以下文件保留可复算的中间数据：
 
@@ -15,7 +25,7 @@
 - [sweep.csv](sweep.csv)
 - [vacuum_A-0/fcc.extxyz](vacuum_A-0/fcc.extxyz)
 
-CSV 第一行是列名；DAT 首部注释或项目 README 定义矩阵维度、指标和单位。自由能零点需要先对齐；虚频使用带符号表示，不取绝对值冒充稳定模式。
+CSV 的首行和 DAT 的首部注释给出列名、矩阵约定或单位；解释数值时请同时核对对应输入。
 
 `result.json` 是附属审计记录：逐输入文件 SHA-256、实际源文件 SHA-256、启动版本、软件版本与 Slurm 作业号。若计算时工作树尚未提交，源文件哈希比 HEAD 更精确。
 
@@ -40,3 +50,5 @@ CSV 第一行是列名；DAT 首部注释或项目 README 定义矩阵维度、�
 - [gpaw-source-logs/clean.txt](gpaw-source-logs/clean.txt)
 - [gpaw-source-logs/fcc-opt.txt](gpaw-source-logs/fcc-opt.txt)
 - [gpaw-source-logs/fcc.txt](gpaw-source-logs/fcc.txt)
+
+[返回推导与受控实验](../README.md) · [核对输入](../input/README.md)

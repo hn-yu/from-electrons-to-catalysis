@@ -1,7 +1,7 @@
 {
   "project": "02_dynamics",
   "input_files_sha256": {
-    "README.md": "34da22028a9bf64e3569e6def812139879fa6e5633fe0dfd188659b76379e047",
+    "README.md": "ce9de6317a5949de06b88f53c45c2b70d944afcf2e901409cd09602b554618ea",
     "cluster.extxyz": "f9023e3bafe8e7913827ea45ec40a86005aca77cd5df71c7719ffdac143da3df",
     "control.toml": "21714958bb252cfe46dc9b123c0051fefdb1b4fbe06371740097b2aa1c40f84d",
     "timesteps.csv": "188c9f2b6132efdbd91129ce6ba053b7e13bd61f83101069354cff6f1034a168"
@@ -15,7 +15,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "05_kinetics/02_dynamics/run.py": "cf95d7ed60697c16cf46546ed5d64a035085092098d0dbef9949e8cb066f670b",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -35,7 +35,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705377",
   "result": {
     "timestep_sweep": [
       {

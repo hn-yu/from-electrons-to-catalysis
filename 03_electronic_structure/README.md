@@ -1,9 +1,52 @@
-# 03 electronic structure
+# 03 · 固定原子核后，电子能量怎样求出来
 
-- [A 1D Schrodinger solver](01_schrodinger/README.md): core project.
-- [Nonorthogonal LCAO](02_lcao/README.md): core project.
-- [Write restricted Hartree-Fock](03_rhf/README.md): quantum project.
-- [Break Hartree-Fock](04_break_hf/README.md): quantum project.
-- [HF, density functionals and FCI](05_dft/README.md): quantum project.
-- [Periodic equation of state](06_periodic/README.md): core project.
-- [Electronic-structure checkpoint](07_checkpoint/README.md): written project.
+这一章从一维量子问题逐步走到分子与周期固体。核心是理解：如何表示未知电子态，如何求解选定近似，以及为什么数值收敛仍不保证物理模型适用。
+
+## 从一个电子到多个电子
+
+固定核后，电子态满足定态薛定谔方程。最小示例是一个粒子在一维势场中的波函数，离散后成为矩阵本征问题。真实分子常使用以原子为中心的基函数，基函数重叠让方程出现重叠矩阵 S。
+
+多电子之间存在相互作用。HF 用单个 Slater 行列式构造近似，把轨道和平均场放进自洽循环；DFT 用密度泛函描述电子能量，实际 KS 实现也要求解辅助轨道。FCI 在小型有限轨道空间内提供更完整的多行列式参照。
+
+周期材料还引入晶胞、Bloch 波矢和布里渊区积分。此时要检查的不仅是电子迭代，还包括 k 点与平面波截断。一路保留“表示、算法、近似”三层区别。
+
+## 阅读顺序与分工
+
+先完成 [单位与力](../02_bringup/README.md)，掌握矩阵乘法、本征向量与积分概念。各项目会解释 AO、MO、SCF、RHF 等缩写，不要求提前背下它们。
+
+| 项目 | 为什么在这里做 | 自己写与成熟软件 |
+|---|---|---|
+| [一维薛定谔方程](01_schrodinger/README.md) | 将微分算符变成可求解矩阵 | 自己离散，NumPy/SciPy 求本征值，对照解析极限 |
+| [非正交 LCAO](02_lcao/README.md) | 从网格过渡到会重叠的基函数 | 自己正交化，对照 SciPy 广义本征求解 |
+| [RHF](03_rhf/README.md) | 解决密度与平均场互相依赖 | 自写 SCF；PySCF 生成积分并独立算 RHF |
+| [让 HF 失效](04_break_hf/README.md) | 主动识别单行列式和自旋限制 | 用 PySCF RHF/UHF，自己设计受控实验 |
+| [DFT 与 FCI](05_dft/README.md) | 比较不同物理近似而非仅比总能高低 | 用 PySCF，自己定义公平比较与误差 |
+| [周期状态方程](06_periodic/README.md) | 将孤立分子拓展到晶体 | ASE/GPAW 求能量与拟合，自己做归一化和收敛 |
+| [检查点](07_checkpoint/README.md) | 把输入、代数、数值与模型检查串起来 | 依据实际报告写分层审核 |
+
+## 一个贯穿的矩阵例子
+
+两基函数展开先得到
+
+```math
+Hc=\epsilon Sc.
+```
+
+S 记录基函数的内积；它不是新加的一种相互作用。RHF 中相同结构变为
+
+```math
+F[D]C=SC\epsilon,\qquad
+D_{\mu\nu}=2\sum_{i\in\mathrm{occ}}C_{\mu i}C_{\nu i}.
+```
+
+区别在于 F 依赖待求密度 D，所以要迭代。H₂/STO-3G 只有两个 AO 和一个双占据 MO，适合逐项手算；水有七个 AO、五个占据 MO，能更有效暴露交换指标和密度更新错误。
+
+最终可以得到很精确的自洽残差，同时在 H₂ 断键时得到有问题的 RHF 物理图像。这正是本章同时安排“实现”和“让近似失效”的原因。
+
+## 运行和交付
+
+RHF 默认读取附带 DAT 积分，改变 XYZ 后先重新生成积分；compare.py 检查坐标与积分匹配。分子方法调用 PySCF，周期默认分析真实 GPAW 历史表，只有 --calculate 启动新周期计算。计算在集群提交 Slurm，具体命令见各项目。
+
+交付应包含中间矩阵或能量表、残差/收敛图，以及“这个比较检验了什么”的解释。不要用一个最终能量替代这些内容。
+
+下一章 [热力学](../04_thermodynamics/README.md) 问：知道电子能之后，有限温度和气体压力还带来什么？[课程首页](../README.md) · [实现边界](../docs/IMPLEMENTATION_BOUNDARIES.md)

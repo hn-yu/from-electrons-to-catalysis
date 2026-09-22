@@ -2,7 +2,7 @@
   "project": "06_periodic",
   "input_files_sha256": {
     "Al.cif": "dc9cfe3b0044b75ae1dbd42b46b3e2e233d9c5d266438c7d8e5b67e0e9ca6663",
-    "README.md": "c56c7968a3b3f9a9c797cb87ee9107cb94c5e6dbf2161a93d9f0da51bd322514",
+    "README.md": "bbb23a482925caccf4e5f207a3844761715ca5291769ac1483ce6a8e9e560bd5",
     "control.toml": "429fd91167624afe6a21afc75752cb84ebe0c2154caf6ae92c628470f64937ce",
     "eos.csv": "b2a493c341e8c58dce7e0da70e43309047e0dd8f6666ff5c02983f2fe2cf96a0",
     "lattice_scan.csv": "a9ab45f97c8573f9b2c42c037e191197d034c5c6b3aa41584264b2ba5d127518"
@@ -16,7 +16,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "03_electronic_structure/06_periodic/run.py": "40dffd82fea29fb6d1cb9f2a5619cd1e13248da76d5a8ed3db8ae125a44d33d9",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -36,7 +36,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "backend": "gpaw",
     "a0_A": 4.047677244916886,

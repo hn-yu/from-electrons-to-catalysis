@@ -7,7 +7,7 @@
     "H2_3.00.xyz": "fa9261504a6d6c3e55a512c60a505b31f85b0b9b0e9050744811d79331b51b27",
     "H2_5.00.xyz": "4783f5c8745887f63f6e036ec3b55f275b4ee696850735e5719772f17ced6d19",
     "O2.xyz": "21f5541fbb1387c01b3b74f7e746e6992d69d8a2a56bc094a5aaee9f2d89cdde",
-    "README.md": "912ba34dbac153a156540d80e7eccae5039f4918da3239eb35de2b4876f972b8",
+    "README.md": "537761324d015a4004beeb39d5f84b68fd04bf47a84ad6622883e51ce19b65c8",
     "control.toml": "6ccb718b4457e429f997882950f8f4694d2a4e196c559051f0d1b6861298baa6",
     "geometries.csv": "1336874fac64977cf6a28e4f99c1a622c329b6627b9f139712c98a7cd9e74971"
   },
@@ -20,7 +20,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "03_electronic_structure/04_break_hf/run.py": "cb9fc02612da5ee61982c4556bff7d885a768579be04e2cf3e61d02cf48b0772",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -40,7 +40,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "stretch": [
       {
@@ -82,8 +82,8 @@
     "oxygen": [
       {
         "spin_2S": 0,
-        "energy_Hartree": -147.55027698444337,
-        "S2": 2.795008668954324e-11,
+        "energy_Hartree": -147.55027698444331,
+        "S2": 2.793587583482804e-11,
         "converged": true
       },
       {
@@ -106,12 +106,12 @@
       },
       {
         "basis": "cc-pvdz",
-        "energy_Hartree": -1.128700093556441,
+        "energy_Hartree": -1.1287000935564409,
         "converged": true
       },
       {
         "basis": "cc-pvtz",
-        "energy_Hartree": -1.1329676829221347,
+        "energy_Hartree": -1.1329676829221365,
         "converged": true
       }
     ]

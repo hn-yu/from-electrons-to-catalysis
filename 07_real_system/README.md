@@ -1,7 +1,50 @@
-# 07 real system
+# 07 · 用真实计算形成范围明确的研究判断
 
-- [Talking to the catalyst](01_calculation_memo/README.md): written project.
-- [Real DFT bringup](02_real_dft/README.md): periodic project.
-- [Blind prediction](03_blind_prediction/README.md): written project.
-- [Bringup analysis](04_bringup_analysis/README.md): written project.
-- [The internal-advisor defense](05_advisor_defense/README.md): written project.
+这一章围绕 H/Cu(111) 的吸附电子能完成一次研究流程：提出问题、记录预测、执行或复核真实 PBE、分析失败，再决定最值得做的下一步。
+
+## 最终项目究竟要回答什么
+
+目标问题是：在给定真空、中性 PBE 模型、覆盖度和 H₂ 参考下，吸附电子能的符号是否对关键设置稳定？这比“解释铜的催化活性”更有限，但对应可执行计算和可以被否定的声明。
+
+```math
+E_{ads}=E_{H/Cu}-E_{Cu}-\frac12E_{H_2}.
+```
+
+负值表示这个电子能反应放热；它本身还不是有限温吸附自由能、迁移势垒或 TOF。所需气体热化学、路径与网络信息在前面章节分别讨论，这里只在实际证据支持的范围内下结论。
+
+## 案例为什么保留未收敛结果
+
+1×1×3、一个 H 的基准为 1 ML，得到 Eads≈+0.0456 eV；四层结果约 −0.3018 eV。差值约 0.35 eV 超过原先 0.05 eV 容限并改变符号。
+
+这次初步计算成功建立了真实软件工作流，也否定了基准厚度足够的假设。课程要求保留这一结果与原始判断，再设计更好的计算，不能把阈值改宽或挑一个更喜欢的数当最终答案。
+
+## 按研究顺序使用项目
+
+| 项目 | 角色 | 具体交付 |
+|---|---|---|
+| [计算备忘录](01_calculation_memo/README.md) | 先定义问题与资源用途 | 结构/覆盖度核对、参考态、容限和否定实验 |
+| [事前预测](03_blind_prediction/README.md) | 对自己的新计算先留下判断 | 保留历史审查，另填尚未测量条件的预测 |
+| [真实 DFT](02_real_dft/README.md) | 执行或复核真实电子结构证据 | 原生输入、原始日志、能量差与收敛表 |
+| [bringup 分析](04_bringup_analysis/README.md) | 根据失败定位主导不确定性 | 独立重算差值，提出保持条件一致的后续序列 |
+| [研究提案答辩](05_advisor_defense/README.md) | 审查从路径到催化活性的跨层推断 | 四个可检验命题及不超过三项下一步计算 |
+
+目录编号将计算放在 02，但对你自己尚未执行的实验，应先完成 03 中的预测。已公开案例只能做历史分析，不能重新包装成盲预测。
+
+## 执行前要知道的区别
+
+默认 run.py 从真实 energies.csv 重建分析，适合先读懂所有参考和误差。只有 --calculate 才对 cases.csv 中所有原生结构启动新的 GPAW 计算，应在 Slurm 中运行。该选项不是简单的绘图刷新。
+
+```bash
+# 从仓库根目录分析现有真实数据
+sbatch scripts/slurm.sh 07_real_system/02_real_dft/run.py --output runs/real-analysis
+# 从当前输入结构执行全部案例的新 PBE 计算
+sbatch scripts/slurm.sh 07_real_system/02_real_dft/run.py --calculate --output runs/new-real-dft
+```
+
+原子坐标、电子结构参数和固定层决定实际计算的问题。单点输出有能量和力不等于结构已优化；当前 native-poscar-check 保留约 1.67 eV/Å 最大力，专用于接口核对。
+
+## 最终提交怎样体现理解
+
+报告应能让别人从结构和参考能重算你的观测量，看到原始预测如何被结果改变，并理解为什么下一项计算优先于其他选择。自己负责这些判断，电子结构、几何优化与结构读写使用 ASE/GPAW。
+
+当你能说明“目前能断言什么、还缺什么、哪个新结果会改变判断”，就完成了从计算工具到研究推理的这一步。[上一章：催化](../06_catalysis/README.md) · [课程首页](../README.md) · [安装说明](../INSTALL.md)

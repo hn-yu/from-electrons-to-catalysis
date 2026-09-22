@@ -1,7 +1,7 @@
 {
   "project": "04_surface_phase",
   "input_files_sha256": {
-    "README.md": "a6012d32e058e3bafe206087b57f7b5afa73a96af976644e5ac3373c7c71cfef",
+    "README.md": "863a8ffdf5918b2c134b2ba6f9e981822de01e1faf4a1389b6d3978b43ff6dec",
     "clean.POSCAR": "c8d36bc86699b753acd616a423af700289e8bfbaa728168430ea0744c4bb25ad",
     "control.toml": "1fec46591275f913ad1c9247e618be45b9139bcc75a101940376ad8ffd95e793",
     "half.POSCAR": "c6d3c4313d694dbd1886ee70585fd52c2028074f37a427561a9c75487ab5ec35",
@@ -17,7 +17,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "04_thermodynamics/04_surface_phase/run.py": "ca2c9dc8b1e5e8309430afea8f7680868402a7481e0d3afb22263bb1f8182b1b",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -37,7 +37,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "mu_eV": [
       -1.0,

@@ -3,7 +3,7 @@
   "input_files_sha256": {
     "H2O.xyz": "f4725c0424dd14251022cd7fcdfea50aa6898ad39335ebbe012aded07c042cc9",
     "H2O_optimized.xyz": "e16481ef57f54d5c33b5942d40cea11dee7879671ab85c5000417c8f1963b5d6",
-    "README.md": "f8dfe81d4eb4b67f7e01e300f9f7c8fde2657579342879619e456f8c5276bbb5",
+    "README.md": "60132af77c50276da54f2e56764399870277971da4466e03c503e708355bb921",
     "control.toml": "7bdfe52d3b679149b737f72c7241d7c38be76d8bed680d1828ef02516a839101",
     "hessian.dat": "088bbf2435696a8a7459aa7ef2bf2b76cba6bcd5bfa63abfeebc30c42e91599f",
     "masses.dat": "8c79e126a016dbb85d60690fa293ad2e265f0b8019d0acefa0f79bde9b88b2ff",
@@ -18,7 +18,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "05_kinetics/03_hessian/run.py": "b5fb392d567102b3bbd0eaf835a88fa87e3aaa05ca5f9362b4f1e68da26ba354",
     "05_kinetics/03_hessian/prepare_hessian.py": "cb24d0409941571f658a4ec786a81d9d75e7aae7f22ab8ef64ae1496990e9aae",
@@ -39,7 +39,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "molecule": "H2O",
     "frequencies_cm^-1": [

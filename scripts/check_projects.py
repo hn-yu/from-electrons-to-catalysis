@@ -23,12 +23,13 @@ for project in projects:
             assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,f'Source changed since output generation: {name}'
 # Historical archives retain their original text; active guides must have valid local links.
 active=[root/'README.md',root/'INSTALL.md',root/'docs/IMPLEMENTATION_BOUNDARIES.md']
+active.extend(sorted({root/Path(project['path']).parent/'README.md' for project in projects}))
 for project in projects:
     folder=root/project['path']
     active.extend([folder/'README.md',folder/'input/README.md',folder/'output/README.md',*sorted((folder/'hints').glob('*.md'))])
 errors=[]
 for path in active:
-    for target in re.findall(r'(?<!!)\[[^\]]+\]\(([^)]+)\)',path.read_text()):
+    for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)',path.read_text()):
         if target.startswith(('http:','https:','mailto:','#')):continue
         target=unquote(target.split('#')[0])
         if not (path.parent/target).exists():errors.append(f'{path.relative_to(root)} -> {target}')

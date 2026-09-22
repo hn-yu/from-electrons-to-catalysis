@@ -1,6 +1,16 @@
-# 输入文件、格式与单位
+# 输入说明
 
-从 [项目正文](../README.md) 的物理模型开始。`run.py --input` 接收本目录的副本，而不是一个 JSON 文件。
+本项目用真实 GPAW/PBE 数据检验一个具体的 H/Cu(111) 吸附假设，并保留从原生结构、软件日志到误差判断的完整证据。
+
+## 这些输入用于哪项任务
+
+从 cases.csv 定位基准与七个变体的完整结构和参数，独立重算 energies.csv 中的吸附能。审核 0.05 eV 容限、覆盖度和厚度影响。若执行新计算，用 Slurm 调用 --calculate，保存 GPAW 原始日志、优化轨迹和最终结构，再重新进行同一项审核。
+
+## 阅读文件前先核对一个具体例子
+
+三层基准吸附能约 +0.04560 eV，四层约 −0.30182 eV。因此当前数据已经否定“这套基准在厚度上达到 0.05 eV 容限”的声明；不能因四层数值看起来更合理就跳过继续收敛。
+
+另外保存的 native-poscar-check 是从当前结构执行的单点，最大力约 1.67 eV/Å。它证明了原生结构可以进入 GPAW 并返回能量/力，但尚未证明该结构为吸附驻点。
 
 ## [DATA_SOURCE.md](DATA_SOURCE.md)
 
@@ -157,3 +167,5 @@ VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标�
 ## [vacuum_A-0/fcc.POSCAR](vacuum_A-0/fcc.POSCAR)
 
 VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标明 Direct/Cartesian 的坐标。
+
+[返回完整背景与公式](../README.md) · [查看结果怎样解释](../output/README.md)

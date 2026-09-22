@@ -1,7 +1,7 @@
 {
   "project": "05_reaction_network",
   "input_files_sha256": {
-    "README.md": "b889bfa47fbce481c794c62241a1a441a4cc3ea34d82c76a77161a32ba022338",
+    "README.md": "7db5bfca982abfc4846f5eacca72148670ad7496ae7570522d40dbcf8a3d5d10",
     "control.toml": "dcc12733c2caf0ccef7e96f1b2a6e9ec45217e9d9fd3900992f03e20c61cf026",
     "mechanism.yaml": "8db414e292c79c1e8a1faa8e56dc7ae217593bea1f9e4a68f098879d90d721dc",
     "states.csv": "d5086fe79b195ca638587b28a6a7eba2aeb64e3ca21fe9f2031eec3741f9aa0c",
@@ -16,7 +16,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "06_catalysis/05_reaction_network/make_mechanism.py": "7d322ef5714ed0ed4dbb7061ec568987b589d55ea467fa1962b576beb014e373",
     "06_catalysis/05_reaction_network/run.py": "941297ec4e5c4604ee1bc1db115b48ab1ace5e696b0b6b935ea491ac926a3bfa",
@@ -37,7 +37,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "species": [
       "vacancy",

@@ -1,7 +1,7 @@
 {
   "project": "05_tst",
   "input_files_sha256": {
-    "README.md": "b75e6fbad3cef2832163550a3d23a552c51a2d9ca864c7324b19169fd3027656",
+    "README.md": "fc2cad37d67d005fd77ca8fbb142f51a216d8cdeda77b57a53c7d3f0ab9054c2",
     "control.toml": "0ff3683dbdbfcb23330d59508a74c02809133d2f5f625aace4490bdd4d55b190",
     "temperatures.csv": "799516021bef9e394d795366d8e28dbc095bd38c60d9f2c4e67621e9b3f465ce"
   },
@@ -14,7 +14,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "05_kinetics/05_tst/run.py": "8836f8489ace77c8011cf0ae7455015c341a160845d2d4dc37f2f6191c26e71d",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -34,7 +34,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "columns": [
       "T_K",

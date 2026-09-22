@@ -1,7 +1,46 @@
-# 04 thermodynamics
+# 04 · 电子能量怎样成为有限温度的自由能
 
-- [Partition functions](01_partition/README.md): core project.
-- [Molecular thermochemistry](02_molecular_thermochemistry/README.md): quantum project.
-- [Pressure and chemical potential](03_chemical_potential/README.md): core project.
-- [Surface phase diagram](04_surface_phase/README.md): core project.
-- [Thermodynamics checkpoint](05_checkpoint/README.md): written project.
+这一章研究平衡时哪些状态更有利。我们先从离散能级的概率开始，再计算分子运动的热化学，最后用化学势描述气体与表面之间的粒子交换。
+
+## 为什么只看最低电子能不够
+
+有限温度下，体系会访问多个微观态。低能态权重大，但高能区域如果有更多可访问状态，也可能获得很大总概率。熵描述这种统计数量效应，自由能把它与能量放在一起比较。
+
+```math
+Z=\sum_i g_i e^{-E_i/(k_BT)},\qquad F=-k_BT\ln Z.
+```
+
+这里 gi 是能级简并度。用于固定粒子数、体积和温度比较的是 Helmholtz 自由能 F；指定温压的分子热化学常用 Gibbs 自由能 G=H−TS。允许粒子与储库交换时，还要扣除相应的 Nμ。选择哪种势由物理约束决定。
+
+这些量回答平衡偏好，尚不回答多快能到达平衡。一个 ΔG<0 的反应仍可能因高能垒在很长时间内不发生。
+
+## 先备知识与概念
+
+需要指数、对数、求和及上一章对电子能的理解。温度通过 kBT 进入能量比，气体压力通过无量纲 p/p° 进入对数。所有分项相加前，先明确单位、粒子数和能量零点。
+
+| 项目 | 新引入的物理内容 | 本项结果用于什么 |
+|---|---|---|
+| [配分函数](01_partition/README.md) | 微观态、简并度、Boltzmann 权重 | 从能级得到概率、U/F/S |
+| [分子热化学](02_molecular_thermochemistry/README.md) | 平移、转动、振动与 RRHO | 从 XYZ 和频率得到气相 H/S/G |
+| [化学势](03_chemical_potential/README.md) | 开放储库与压力 | 计算温压如何改变吸附方向 |
+| [表面相图](04_surface_phase/README.md) | 不同粒子数状态的公平比较 | 用 Ω 下包络选择稳定覆盖度 |
+| [检查点](05_checkpoint/README.md) | 反应自由能的逐项账本 | 避免漏算、重复计数和参考态混用 |
+
+频率来自势能面曲率。如果还不了解 Hessian，可先读 [正常振动项目的背景](../05_kinetics/03_hessian/README.md)，再回来完成分子热化学；不需要先完成整章动力学。
+
+## 从负吸附能到正吸附自由能
+
+简单模型取 Eads=−0.6 eV、气体熵 s=0.0015 eV/K。600 K、标准压力时，气体相对电子能的化学势修正为 −Ts=−0.9 eV，所以吸附自由能为 +0.3 eV。
+
+```math
+\Delta G_{ads}=E_{ads}-[\mu(T,p)-E_{gas}],\qquad
+\mu(T,p)=\mu^\circ(T)+k_BT\ln(p/p^\circ).
+```
+
+这个正号说明气相熵可以抵消电子成键收益。升压十倍会使 600 K 的吸附自由能降低约 0.11905 eV。该常熵模型用于隔离效应；定量分子热化学则由前一项的 RRHO 提供。
+
+## 本章的实现与交付
+
+自己写统计求和、热化学分项和储库账本；PySCF 提供真实分子能量/梯度/Hessian，ASE 提供独立热化学对照与结构读取。相图的给定能量是明确标记的可解模型，不将其称为 DFT 数据。
+
+交付一组带标准态和分项的自由能表，并能解释至少一次温度、压力或粒子数改变的方向。下一章 [动力学](../05_kinetics/README.md) 研究结构之间的路径和等待时间。[上一章：电子结构](../03_electronic_structure/README.md) · [课程首页](../README.md)

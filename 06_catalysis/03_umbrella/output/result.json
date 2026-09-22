@@ -1,7 +1,7 @@
 {
   "project": "03_umbrella",
   "input_files_sha256": {
-    "README.md": "b731a5cedcd9c3dad0a7bd15e7e76da5985b16a126a7cb8f1f6c66c3e8bea333",
+    "README.md": "89d0caa16da71213b656601a932ad5e5305946defb501def3fcbe2562a1ef1ad",
     "control.toml": "f8218d1f94f49a89eeca39119fde7ec71aaf78b8a2d4cb699253c28272e7f265",
     "windows.csv": "455515dbafc89e7e97c3d78984522aef212a6c6cbac8d3562dd949e9261322e8"
   },
@@ -14,7 +14,7 @@
     "pymbar": "4.0.3",
     "cantera": "3.2.0"
   },
-  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_revision": "6304c6672687a6c0f9d311fa3b1b6fe4aab77508",
   "source_files_sha256": {
     "06_catalysis/03_umbrella/run.py": "b5670c5dc664241a9ec9ec97ff08c2a5cc2a196ae70fe86f2ff5e53ab4197d0b",
     "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
@@ -34,7 +34,7 @@
     "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
     "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
   },
-  "slurm_job_id": "705362",
+  "slurm_job_id": "705373",
   "result": {
     "one_dimension": {
       "x": [

@@ -24,8 +24,8 @@ stretch[4].UHF_Hartree: -0.9331637220050206
 stretch[4].UHF_S2: 0.9999998646827213
 stretch[4].converged: True
 oxygen[0].spin_2S: 0
-oxygen[0].energy_Hartree: -147.55027698444337
-oxygen[0].S2: 2.795008668954324e-11
+oxygen[0].energy_Hartree: -147.55027698444331
+oxygen[0].S2: 2.793587583482804e-11
 oxygen[0].converged: True
 oxygen[1].spin_2S: 2
 oxygen[1].energy_Hartree: -147.63232570971752
@@ -38,9 +38,9 @@ basis_sweep[1].basis: 6-31g
 basis_sweep[1].energy_Hartree: -1.1267553171969311
 basis_sweep[1].converged: True
 basis_sweep[2].basis: cc-pvdz
-basis_sweep[2].energy_Hartree: -1.128700093556441
+basis_sweep[2].energy_Hartree: -1.1287000935564409
 basis_sweep[2].converged: True
 basis_sweep[3].basis: cc-pvtz
-basis_sweep[3].energy_Hartree: -1.1329676829221347
+basis_sweep[3].energy_Hartree: -1.1329676829221365
 basis_sweep[3].converged: True
 Tables and arrays are saved alongside this report.
