@@ -1,3 +1,104 @@
+# From Electrons to Catalysis — executable projects
+
+This repository implements the course below as **37 projects: 26 computational projects and 11 written projects**. Each project has its own README, input, output, and progressive hints, following the teaching structure of [ProgrammingProjects](https://github.com/hn-yu/ProgrammingProjects). Algorithms live in a shared `src/catalysis` package so later projects reuse earlier implementations.
+
+The checked-in numerical outputs are generated calculations with input hashes, software versions and Slurm job IDs. Written projects contain questions and worked analyses. Predictions were committed before the first calculation; measured results are appended separately. The preexisting Hamiltonian note remains in `01_intro/hamiltonian.md`.
+
+## Install and run
+
+Python 3.10 or newer is required (reference environment: Python 3.11).
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[test]'
+python 02_bringup/01_units/run.py
+python -m pytest -q
+python scripts/check_projects.py
+```
+
+The last check validates all 37 project layouts and their input/output hashes. Outputs from your own runs go under `runs/`, leaving the checked-in examples intact. Each runner supports `--input PATH --output DIRECTORY`. Input paths are relative to your working directory; commands shown here assume the repository root.
+
+For molecular electronic structure and thermochemistry:
+
+```bash
+python -m pip install -e '.[quantum,test]'
+python 03_electronic_structure/03_rhf/run.py
+```
+
+For periodic PBE calculations, install GPAW with BLAS and LibXC plus PAW datasets. The tested version is GPAW 25.7.0; `requirements-lock.txt` records the full example environment. System-specific compiler configuration is described in [INSTALL.md](INSTALL.md).
+
+```bash
+python -m pip install -e '.[periodic]'
+python 03_electronic_structure/06_periodic/run.py \
+  --input 03_electronic_structure/06_periodic/input/dft.json
+```
+
+## Run on Slurm
+
+Edit the partition/resources in `scripts/slurm.sh` for your cluster. Here the CPU partition is `intel96`; no GPU is required. Submit computational work instead of running it on a login node:
+
+```bash
+sbatch scripts/slurm.sh scripts/run_all.py --tiers core
+sbatch scripts/slurm.sh scripts/run_all.py --tiers quantum
+sbatch scripts/slurm.sh 07_real_system/02_real_dft/run.py
+sbatch scripts/slurm.sh -m pytest -q
+```
+
+Before the real-system run, read the calculation memo and blind prediction in section 7. The examples use H/Cu(111), with adsorption referenced to half a relaxed H2 molecule. The initial real-system cell is 1 monolayer; increasing lateral size with one H changes coverage. EMT results are explicitly labelled as emulation. GPAW inputs never fall back silently to EMT. Numerical convergence flags report the actual finite sweep, including failed tolerances; they do not certify a complete scientific claim.
+
+## Project index
+
+| Project | Topic | Dependencies |
+|---|---|---|
+| [01_intro/01_hamiltonian](01_intro/01_hamiltonian/README.md) | The electron-nuclear Hamiltonian | written |
+| [01_intro/02_emulation](01_intro/02_emulation/README.md) | Emulation and environment | written |
+| [01_intro/03_prediction_log](01_intro/03_prediction_log/README.md) | The prediction log | written |
+| [02_bringup/01_units](02_bringup/01_units/README.md) | Units and physical scales | core |
+| [02_bringup/02_forces](02_bringup/02_forces/README.md) | An energy/force interface | core |
+| [02_bringup/03_finite_differences](02_bringup/03_finite_differences/README.md) | Break finite differences | core |
+| [03_electronic_structure/01_schrodinger](03_electronic_structure/01_schrodinger/README.md) | A 1D Schrodinger solver | core |
+| [03_electronic_structure/02_lcao](03_electronic_structure/02_lcao/README.md) | Nonorthogonal LCAO | core |
+| [03_electronic_structure/03_rhf](03_electronic_structure/03_rhf/README.md) | Write restricted Hartree-Fock | quantum |
+| [03_electronic_structure/04_break_hf](03_electronic_structure/04_break_hf/README.md) | Break Hartree-Fock | quantum |
+| [03_electronic_structure/05_dft](03_electronic_structure/05_dft/README.md) | HF, density functionals and FCI | quantum |
+| [03_electronic_structure/06_periodic](03_electronic_structure/06_periodic/README.md) | Periodic equation of state | core |
+| [03_electronic_structure/07_checkpoint](03_electronic_structure/07_checkpoint/README.md) | Electronic-structure checkpoint | written |
+| [04_thermodynamics/01_partition](04_thermodynamics/01_partition/README.md) | Partition functions | core |
+| [04_thermodynamics/02_molecular_thermochemistry](04_thermodynamics/02_molecular_thermochemistry/README.md) | Molecular thermochemistry | quantum |
+| [04_thermodynamics/03_chemical_potential](04_thermodynamics/03_chemical_potential/README.md) | Pressure and chemical potential | core |
+| [04_thermodynamics/04_surface_phase](04_thermodynamics/04_surface_phase/README.md) | Surface phase diagram | core |
+| [04_thermodynamics/05_checkpoint](04_thermodynamics/05_checkpoint/README.md) | Thermodynamics checkpoint | written |
+| [05_kinetics/01_optimizer](05_kinetics/01_optimizer/README.md) | Optimization | core |
+| [05_kinetics/02_dynamics](05_kinetics/02_dynamics/README.md) | Velocity Verlet | core |
+| [05_kinetics/03_hessian](05_kinetics/03_hessian/README.md) | Hessians and normal modes | core |
+| [05_kinetics/04_neb](05_kinetics/04_neb/README.md) | Nudged elastic band | core |
+| [05_kinetics/05_tst](05_kinetics/05_tst/README.md) | Barrier-to-timescale map | core |
+| [05_kinetics/06_checkpoint](05_kinetics/06_checkpoint/README.md) | Kinetics checkpoint | written |
+| [06_catalysis/01_slab](06_catalysis/01_slab/README.md) | Converge a slab observable | core |
+| [06_catalysis/02_adsorption](06_catalysis/02_adsorption/README.md) | Adsorption site competition | core |
+| [06_catalysis/03_umbrella](06_catalysis/03_umbrella/README.md) | Umbrella sampling and WHAM | core |
+| [06_catalysis/04_mep_fes](06_catalysis/04_mep_fes/README.md) | MEP versus free energy | core |
+| [06_catalysis/05_reaction_network](06_catalysis/05_reaction_network/README.md) | Detailed-balance reaction network | core |
+| [06_catalysis/06_microkinetics](06_catalysis/06_microkinetics/README.md) | Microkinetics and observables | core |
+| [06_catalysis/07_rate_control](06_catalysis/07_rate_control/README.md) | Break rate-determining-step intuition | core |
+| [06_catalysis/08_checkpoint](06_catalysis/08_checkpoint/README.md) | Catalysis checkpoint | written |
+| [07_real_system/01_calculation_memo](07_real_system/01_calculation_memo/README.md) | Talking to the catalyst | written |
+| [07_real_system/02_real_dft](07_real_system/02_real_dft/README.md) | Real DFT bringup | periodic |
+| [07_real_system/03_blind_prediction](07_real_system/03_blind_prediction/README.md) | Blind prediction | written |
+| [07_real_system/04_bringup_analysis](07_real_system/04_bringup_analysis/README.md) | Bringup analysis | written |
+| [07_real_system/05_advisor_defense](07_real_system/05_advisor_defense/README.md) | The internal-advisor defense | written |
+
+## Verification and interpretation
+
+The tests cover numerical/reference agreement, physical constraints and limiting cases: analytic spectra, PySCF RHF energies, ASE RRHO thermochemistry and NEB, NVE integration stability, WHAM against exact marginals, detailed balance, and independent steady-state/ODE solutions. GitHub Actions runs the core and molecular test suite; long periodic calculations are represented by versioned outputs and optional local validation, not rerun for every push.
+
+Read each `output/analysis.md` for measured values and prediction postmortems. Figures and CSV tables are checked in where they clarify the calculation. `scripts/render_outputs.py` rebuilds figures and numerical summaries from existing reference outputs. See [VALIDATION.md](VALIDATION.md) for the actual run record, [predictions.md](predictions.md) for frozen expectations, and [judgment.md](judgment.md) for reusable rules.
+
+The course notes below retain the original scope and motivation. The small models and minimal basis examples are educational implementations; interpretation must remain within their declared assumptions.
+
+---
+
 ## From Electrons to Catalysis
 
 Modern computational chemistry education often teaches software recipes faster than physical judgment. It is easy to learn how to launch a DFT calculation and much harder to know whether the calculation answers the scientific question, whether the result has the right order of magnitude, and what the cheapest falsifying calculation should be.

@@ -32,3 +32,7 @@ Dependency tier: **quantum**. See root installation instructions. Input: [input/
 Stationary geometry; correct mode count; independently assembled G versus ASE.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+## Thermochemical model
+
+The calculation uses optimized gas-phase RHF/STO-3G geometries and harmonic frequencies, an ideal translational partition function, and the high-temperature rigid-rotor approximation. All four molecules are closed-shell singlets. Rotational symmetry numbers are specified in the input; nuclear-spin ortho/para statistics, anharmonicity and hindered rotors are omitted. The pressure standard is 1 bar, and no solution-phase concentration conversion is made. The small residual against ASE measures implementation agreement for this shared RRHO model, not accuracy against experimental spectra or entropies.

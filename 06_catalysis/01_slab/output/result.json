@@ -1,0 +1,131 @@
+{
+  "project": "01_slab",
+  "input": {
+    "experiment": "slab",
+    "parameters": {
+      "baseline": {
+        "backend": "emt",
+        "size": [
+          2,
+          2,
+          3
+        ],
+        "vacuum_A": 8.0,
+        "fixed_layers": 1,
+        "sites": [
+          "fcc"
+        ],
+        "fmax": 0.04
+      },
+      "sweeps": {
+        "size": [
+          [
+            2,
+            2,
+            4
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "vacuum_A": [
+          6.0,
+          10.0
+        ],
+        "fixed_layers": [
+          0,
+          2
+        ]
+      },
+      "tolerance_eV": 0.05
+    }
+  },
+  "input_sha256": "d37e3a15e173f6cce0d99860fea980640b3d1035b72ded38e8add1dfb7c253bd",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "backend": "emt",
+    "baseline": {
+      "backend": "emt",
+      "reference": "E(slab+H)-E(slab)-0.5 E(H2)",
+      "coverage_ML": 0.25,
+      "clean_eV": 2.8402760046582713,
+      "H2_eV": 1.0705412692469816,
+      "sites": [
+        {
+          "initial_site": "fcc",
+          "total_eV": 2.8843167050478113,
+          "adsorption_eV": -0.4912299342339508,
+          "final_H_position_A": [
+            1.2763277400417188,
+            0.7368881642872727,
+            13.787701611371395
+          ],
+          "force_max_eV_A": 0.031923668370180014
+        }
+      ],
+      "scope": "EMT is a workflow emulator, not a DFT adsorption prediction."
+    },
+    "sweep": [
+      {
+        "parameter": "size",
+        "value": [
+          2,
+          2,
+          4
+        ],
+        "adsorption_eV": -0.49070119010313906,
+        "delta_from_baseline_eV": 0.0005287441308117202
+      },
+      {
+        "parameter": "size",
+        "value": [
+          3,
+          3,
+          3
+        ],
+        "adsorption_eV": -0.4908074254747583,
+        "delta_from_baseline_eV": 0.00042250875919247477
+      },
+      {
+        "parameter": "vacuum_A",
+        "value": 6.0,
+        "adsorption_eV": -0.4912299342339508,
+        "delta_from_baseline_eV": 0.0
+      },
+      {
+        "parameter": "vacuum_A",
+        "value": 10.0,
+        "adsorption_eV": -0.4912299342339508,
+        "delta_from_baseline_eV": 0.0
+      },
+      {
+        "parameter": "fixed_layers",
+        "value": 0,
+        "adsorption_eV": -0.4913812690910291,
+        "delta_from_baseline_eV": -0.0001513348570783002
+      },
+      {
+        "parameter": "fixed_layers",
+        "value": 2,
+        "adsorption_eV": -0.491515038472504,
+        "delta_from_baseline_eV": -0.0002851042385532132
+      }
+    ],
+    "tolerance_eV": 0.05,
+    "all_variations_within_tolerance": true,
+    "interpretation": "Agreement with one baseline does not establish an asymptotic convergence plateau; extend failing axes."
+  }
+}

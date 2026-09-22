@@ -31,3 +31,7 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 Detailed balance after perturbation; DRC sum near 1; nonlinear ±0.1 eV response.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+## Interpret the actual counterexample
+
+In the included run the forward barriers are 0.65, 0.90 and 0.55 eV. Yet transition-state degrees of rate control are approximately 0.026, 0.003 and 0.971. Raising the third transition state by 0.1 eV reduces TOF to about 0.148 of its original value; raising the second transition state by the same amount gives about 0.983. The highest isolated forward barrier therefore has very little control here. Deep intermediate stabilization and reverse cycling matter: the probability that an excursion produces a product is part of the flux calculation.

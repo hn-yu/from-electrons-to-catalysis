@@ -1,0 +1,72 @@
+{
+  "project": "02_dynamics",
+  "input": {
+    "experiment": "dynamics",
+    "parameters": {
+      "timesteps": [
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        1.9,
+        2.01
+      ],
+      "steps": 300
+    }
+  },
+  "input_sha256": "d49175c0e44774f8f333f7e738157eb69b1722796decf2bfa2929a7d8dccc53a",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "units": "reduced units (m=k=1 for harmonic; LJ sigma=epsilon=m=1)",
+    "timestep_sweep": [
+      {
+        "dt": 0.01,
+        "max_energy_error": 1.2499992202874566e-05,
+        "final_energy": 0.49999975110794836
+      },
+      {
+        "dt": 0.05,
+        "max_energy_error": 0.0003124968722071908,
+        "final_energy": 0.49986833424356103
+      },
+      {
+        "dt": 0.1,
+        "max_energy_error": 0.0012499278017938376,
+        "final_energy": 0.49878469584923574
+      },
+      {
+        "dt": 0.5,
+        "max_energy_error": 0.031249717735797933,
+        "final_energy": 0.48355326833932866
+      },
+      {
+        "dt": 1.0,
+        "max_energy_error": 0.09375,
+        "final_energy": 0.5
+      },
+      {
+        "dt": 1.9,
+        "max_energy_error": 0.4512360997918139,
+        "final_energy": 0.14126837909609577
+      },
+      {
+        "dt": 2.01,
+        "max_energy_error": 1.5663529652965478e+51,
+        "final_energy": 1.5663529652965478e+51
+      }
+    ],
+    "cluster_energy_span": 1.8001011733770333e-05
+  }
+}

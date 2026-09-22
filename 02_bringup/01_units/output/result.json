@@ -1,0 +1,100 @@
+{
+  "project": "01_units",
+  "input": {
+    "experiment": "units_experiment",
+    "parameters": {
+      "temperatures_K": [
+        300,
+        600,
+        1000,
+        1500
+      ],
+      "conversions": [
+        {
+          "value": 1,
+          "from": "eV",
+          "to": "kJ/mol"
+        },
+        {
+          "value": 1,
+          "from": "Hartree",
+          "to": "eV"
+        },
+        {
+          "value": 1000,
+          "from": "cm^-1",
+          "to": "eV"
+        },
+        {
+          "value": 1,
+          "from": "bar",
+          "to": "Pa"
+        },
+        {
+          "value": 1,
+          "from": "ps",
+          "to": "fs"
+        }
+      ]
+    }
+  },
+  "input_sha256": "b302c5a09eb406e0351f46cadb8a6c77c32da38f72339b89278845ac505804c7",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "temperatures_K": [
+      300,
+      600,
+      1000,
+      1500
+    ],
+    "kBT_eV": [
+      0.025851999786435,
+      0.05170399957287,
+      0.08617333262145,
+      0.129259998932175
+    ],
+    "conversions": [
+      {
+        "value": 1,
+        "from": "eV",
+        "to": "kJ/mol",
+        "result": 96.4853321233
+      },
+      {
+        "value": 1,
+        "from": "Hartree",
+        "to": "eV",
+        "result": 27.211386245988
+      },
+      {
+        "value": 1000,
+        "from": "cm^-1",
+        "to": "eV",
+        "result": 0.1239841984332
+      },
+      {
+        "value": 1,
+        "from": "bar",
+        "to": "Pa",
+        "result": 100000.0
+      },
+      {
+        "value": 1,
+        "from": "ps",
+        "to": "fs",
+        "result": 999.9999999999999
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "stamp": {
+    "input": {
+      "backend": "gpaw",
+      "size": [
+        1,
+        1,
+        3
+      ],
+      "vacuum_A": 8.0,
+      "fixed_layers": 1,
+      "sites": [
+        "fcc"
+      ],
+      "fmax": 0.05,
+      "cutoff_eV": 250,
+      "kpts": [
+        3,
+        3,
+        1
+      ],
+      "smearing_eV": 0.1
+    },
+    "source_sha256": "5f1da222e4964d8959d2955ee9c24737d69f573d424f41eb5a46b51d94c621d4",
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "ase": "3.29.0",
+      "gpaw": "25.7.0"
+    }
+  },
+  "result": {
+    "backend": "gpaw",
+    "reference": "E(slab+H)-E(slab)-0.5 E(H2)",
+    "coverage_ML": 1.0,
+    "clean_eV": -9.363429395367815,
+    "H2_eV": -6.485204909265862,
+    "sites": [
+      {
+        "initial_site": "fcc",
+        "total_eV": -12.555269294268994,
+        "adsorption_eV": 0.050762555731751924,
+        "final_H_position_A": [
+          1.276556965964914,
+          0.7370186941988841,
+          13.202191280850782
+        ],
+        "force_max_eV_A": 0.02068727355917662
+      }
+    ],
+    "scope": "PBE slab calculation; inspect convergence sweep before interpreting chemistry."
+  }
+}

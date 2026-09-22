@@ -31,3 +31,17 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 Detailed balance; column site balance; equilibrium cycle product.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+## Explicit reaction and standard-state convention
+
+The implemented cycle is:
+
+```text
+A(g) + *  <=> A*
+A*        <=> B*
+B*        <=> B(g) + *
+```
+
+The surface state vector is `[vacancy, A*, B*]`, whose fractions sum to one. Gas species are chemostatted reservoirs, with dimensionless activities `pA/1 bar` and `pB/1 bar`. The `states_eV` entries refer to vacancy+A(g), A*, and B*; `product_eV` refers to vacancy+B(g). A shared transition-state energy gives both directions of each step. Rates are `kf0*aA*theta_v-kr0*theta_A`, `kf1*theta_A-kr1*theta_B`, and `kf2*theta_B-kr2*aB*theta_v`.
+
+At reservoir equilibrium, `aB/aA=exp(-product_eV/kBT)` because the initial standard-state energy is zero. This must give zero cycle flux. The next project solves this exact same network. Its linear generator allows an independent matrix-exponential/BDF check without requiring Cantera; more general networks with lateral interactions or multiple site types need a nonlinear solver and additional validation.

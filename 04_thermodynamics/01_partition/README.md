@@ -31,3 +31,5 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 Population normalization; U-F=TS; high/low-temperature limits.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+`Z` is provided when its magnitude is representable as a normal double-precision number; otherwise it is JSON `null`. `logZ` remains the authoritative stable quantity. Never replace an overflowing partition sum with an arbitrary cap, since that changes the free energy.

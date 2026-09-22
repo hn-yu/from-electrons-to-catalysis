@@ -1,0 +1,116 @@
+{
+  "project": "07_rate_control",
+  "input": {
+    "experiment": "rate_control",
+    "parameters": {
+      "model": {
+        "states_eV": [
+          0.0,
+          -0.7,
+          -0.05
+        ],
+        "product_eV": -0.1,
+        "transition_states_eV": [
+          0.65,
+          0.2,
+          0.5
+        ]
+      },
+      "temperature_K": 600
+    }
+  },
+  "input_sha256": "83d460173044bab3811898a1b17e60c10e90e6d4b3806f3143798826f6985909",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "forward_barriers_eV": [
+      0.65,
+      0.8999999999999999,
+      0.55
+    ],
+    "response": {
+      "reaction_orders_A_B": [
+        0.027023940298853688,
+        -0.02699933975991442
+      ],
+      "apparent_activation_eV": 1.251940480631775,
+      "degree_of_rate_control": [
+        0.025580892488804043,
+        0.002935318746581661,
+        0.9714838978981398
+      ]
+    },
+    "perturbations": [
+      {
+        "parameter": "states_eV",
+        "index": 1,
+        "shift_eV": -0.1,
+        "TOF_ratio": 0.1445597517571971
+      },
+      {
+        "parameter": "states_eV",
+        "index": 1,
+        "shift_eV": 0.1,
+        "TOF_ratio": 6.9165723290212915
+      },
+      {
+        "parameter": "states_eV",
+        "index": 2,
+        "shift_eV": -0.1,
+        "TOF_ratio": 0.9999795308806712
+      },
+      {
+        "parameter": "states_eV",
+        "index": 2,
+        "shift_eV": 0.1,
+        "TOF_ratio": 1.000002959009109
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 0,
+        "shift_eV": -0.1,
+        "TOF_ratio": 1.0223673206232073
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 0,
+        "shift_eV": 0.1,
+        "TOF_ratio": 0.8685488776814559
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 1,
+        "shift_eV": -0.1,
+        "TOF_ratio": 1.0025166972667112
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 1,
+        "shift_eV": 0.1,
+        "TOF_ratio": 0.9829303298204093
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 2,
+        "shift_eV": -0.1,
+        "TOF_ratio": 5.919099045386159
+      },
+      {
+        "parameter": "transition_states_eV",
+        "index": 2,
+        "shift_eV": 0.1,
+        "TOF_ratio": 0.14816990101506508
+      }
+    ]
+  }
+}

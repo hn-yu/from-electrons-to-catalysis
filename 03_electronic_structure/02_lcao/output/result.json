@@ -1,0 +1,71 @@
+{
+  "project": "02_lcao",
+  "input": {
+    "experiment": "lcao",
+    "parameters": {
+      "H_Hartree": [
+        [
+          -1.0,
+          -0.3
+        ],
+        [
+          -0.3,
+          -1.0
+        ]
+      ],
+      "S": [
+        [
+          1.0,
+          0.2
+        ],
+        [
+          0.2,
+          1.0
+        ]
+      ]
+    }
+  },
+  "input_sha256": "2e9d856c963d219e4fa9e9684b2b752ac5697cf7975fa77f7b3b5a40a8cb2324",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "energies_Hartree": [
+      -1.0833333333333333,
+      -0.875
+    ],
+    "coefficients": [
+      [
+        -0.6454972243679029,
+        0.7905694150420948
+      ],
+      [
+        -0.6454972243679028,
+        -0.790569415042095
+      ]
+    ],
+    "orthonormality": [
+      [
+        1.0000000000000002,
+        8.767332719583525e-17
+      ],
+      [
+        7.205076249421737e-17,
+        1.0
+      ]
+    ],
+    "basis_vector_Rayleigh_Hartree": [
+      -1.0,
+      -1.0
+    ]
+  }
+}

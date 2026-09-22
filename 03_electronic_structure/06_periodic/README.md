@@ -31,3 +31,7 @@ Dependency tier: **core**. See root installation instructions. Input: [input/exa
 EOS minimum inside scan; positive modulus; denser volume scan stability.
 
 The root pytest suite supplies numerical, physical and limiting-case checks. Compare floating-point values with tolerances, not byte-for-byte JSON equality; software versions and scheduler IDs are provenance, not numerical targets. The result and analysis identify the model and its limits.
+
+The executed periodic PBE example is in [output/dft/result.json](output/dft/result.json), with a [measured convergence audit](output/dft/analysis.md). It includes separate cutoff, k-point, smearing and volume-sampling variations. The EMT default remains a cheap fitting test.
+
+The next k-mesh refinement was predicted separately and executed with `input/dft_refined.json`. Its [result and prospective tolerance assessment](output/dft_refined/analysis.md) are retained, including either passing or failed observable thresholds.
