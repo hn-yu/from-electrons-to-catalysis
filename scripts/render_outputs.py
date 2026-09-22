@@ -88,6 +88,8 @@ def plot(experiment,r,folder):
     else:made=False
     if made:
         fig.tight_layout();fig.savefig(folder/'figure.svg',metadata={'Date':None})
+        svg=folder/'figure.svg'
+        svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
     return made
 
