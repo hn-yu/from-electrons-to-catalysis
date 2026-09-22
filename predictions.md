@@ -161,3 +161,6 @@ Reason and model: Carry one H/Cu(111) adsorption subproblem through an explicit 
 ## Atomic continuation of the NEB project
 
 Before execution: the fixed-substrate EMT H/Cu(111) fcc-to-hcp barrier should be positive and below 1 eV, low confidence. Reason: neighboring high-coordination sites should connect over a lower-coordination bridge. Falsifier: endpoints collapse, no saddle, or barrier outside this range. This tests the workflow, not DFT chemistry.
+## PBE Al k-mesh refinement after the initial audit
+
+Before the 8×8×8 calculation: keep the original 250 eV cutoff, smearing and volume grid. Predict a0 in 4.00–4.08 A and a shift below 0.005 A from the 6×6×6 result, medium confidence. Reason: the initial cutoff sensitivity is small and the 4→6 mesh shift is already only about 0.006 A; metallic sampling may nevertheless oscillate. Falsifier: an 8-mesh shift above 0.005 A or a bulk-modulus shift above 2 GPa. These observable tolerances are prospective for this new refinement.
