@@ -1,3 +1,10 @@
-# Worked analysis: Catalysis checkpoint
+# 参考分析
 
-Electronic energies require state and numerical validation, consistent reaction references, temperature and chemical-potential corrections, transition states and rate prefactors, a detailed-balanced network, site balances, steady-state or transient solution, and comparison at experimental conditions. Transport, reconstruction and missing pathways can invalidate the final interpretation even when every included step is numerically converged.
+
+固定 pA=1 bar、pB=0.01 bar 的储库可持续驱动循环。稳态时中间体不积累，但每步仍有共同净通量；热平衡则每步净通量为零。
+
+Cantera 与手写模型相符验证的是相同机制的方程和单位。它们共同遗漏某个真实中间体时仍可以完全一致。因此还需要实验反应级数、温度依赖和竞争机制证据。
+
+对某一步同时缩放正逆常数保持平衡常数，才能把响应解释为其动力学控制；只改变一侧会同时改变热力学。稳定中间体可能增加覆盖度、减少可用空位并抑制通量。
+
+当前 H/Cu 厚度变化远超阈值，不能把它当作已收敛能量输入到真实微观动力学。隐藏变量需要独立重启或更好的集体变量，遗漏位点需要结构搜索与人口比较，厚度问题需要保持覆盖度的加厚序列。

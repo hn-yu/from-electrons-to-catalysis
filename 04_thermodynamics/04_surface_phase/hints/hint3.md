@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：面积和两表面因子
 
-Different-area cells must be normalized before comparing.
+对称清洁 slab 的表面能常写为 $(E_{slab}-NE_{bulk})/(2A)$，因为上下两面同时出现。
+
+本项目比较的是同一个 slab 上一侧不同吸附态，另一面贡献相消，吸附自由能差对应 A。
+
+改变横向原胞时，需要统一每面积能量和吸附数密度；只统一每原胞能量会把不同面积混在一起。

@@ -1,0 +1,14 @@
+H2O Cartesian Hessian analysis
+input: Hartree/bohr^2; mass: u
+mode lambda[eV/(A^2 u)] own[cm^-1] ASE[cm^-1]
+ 1 -5.97925754e-07     -0.40323     -0.40323
+ 2 -3.44399754e-07     -0.30603     -0.30603
+ 3 -1.99890675e-07     -0.23315     -0.23315
+ 4 -2.93504283e-11     -0.00283     -0.00283
+ 5 -1.07940949e-11     -0.00171     -0.00171
+ 6 -5.06909108e-12     -0.00117     -0.00117
+ 7  1.73140961e+01   2169.85138   2169.85139
+ 8  6.30179193e+01   4139.63554   4139.63555
+ 9  7.08927926e+01   4390.67326   4390.67327
+Six near-zero rigid modes are expected for nonlinear H2O.
+A negative sign denotes an imaginary mode; never take abs() and call it stable.

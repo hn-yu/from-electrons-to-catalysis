@@ -1,0 +1,11 @@
+MEP_barrier_eV: 0.15
+finite_temperature[0].T_K: 300.0
+finite_temperature[0].barrier_eV: 0.14109646455562241
+finite_temperature[0].quadrature_max_error_eV: 1.8735013540549517e-16
+finite_temperature[1].T_K: 600.0
+finite_temperature[1].barrier_eV: 0.1323625402414162
+finite_temperature[1].quadrature_max_error_eV: 5.273559366969494e-16
+finite_temperature[2].T_K: 1000.0
+finite_temperature[2].barrier_eV: 0.12092903778964532
+finite_temperature[2].quadrature_max_error_eV: 1.5029644195863057e-14
+Tables and arrays are saved alongside this report.

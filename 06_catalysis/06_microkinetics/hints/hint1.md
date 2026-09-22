@@ -1,3 +1,12 @@
-# Hint 1
+# 提示 1：矩阵中列代表来源状态
 
-Stiffness follows from disparate elementary timescales.
+采用列向量 θ，Q[j,i] 是 i→j 的速率。
+
+每列的对角项是从该状态离开的总速率负值，因此列和为零：
+
+```python
+Q[j, i] += rate
+Q[i, i] -= rate
+```
+
+若改用行向量约定，所有后续公式也必须转置；不要从不同教材各抄半套。

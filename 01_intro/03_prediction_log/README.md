@@ -1,9 +1,34 @@
-# The prediction log
+# 03 · 把预测写成可以被结果改变的判断
 
-Record a falsifiable prediction before computing.
+“结果应该合理”不是预测。你需要在看到结果前写出对象、范围、原因和会推翻它的观察。
 
-1. Read [the assignment](input/questions.md).
-2. Write your answer before consulting [the hint](hints/README.md).
-3. Compare with [the worked analysis](output/answer.md).
+## 这个项目应该自己完成什么
 
-This is a written project; the output is an analysis, not invented computational data. Assess it for numerical meaning (units and observable), physical assumptions, and a limiting-case or falsification argument.
+本项目要求**手写推理、量纲检查和可否定的判断**。引用前面计算项目的成熟软件结果；不把讨论题包装成返回 true/false 的脚本。必要算术可以使用 NumPy，电子结构、采样与动力学仍由对应项目的软件完成。
+
+## 输入案例
+
+- [prediction-template.md](input/prediction-template.md)
+
+
+
+
+若预测区间为 $[L,U]$，一次结果 y 落在区间内并不能证明模型准确。区间越宽，越容易覆盖结果，但决策价值越低。
+
+$$\delta\ln k=-\delta G^\ddagger/(k_BT)$$
+
+可以先从允许的速率误差倒推所需能量区间宽度，再决定预测是否足够有用。
+
+
+## 作业步骤
+
+1. 阅读 prediction-template.md，为一个尚未查看输出的扰动写事前预测。
+2. 必须列出目标观测量、单位、固定条件、区间或变化符号、理由、失效证据。
+3. 单独追加测量与事后解释，禁止覆盖原预测。
+4. 对已经公开的 H/Cu 示例只能做回顾分析；选择新层数、覆盖度或扰动作为下一次预测。
+
+将回答写入自己的 `runs/03_prediction_log/answer.md`，保留输入数据、公式、计算出的数值与结论范围。先完成回答，再查看 [参考分析](output/answer.md)。历史回答保存在 output/previous-answer.md；其中事前预测与事后测量不能互换身份。
+
+## 提示
+
+[逐步提示](hints/README.md) 给出三个具体推理环节。完整课程的 [实现边界表](../../docs/IMPLEMENTATION_BOUNDARIES.md) 解释哪些工作应交给库。

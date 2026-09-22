@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：不要误用变分原理给 DFT 排序
 
-DFT energies are not variational upper bounds to FCI in this comparison.
+HF 与 FCI 在同一个线性波函数空间层级内比较，变分上界有明确含义。
+
+LDA、GGA、杂化泛函改变了近似能量表达式，彼此没有“更低一定更好”的定理。
+
+用参考曲线误差 $\Delta E(r)=E_{\rm approx}(r)-E_{\rm FCI}(r)$，再减去平衡点误差以观察非平行性。数值低并不是独立的准确性指标。

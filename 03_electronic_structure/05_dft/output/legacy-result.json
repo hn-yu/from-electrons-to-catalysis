@@ -1,0 +1,48 @@
+{
+  "project": "05_dft",
+  "input": {
+    "experiment": "dft",
+    "parameters": {
+      "basis": "sto-3g",
+      "bond_lengths_A": [
+        0.74,
+        2.5
+      ]
+    }
+  },
+  "input_sha256": "c9fce017bf04e3ae1d72089e4d7112623832140d4429dff0ccb5b6230099d72c",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "basis": "sto-3g",
+    "results": [
+      {
+        "r_A": 0.74,
+        "HF_Hartree": -1.1167593073964255,
+        "FCI_Hartree": -1.1372838344885023,
+        "lda,vwn_Hartree": -1.1212061157024127,
+        "pbe_Hartree": -1.1520727951590926,
+        "b3lyp_Hartree": -1.1654184106731211
+      },
+      {
+        "r_A": 2.5,
+        "HF_Hartree": -0.7029435997235269,
+        "FCI_Hartree": -0.9360549199556059,
+        "lda,vwn_Hartree": -0.8225405155022383,
+        "pbe_Hartree": -0.861940855380654,
+        "b3lyp_Hartree": -0.8515256533494835
+      }
+    ],
+    "reference_scope": "FCI is exact only within the specified finite basis; all DFT runs are spin restricted."
+  }
+}

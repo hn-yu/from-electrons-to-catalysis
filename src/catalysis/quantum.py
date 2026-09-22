@@ -5,8 +5,8 @@ import numpy as np
 def hf_failures(config):
     from pyscf import gto, scf
     rows = []
-    for r in config['bond_lengths_A']:
-        mol = gto.M(atom=f'H 0 0 0; H 0 0 {r}', basis='sto-3g', verbose=0)
+    for index,r in enumerate(config['bond_lengths_A']):
+        mol = gto.M(atom=config.get('geometries',[f'H 0 0 0; H 0 0 {v}' for v in config['bond_lengths_A']])[index], basis='sto-3g', verbose=0)
         rhf = scf.RHF(mol).run(conv_tol=1e-10)
         # Deliberately break alpha/beta spatial symmetry; a symmetric start stays RHF-like.
         uhf = scf.UHF(mol)
@@ -16,12 +16,12 @@ def hf_failures(config):
                      'UHF_S2':float(uhf.spin_square()[0]), 'converged':bool(rhf.converged and uhf.converged)})
     oxygen = []
     for spin in [0,2]:
-        mol = gto.M(atom='O 0 0 0; O 0 0 1.21', basis='sto-3g', spin=spin, verbose=0)
+        mol = gto.M(atom=config.get('oxygen_geometry','O 0 0 0; O 0 0 1.21'), basis='sto-3g', spin=spin, verbose=0)
         mf = scf.UHF(mol).run()
         oxygen.append({'spin_2S':spin, 'energy_Hartree':mf.e_tot, 'S2':float(mf.spin_square()[0]), 'converged':bool(mf.converged)})
     basis = []
     for name in config['bases']:
-        mol = gto.M(atom='H 0 0 0; H 0 0 .74', basis=name, verbose=0)
+        mol = gto.M(atom=config.get('geometries',['H 0 0 0; H 0 0 .74'])[0], basis=name, verbose=0)
         mf = scf.RHF(mol).run(conv_tol=1e-10)
         basis.append({'basis':name, 'energy_Hartree':mf.e_tot, 'converged':bool(mf.converged)})
     if not all(r['converged'] for r in rows+oxygen+basis):
@@ -32,8 +32,8 @@ def hf_failures(config):
 def dft_comparison(config):
     from pyscf import gto, scf, dft, fci
     results = []
-    for r in config['bond_lengths_A']:
-        mol = gto.M(atom=f'H 0 0 0; H 0 0 {r}', basis=config['basis'], verbose=0)
+    for index,r in enumerate(config['bond_lengths_A']):
+        mol = gto.M(atom=config.get('geometries',[f'H 0 0 0; H 0 0 {v}' for v in config['bond_lengths_A']])[index], basis=config['basis'], verbose=0)
         hf = scf.RHF(mol).run(conv_tol=1e-10)
         reference = fci.FCI(hf).kernel()[0]
         row = {'r_A':r, 'HF_Hartree':hf.e_tot, 'FCI_Hartree':reference}
@@ -81,10 +81,10 @@ def molecular_thermo(config):
         atoms = Atoms(symbols, positions=positions)
         electronic = float(convert(mf.e_tot,'Hartree','eV'))
         ours = ideal_gas(atoms, quanta, config['temperature_K'], config['pressure_bar'],
-                         item['symmetry'], electronic, linear=item['linear'])
+                         item['symmetry'], electronic, spin=item.get('spin',0), linear=item['linear'])
         ref = IdealGasThermo(vib_energies=quanta, potentialenergy=electronic,
                              atoms=atoms, geometry='linear' if item['linear'] else 'nonlinear',
-                             symmetrynumber=item['symmetry'], spin=0)
+                             symmetrynumber=item['symmetry'], spin=item.get('spin',0))
         gref = ref.get_gibbs_energy(config['temperature_K'],config['pressure_bar']*1e5,verbose=False)
         rows.append({'molecule':item['name'], 'positions_A':positions.tolist(),
                      'frequencies_cm^-1':frequencies.real.tolist(), **ours,

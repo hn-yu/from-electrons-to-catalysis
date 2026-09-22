@@ -1,5 +1,7 @@
-# Progressive hints
+# 分步提示
 
-1. [Hint 1](hint1.md)
-2. [Hint 2](hint2.md)
-3. [Hint 3](hint3.md)
+这些提示对应「05 · 同一有限基组里的 HF、DFT 与 FCI」的三个容易混淆的环节。每完成一个环节，先保存对应的中间量再继续。
+
+1. [统一比较对象](hint1.md)
+2. [不要误用变分原理给 DFT 排序](hint2.md)
+3. [从两电子例子理解方法的成本](hint3.md)

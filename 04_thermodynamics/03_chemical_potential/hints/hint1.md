@@ -1,3 +1,9 @@
-# Hint 1
+# 提示 1：反应方向决定符号
 
-Use a dimensionless p/p0 inside the logarithm.
+反应是 A(g)+*→A*，反应物气体项要减去。
+
+$$\Delta G=G_{A*}-G_*-\mu_A.$$
+
+提高 μ_A 让 ΔG 减小。先用这个方向判断代码的负号，再做数值扫描。
+
+如果换成脱附反应，整个 ΔG 变号，而不是只改压力项。

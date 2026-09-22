@@ -1,3 +1,9 @@
-# Hint 3
+# 提示 3：从两电子例子理解方法的成本
 
-Stretched H2 exposes static correlation; convergence does not cure it.
+固定 $N_\alpha,N_\beta$ 时，行列式空间大小约为
+
+$$N_{\rm det}=\binom{M}{N_\alpha}\binom{M}{N_\beta},$$
+
+其中 M 是空间轨道数。对 H₂，电子数很小，扩展基组还可演示；对金属 slab，这种增长迅速失去可行性。
+
+因此本课程用 FCI 解释近似，再用 GPAW 做周期体系。软件选择来自物理尺度和计算成本，而不只是依赖包是否可安装。

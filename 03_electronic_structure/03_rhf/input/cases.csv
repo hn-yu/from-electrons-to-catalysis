@@ -1,0 +1,5 @@
+case,geometry,basis,charge,spin
+H2,H2/molecule.xyz,sto-3g,0,0
+HeH+,HeHplus/molecule.xyz,sto-3g,1,0
+LiH,LiH/molecule.xyz,sto-3g,0,0
+H2O,H2O/molecule.xyz,sto-3g,0,0

@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：同一组频率才是算法对照
 
-Specify pressure, symmetry number and spin degeneracy.
+ASE 比较必须复用相同的正频率、几何和标准压力。
+
+若另一软件先重新优化、换方法计算频率，再比较 G，差值包含物理输入差异，无法隔离 RRHO 实现。
+
+本例 G 差在约 $10^{-7}$ eV 量级，主要来自常数细节；这个一致性不证明 RHF/STO-3G 对真实分子热化学足够准确。

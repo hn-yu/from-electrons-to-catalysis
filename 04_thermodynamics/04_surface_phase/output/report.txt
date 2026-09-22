@@ -1,0 +1,2 @@
+model: Synthetic state energies for grand-potential algebra; POSCAR illustrates composition, not a DFT energy source.
+Tables and arrays are saved alongside this report.

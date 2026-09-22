@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Write a stoichiometric reaction before combining free energies.
+1. [先写完整反应计量](hint1.md)
+2. [零点能不是熵](hint2.md)
+3. [从单分子到表面相还缺什么](hint3.md)

@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：熵中为什么出现 5/2
 
-Convert cm^-1 to eV before adding ZPE.
+单分子平移配分函数中的体积在标准压力下写为 $k_BT/p$。理想气体平移熵是
+
+$$S_{\rm trans}=k_B(\ln q_{\rm trans}+5/2).$$
+
+不能把固定体积下单粒子的表达式和固定压力的 Gibbs 自由能混用。所有 SI 换算先在 q 内完成，使 q 无量纲。

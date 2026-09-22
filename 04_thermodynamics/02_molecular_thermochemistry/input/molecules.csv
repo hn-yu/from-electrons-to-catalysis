@@ -1,0 +1,5 @@
+molecule,geometry,symmetry,linear,spin
+H2,H2.xyz,2,true,0
+CO,CO.xyz,1,true,0
+CO2,CO2.xyz,2,true,0
+H2O,H2O.xyz,2,false,0

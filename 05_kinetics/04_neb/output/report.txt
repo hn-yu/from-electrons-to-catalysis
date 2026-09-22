@@ -1,0 +1,11 @@
+own.barrier_eV: 1.056243819418133
+own.force_max: 6.262264732086843e-05
+own.iterations: 465
+ASE_barrier_eV: 1.0559241328578426
+barrier_difference_eV: 0.00031968656029035536
+scope: 2D benchmark; production atom diffusion requires validated endpoints and a separate potential.
+atomic.backend: EMT
+atomic.barrier_eV: 0.009493025951567535
+atomic.endpoint_force_max: 6.53492374961969e-05, 6.52590075580441e-05
+atomic.scope: Fixed Cu substrate and EMT; a workflow example, not a physical DFT diffusion barrier.
+Tables and arrays are saved alongside this report.

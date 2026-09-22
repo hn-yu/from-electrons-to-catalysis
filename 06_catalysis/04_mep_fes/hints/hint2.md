@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：高斯积分的系数
 
-The free-energy barrier starts at the F minimum, not necessarily x=±1.
+公式 $\int e^{-ay^2}dy=\sqrt{\pi/a}$ 中，此例 $a=\beta(1+x^2)$。
+
+对积分取 $-k_BT\ln$，得到正号的 $k_BT\ln(1+x^2)/2$。
+
+如果模型写成 $K(x)y^2/2$，必须先令 $a=\beta K/2$。遗漏 1/2 会改变常数或相对曲率，需根据 K 的定义判断。

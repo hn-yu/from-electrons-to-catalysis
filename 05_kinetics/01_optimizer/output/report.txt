@@ -1,0 +1,55 @@
+minima[0].potential: Morse
+minima[0].start: 0.5
+minima[0].own.x: 0.7400000218449845
+minima[0].own.energy: -4.499999999999993
+minima[0].own.iterations: 19
+minima[0].own.force_norm: 6.369997111113791e-07
+minima[0].SciPy_energy: -4.5
+minima[0].SciPy_x: 0.7400000000053681
+minima[0].energy_difference: 7.105427357601002e-15
+minima[1].potential: Morse
+minima[1].start: 1.0
+minima[1].own.x: 0.7399999747403857
+minima[1].own.energy: -4.49999999999999
+minima[1].own.iterations: 19
+minima[1].own.force_norm: 7.365704037864896e-07
+minima[1].SciPy_energy: -4.5
+minima[1].SciPy_x: 0.7400000009576113
+minima[1].energy_difference: 9.769962616701378e-15
+minima[2].potential: Morse
+minima[2].start: 1.5
+minima[2].own.x: 0.740000025749429
+minima[2].own.energy: -4.49999999999999
+minima[2].own.iterations: 20
+minima[2].own.force_norm: 7.508532989073325e-07
+minima[2].SciPy_energy: -4.5
+minima[2].SciPy_x: 0.7400000002821927
+minima[2].energy_difference: 9.769962616701378e-15
+minima[3].potential: MullerBrown
+minima[3].start: -0.6, 1.4
+minima[3].own.x: -0.5582236827824901, 1.441725795333846
+minima[3].own.energy: -1.466995172099531
+minima[3].own.iterations: 44
+minima[3].own.force_norm: 2.791115841751102e-07
+minima[3].SciPy_energy: -1.4669951720995371
+minima[3].SciPy_x: -0.558223660812469, 1.4417258156566155
+minima[3].energy_difference: 6.217248937900877e-15
+minima[4].potential: MullerBrown
+minima[4].start: 0.6, 0.0
+minima[4].own.x: 0.6234993458795731, 0.028037736824834247
+minima[4].own.energy: -1.0816672411685049
+minima[4].own.iterations: 32
+minima[4].own.force_norm: 8.246440519064985e-07
+minima[4].SciPy_energy: -1.0816672411685233
+minima[4].SciPy_x: 0.6234994050239421, 0.02803775880636747
+minima[4].energy_difference: 1.84297022087776e-14
+minima[5].potential: MullerBrown
+minima[5].start: -0.1, 0.5
+minima[5].own.x: -0.050011240572571634, 0.46669415595656305
+minima[5].own.energy: -0.8076781812963947
+minima[5].own.iterations: 47
+minima[5].own.force_norm: 9.298770073019688e-07
+minima[5].SciPy_energy: -0.8076781812965902
+minima[5].SciPy_x: -0.050010833692334285, 0.4666941042530788
+minima[5].energy_difference: 1.9551027463649007e-13
+Tables and arrays are saved alongside this report.

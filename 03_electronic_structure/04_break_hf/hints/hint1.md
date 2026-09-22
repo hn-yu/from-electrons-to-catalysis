@@ -1,3 +1,12 @@
-# Hint 1
+# 提示 1：主动破缺初猜对称性
 
-A symmetric UHF guess can remain on the RHF stationary solution.
+对两原子最小基组，令 α 密度先局域在一端、β 密度局域在另一端：
+
+```python
+dm = np.zeros((2, nao, nao))
+dm[0, 0, 0] = 1
+dm[1, 1, 1] = 1
+uhf.kernel(dm0=dm)
+```
+
+这是寻找另一 SCF 驻点的策略，不是最终物理密度的证明。比较收敛后的能量和 S²，再讨论解的意义。

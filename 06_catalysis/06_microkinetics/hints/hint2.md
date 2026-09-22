@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：稳态不等于每一步正逆都平衡
 
-At steady state all three net elementary rates coincide.
+稳态只要求每个中间体不再积累，因此 $r_1=r_2=r_3$。
+
+在外部气体储库持续驱动下，这个共同净通量可以非零。热力学平衡则要求各步净通量为零。
+
+把 `Q theta = 0` 误读成所有 reaction rates=0，会消除真正的催化循环。

@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：失败结果应决定下一笔计算预算
 
-Use raw outputs to decide whether tolerance is met; never label a failed sweep converged.
+厚度变化约 0.35 eV，而容限 0.05 eV。先增加厚度与检查约束，不应直接转去用这个势垒或吸附能生成漂亮的活性图。
+
+把后续计划写成可否定的条件：例如同覆盖度相邻两次加厚的目标差都小于阈值，并检查 k 点耦合。
+
+即使数值收敛，也只减少数值误差；PBE、有限 slab 和实际实验环境之间的模型误差仍需另行论证。

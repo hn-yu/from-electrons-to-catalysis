@@ -1,0 +1,5 @@
+energies_Hartree: -1.083333333333333, -0.8749999999999998
+SciPy_energies_Hartree: -1.0833333333333333, -0.875
+max_reference_error: 2.220446049250313e-16
+generalized_residual: 4.2998752849492583e-16
+Tables and arrays are saved alongside this report.

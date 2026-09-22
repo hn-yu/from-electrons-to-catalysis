@@ -1,4 +1,4 @@
-"""Executable experiments. Inputs are JSON; every runner records the full input and versions."""
+"""Executable experiments. Legacy parameter API retained for numerical kernels and archived runs."""
 from pathlib import Path
 import numpy as np
 from . import units, electronic, thermo, kinetics, network, sampling
@@ -212,9 +212,12 @@ def atom_diffusion(c, work):
     from ase.mep import NEB
     from ase.io import write
     endpoints = []
-    for site in ['fcc','hcp']:
+    for endpoint_index,site in enumerate(['fcc','hcp']):
         atoms = fcc111('Cu',size=(2,2,3),a=3.61,vacuum=7.)
         add_adsorbate(atoms,'H',1.2,site)
+        if 'endpoint_files' in c:
+            from ase.io import read
+            atoms = read(c['endpoint_files'][endpoint_index])
         # A fixed substrate isolates the adatom coordinate for this first atomic band.
         atoms.set_constraint(FixAtoms(indices=range(len(atoms)-1)))
         atoms.calc = EMT()

@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：排序的误差预算
 
-EMT coordination preferences are not electronic-structure evidence.
+若两个位点能量差是 7 meV，而数值设置变化引起几十到几百 meV 的位移，排序结论需要进一步验证。
+
+共同误差可能抵消，因此应该直接收敛 $\Delta E_{fcc,hcp}$，同时报告绝对吸附能收敛。
+
+不要用每个总能量最后六位小数都稳定来替代目标能量差的误差预算。

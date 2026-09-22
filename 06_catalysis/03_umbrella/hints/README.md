@@ -1,5 +1,7 @@
-# Progressive hints
+# 分步提示
 
-1. [Hint 1](hint1.md)
-2. [Hint 2](hint2.md)
-3. [Hint 3](hint3.md)
+这些提示对应「03 · 从有偏轨迹恢复自由能」的三个容易混淆的环节。每完成一个环节，先保存对应的中间量再继续。
+
+1. [Metropolis 接受的是总有偏能量](hint1.md)
+2. [WHAM 的任意常数与数值稳定性](hint2.md)
+3. [MBAR 需要交叉评估所有窗口](hint3.md)

@@ -1,3 +1,10 @@
-# Worked analysis: Talking to the catalyst
+# 参考分析
 
-Question: does atomic H adsorption from half H2 remain favorable across slab settings at high coverage? Hypothesis: fcc adsorption is weakly exothermic, -0.8 to +0.3 eV, low confidence. Relevant physics: metallic screening, H–Cu bonding, coverage and H2 reference. Observable: E(slab+H)-E(slab)-0.5E(H2). Model: neutral periodic PBE slab, no solvent, 0 K, fixed bottom layer, initially 1 ML. Numerical failures: cutoff, k sampling, smearing, force convergence and vacuum. Physical failures: coverage ordering, missed sites, functional bias. Cheapest falsifier: relaxed fcc at the coarse baseline followed by one cutoff/k-point refinement. Abandon the favorable-adsorption hypothesis if stable adsorption is endothermic beyond numerical uncertainty. EMT predictions are not evidence for this claim.
+
+问题应限定为：“在指定 1 ML 的中性 PBE slab 模型中，相对于半个 H₂ 的 H 吸附符号是否对数值设置稳定？”这尚未涉及真实工作条件下的催化活性。
+
+每个设置需要 clean、H₂ 和 adsorbed 三套一致参考；目标容限为 0.05 eV。先跑粗基准与少量单因素变体。若层数变化改变符号且超过容限，优先加厚，暂缓多个位点和 NEB。
+
+数值风险包括 cutoff、k 点、电子展宽、SCF、真空和优化；模型风险包括覆盖度相互作用、未探索位点、PBE 偏差和缺失环境。数值收敛只能处理第一类的一部分。
+
+旧预测为 −0.8 到 +0.3 eV、低置信度，保存在历史记录。这个备忘录如今是已知结果案例的复盘，不能重新标注为盲预测。真正的新实验应先写新的未测条件与容限，再提交计算。

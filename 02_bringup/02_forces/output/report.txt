@@ -1,0 +1,4 @@
+Cartesian_force_max_error_eV_A: 3.552713678800501e-15
+columns: r_A, own_E_eV, ASE_E_eV, own_radial_F_eV_A, ASE_radial_F_eV_A, FD_radial_F_eV_A
+max_ASE_force_error: 3.552713678800501e-15
+Tables and arrays are saved alongside this report.

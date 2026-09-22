@@ -1,3 +1,10 @@
-# Hint 3
+# 提示 3：自由能最低点也随温度变
 
-Experimental apparent activation can additionally include coverage changes.
+对于非零极小值，令 F′=0 得
+
+$$0.6(x^2-1)+\frac{k_BT}{1+x^2}=0,$$
+$$x^4=1-\frac{k_BT}{0.6\ \mathrm{eV}}.$$
+
+因此极小值一般不是 ±1。若固定用 F(0)−F(1) 当势垒，会引入温度相关的系统误差。
+
+数值网格最低点只能近似这个连续结果，可通过加密网格检验。

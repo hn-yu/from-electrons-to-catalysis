@@ -1,7 +1,10 @@
-# Worked analysis: Blind prediction
+# 参考分析
 
-Observable: PBE H/Cu(111) adsorption relative to half H2. Range: -0.8 to +0.3 eV at the stated high coverage; low confidence. Physical reason: dissociating half a strong H2 bond offsets H–metal bonding; lateral interactions can shift the result. Falsifier: energy outside range, desorption, or a change of sign larger than the numerical uncertainty. This is a deliberately broad teaching prediction and not a literature value. See git history for the pre-run version.
 
-## Postmortem appended after partial results
+历史 −0.8 到 +0.3 eV 范围包含三层 +0.0456 与四层 −0.3018 eV，但二者差约 −0.3474 eV，远超容限。覆盖一个宽区间没有支持可靠符号判断。
 
-The unchanged range was -0.8 to +0.3 eV, with low confidence. The three-layer baseline gave approximately +0.046 eV; four layers gave approximately -0.302 eV at the same nominal coverage. Both are within the deliberately broad prediction interval, but their sign disagreement and approximately 0.35 eV difference defeat a claim of a numerically established adsorption sign. A broad interval can be calibrated yet scientifically insufficient. The next prediction should target the layer-convergence trend, rather than merely repeat the broad adsorption range. Full measured results are retained in the real-system project.
+新的预测可以针对厚度敏感性，而不是重复宽泛区间。应固定覆盖度、横向晶胞、约束与参考协议，并在计算前定义何种连续平台趋势才会接受。
+
+目前没有新的 5/6 层测量，因此参考解不填入数值。预测理由可以承认量子尺寸效应与松弛耦合造成非单调趋势；承认不确定性比事后改写预测诚实，也更能指导资源分配。
+
+历史原文保存在输入和 previous-answer.md，新的分析仅作追加，不改变其时间身份。

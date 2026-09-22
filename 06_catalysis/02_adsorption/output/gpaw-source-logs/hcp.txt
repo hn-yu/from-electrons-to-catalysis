@@ -1,0 +1,2785 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  25.7.0
+ |___|_|             
+
+User:   yuhaonan@cm1
+Date:   Tue Sep 22 13:29:38 2026
+Arch:   x86_64
+Pid:    925940
+CWD:    /home/yuhaonan/from-electrons-to-catalysis
+Python: 3.11.13
+gpaw:   /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/gpaw
+_gpaw:  /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/
+        _gpaw.cpython-311-x86_64-linux-gnu.so
+ase:    /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/ase (version 3.29.0)
+numpy:  /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/numpy (version 2.4.6)
+scipy:  /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/scipy (version 1.17.1)
+libxc:  7.0.0
+units:  Angstrom and eV
+cores: 1
+OpenMP: False
+OMP_NUM_THREADS: 4
+
+Input parameters:
+  convergence: {energy: 1e-06}
+  kpts: [3 3 1]
+  mode: {ecut: 300.0,
+         name: pw}
+  occupations: {fixmagmom: False,
+                name: fermi-dirac,
+                width: 0.1}
+  xc: PBE
+
+System changes: positions, numbers, cell, pbc, initial_charges, initial_magmoms 
+
+Initialize ...
+
+species:
+  Cu:
+    name: Copper
+    id: f1c4d45d90492f1bbfdcb091e8418fdf
+    Z: 29.0
+    valence: 11
+    core: 18
+    charge: 0.0
+    file: /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/gpaw_data/setups/Cu.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.33,
+                           lmax: 2}
+    cutoffs: {filter: 2.06,
+              core: 2.43}
+    projectors:
+      #              energy  rcut
+      - 4s(1.00)    -4.609   1.164
+      - 4p(0.00)    -0.698   1.164
+      - 3d(10.00)    -5.039   1.058
+      -  s          22.603   1.164
+      -  p          26.513   1.164
+      -  d          22.172   1.058
+  
+    # Using partial waves for Cu as LCAO basis
+
+  H:
+    name: Hydrogen
+    id: d65de229564ff8ea4db303e23b6d1ecf
+    Z: 1.0
+    valence: 1
+    core: 0
+    charge: 0.0
+    file: /home/yuhaonan/from-electrons-to-catalysis/.venv/lib/python3.11/site-packages/gpaw_data/setups/H.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.15,
+                           lmax: 2}
+    cutoffs: {filter: 0.85,
+              core: 0.53}
+    projectors:
+      #              energy  rcut
+      - 1s(1.00)    -6.494   0.476
+      -  s          20.717   0.476
+      -  p           0.000   0.476
+  
+    # Using partial waves for H as LCAO basis
+
+Reference energy: -540269.912256  # eV
+
+Spin-paired calculation
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 1e-06 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.0001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 4e-08 eV^2 / valence electron
+ Maximum number of scf [iter]ations: 333
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 6
+
+  ( 1  0  0)  ( 1 -1  0)  ( 0  1  0)  ( 0 -1  0)  (-1  1  0)  (-1  0  0)
+  ( 0  1  0)  ( 0 -1  0)  ( 1  0  0)  ( 1 -1  0)  (-1  0  0)  (-1  1  0)
+  ( 0  0  1)  ( 0  0  1)  ( 0  0  1)  ( 0  0  1)  ( 0  0  1)  ( 0  0  1)
+
+9 k-points: 3 x 3 x 1 Monkhorst-Pack grid
+3 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:     0.00000000    0.00000000    0.00000000          1/9
+   1:     0.33333333   -0.33333333    0.00000000          2/9
+   2:     0.33333333    0.33333333    0.00000000          6/9
+
+Wave functions: Plane wave expansion
+  Cutoff energy: 300.000 eV
+  Number of coefficients (min, max): 5331, 5373
+  Pulay-stress correction: 0.000000 eV/Ang^3 (de/decut=0.000000)
+  Using Numpy's FFT
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Fermi-Dirac:
+  width: 0.1000  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 21*21*81 grid
+  Fine grid: 42*42*162 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.05
+  old densities: 5
+  Damping of long wavelength oscillations: 50 
+
+Hamiltonian:
+  XC and Coulomb potentials evaluated on a 42*42*162 grid
+  Using the PBE Exchange-Correlation functional
+  External potential:
+    NoExternalPotential
+ 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 439.43 MiB
+  Calculator: 55.45 MiB
+    Density: 16.94 MiB
+      Arrays: 7.09 MiB
+      Localized functions: 7.13 MiB
+      Mixer: 2.73 MiB
+    Hamiltonian: 4.81 MiB
+      Arrays: 4.63 MiB
+      XC: 0.00 MiB
+      Poisson: 0.00 MiB
+      vbar: 0.17 MiB
+    Wavefunctions: 33.70 MiB
+      Arrays psit_nG: 20.66 MiB
+      Eigensolver: 8.38 MiB
+      Projections: 0.85 MiB
+      Projectors: 2.21 MiB
+      PW-descriptor: 1.61 MiB
+
+Total number of cores used: 1
+
+Number of atoms: 13
+Number of atomic orbitals: 109
+Number of bands in calculation: 84
+Number of valence electrons: 133
+Bands to converge: occupied
+
+... initialized
+
+Initializing position-dependent things.
+
+Density initialized from atomic densities
+Creating initial wave functions:
+  84 bands from LCAO basis set
+
+                               
+                               
+                               
+                               
+                               
+              H                
+                               
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.473776   10.084483    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.084478    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.276328    3.684441   10.084483    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.828983    3.684441   10.084483    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.177094    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.000000   12.177095    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.276327    2.210665   12.177095    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.828984    2.210665   12.177095    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.677095    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:29:42   -50.191739
+iter:   2 13:29:43   -45.983447   -1.79  -1.17
+iter:   3 13:29:45   -40.367316   -0.74  -1.25
+iter:   4 13:29:47   -39.961586   -2.57  -1.66
+iter:   5 13:29:48   -39.814429   -2.59  -1.71
+iter:   6 13:29:50   -40.017165   -1.98  -1.82
+iter:   7 13:29:51   -39.774460   -2.50  -1.98
+iter:   8 13:29:53   -39.709875   -3.07  -2.44
+iter:   9 13:29:55   -39.672133   -2.99  -2.57
+iter:  10 13:29:56   -39.699885   -3.16  -2.72
+iter:  11 13:29:58   -39.683952   -4.28  -2.88
+iter:  12 13:30:00   -39.670011   -3.87  -2.92
+iter:  13 13:30:01   -39.670078   -5.33  -3.02
+iter:  14 13:30:03   -39.669018   -4.93  -3.10
+iter:  15 13:30:04   -39.667289   -4.30  -3.43
+iter:  16 13:30:06   -39.667365   -5.34  -3.77
+iter:  17 13:30:08   -39.667257c  -6.25  -3.86
+iter:  18 13:30:09   -39.667177   -5.96  -3.88
+iter:  19 13:30:11   -39.667269c  -6.14  -3.93
+iter:  20 13:30:12   -39.667276c  -6.98  -4.02c
+iter:  21 13:30:14   -39.667281c  -6.51  -4.06c
+iter:  22 13:30:16   -39.667221c  -6.68  -4.27c
+iter:  23 13:30:17   -39.667223c  -7.59c -4.65c
+
+Converged after 23 iterations.
+
+Dipole moment: (0.000008, 0.000005, -0.060099) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -144.718375
+Potential:     +106.709920
+External:        +0.000000
+XC:              -6.732327
+Entropy (-ST):   -0.240190
+Local:           +5.193654
+SIC:             +0.000000
+--------------------------
+Free energy:    -39.787318
+Extrapolated:   -39.667223
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.76738    1.35415
+  0    65     -0.72784    1.17080
+  0    66     -0.72783    1.17074
+  0    67      0.13471    0.00051
+
+  1    64     -2.08559    2.00000
+  1    65     -2.07337    2.00000
+  1    66     -1.00486    1.91503
+  1    67      0.00586    0.00184
+
+
+Fermi level: -0.69334
+
+Gap: 0.330 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.362 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.07263    0.04193    0.01293
+  1 Cu   -0.07263    0.04193    0.01293
+  2 Cu    0.00000   -0.08387    0.01293
+  3 Cu    0.00000   -0.00000   -0.07676
+  4 Cu    0.00000   -0.00401    0.20184
+  5 Cu    0.00000   -0.00000   -0.23669
+  6 Cu    0.00348    0.00201    0.20184
+  7 Cu   -0.00348    0.00201    0.20184
+  8 Cu    0.00000    0.00000   -0.21601
+  9 Cu    0.00000    0.40550    0.48273
+ 10 Cu    0.35117   -0.20275    0.48273
+ 11 Cu   -0.35117   -0.20275    0.48273
+ 12 H     0.00000    0.00000   -1.57322
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+                               
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.473719   10.087367    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.081096    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.276377    3.684469   10.087367    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.828934    3.684469   10.087367    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.174008    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.005792   12.183991    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.281344    2.207768   12.183991    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.823967    2.207768   12.183991    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.654620    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:30:19   -39.806464   -3.02
+iter:   2 13:30:21   -39.734626   -3.28  -2.36
+iter:   3 13:30:23   -39.726022   -4.35  -2.86
+iter:   4 13:30:24   -39.722412   -4.13  -3.06
+iter:   5 13:30:26   -39.722225   -4.67  -3.35
+iter:   6 13:30:27   -39.722055   -5.35  -3.51
+iter:   7 13:30:29   -39.721841   -5.12  -3.65
+iter:   8 13:30:31   -39.721798   -6.40  -4.01c
+iter:   9 13:30:32   -39.721759c  -5.62  -3.91
+iter:  10 13:30:34   -39.721730c  -6.43  -4.25c
+iter:  11 13:30:36   -39.721730c  -6.49  -4.20c
+iter:  12 13:30:37   -39.721729c  -8.05c -4.81c
+
+Converged after 12 iterations.
+
+Dipole moment: (-0.214723, -0.123970, -0.055371) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -145.032214
+Potential:     +106.976492
+External:        +0.000000
+XC:              -6.738524
+Entropy (-ST):   -0.239565
+Local:           +5.192298
+SIC:             +0.000000
+--------------------------
+Free energy:    -39.841512
+Extrapolated:   -39.721729
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.76289    1.36680
+  0    65     -0.72032    1.17020
+  0    66     -0.72031    1.17014
+  0    67      0.13859    0.00052
+
+  1    64     -2.08051    2.00000
+  1    65     -2.06835    2.00000
+  1    66     -0.99148    1.91003
+  1    67      0.01069    0.00188
+
+
+Fermi level: -0.68595
+
+Gap: 0.334 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.367 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.06798    0.03925    0.01683
+  1 Cu   -0.06798    0.03925    0.01683
+  2 Cu    0.00000   -0.07850    0.01683
+  3 Cu   -0.00000   -0.00000   -0.06324
+  4 Cu    0.00000    0.00896    0.20261
+  5 Cu    0.00000    0.00000   -0.21605
+  6 Cu   -0.00776   -0.00448    0.20261
+  7 Cu    0.00776   -0.00448    0.20261
+  8 Cu   -0.00000   -0.00000   -0.18494
+  9 Cu    0.00000    0.33559    0.45031
+ 10 Cu    0.29063   -0.16779    0.45031
+ 11 Cu   -0.29063   -0.16779    0.45031
+ 12 H     0.00000    0.00000   -1.53429
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+                               
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.474803   10.113740    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.052837    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.275438    3.683927   10.113740    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.829873    3.683927   10.113740    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.149733    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.049927   12.242824    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.319566    2.185701   12.242824    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.785745    2.185701   12.242824    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.454620    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:30:39   -46.292750   -1.22
+iter:   2 13:30:41   -41.092934   -1.37  -1.44
+iter:   3 13:30:42   -40.354202   -2.50  -1.90
+iter:   4 13:30:44   -40.150972   -2.25  -2.08
+iter:   5 13:30:46   -40.079892   -2.98  -2.32
+iter:   6 13:30:47   -40.070613   -2.80  -2.53
+iter:   7 13:30:49   -40.062101   -4.23  -2.74
+iter:   8 13:30:51   -40.055004   -3.26  -2.83
+iter:   9 13:30:52   -40.053065   -5.16  -3.05
+iter:  10 13:30:54   -40.050783   -3.95  -3.10
+iter:  11 13:30:55   -40.050306   -5.08  -3.39
+iter:  12 13:30:57   -40.050384   -5.42  -3.51
+iter:  13 13:30:59   -40.050373c  -5.43  -3.61
+iter:  14 13:31:00   -40.050259c  -5.65  -3.83
+iter:  15 13:31:02   -40.050237   -6.63  -4.07c
+iter:  16 13:31:04   -40.050244c  -6.28  -4.17c
+iter:  17 13:31:05   -40.050252c  -7.23  -4.36c
+iter:  18 13:31:07   -40.050250c  -7.12  -4.44c
+iter:  19 13:31:08   -40.050246c  -7.83c -4.69c
+
+Converged after 19 iterations.
+
+Dipole moment: (-1.847447, -1.066624, -0.018606) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -144.716725
+Potential:     +106.660457
+External:        +0.000000
+XC:              -7.069059
+Entropy (-ST):   -0.234904
+Local:           +5.192533
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.167698
+Extrapolated:   -40.050246
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.74644    1.49851
+  0    65     -0.66823    1.15499
+  0    66     -0.66821    1.15492
+  0    67      0.14902    0.00077
+
+  1    64     -2.04815    2.00000
+  1    65     -2.03639    2.00000
+  1    66     -0.87187    1.82570
+  1    67      0.00207    0.00335
+
+
+Fermi level: -0.63698
+
+Gap: 0.368 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.407 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.03069    0.01772    0.03340
+  1 Cu   -0.03069    0.01772    0.03340
+  2 Cu   -0.00000   -0.03543    0.03340
+  3 Cu    0.00000    0.00000    0.03937
+  4 Cu    0.00000    0.08838    0.17603
+  5 Cu    0.00000    0.00000   -0.02152
+  6 Cu   -0.07654   -0.04419    0.17603
+  7 Cu    0.07654   -0.04419    0.17603
+  8 Cu    0.00000   -0.00000    0.00414
+  9 Cu    0.00000   -0.30197    0.06112
+ 10 Cu   -0.26151    0.15098    0.06112
+ 11 Cu    0.26151    0.15098    0.06112
+ 12 H     0.00000   -0.00000   -0.88200
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.477218   10.131774    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.037009    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.273347    3.682720   10.131774    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.831964    3.682720   10.131774    ( 0.0000,  0.0000,  0.0000)
+   8 Cu    -0.000000   -0.000000   12.136512    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.067577   12.276039    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.334851    2.176876   12.276039    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.770460    2.176876   12.276039    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.327461    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:31:10   -42.355994   -1.70
+iter:   2 13:31:12   -40.366289   -1.86  -1.67
+iter:   3 13:31:14   -40.173319   -3.05  -2.18
+iter:   4 13:31:15   -40.117614   -2.68  -2.36
+iter:   5 13:31:17   -40.102601   -3.75  -2.65
+iter:   6 13:31:19   -40.101024   -3.22  -2.78
+iter:   7 13:31:20   -40.096072   -4.62  -2.96
+iter:   8 13:31:22   -40.094698   -3.75  -3.06
+iter:   9 13:31:23   -40.094033   -5.59  -3.25
+iter:  10 13:31:25   -40.092954   -4.45  -3.30
+iter:  11 13:31:27   -40.092933   -6.13  -3.68
+iter:  12 13:31:28   -40.092990c  -5.44  -3.76
+iter:  13 13:31:30   -40.093102   -5.38  -3.83
+iter:  14 13:31:31   -40.093012c  -5.81  -3.93
+iter:  15 13:31:33   -40.092975c  -6.66  -4.23c
+iter:  16 13:31:35   -40.092960c  -7.15  -4.35c
+iter:  17 13:31:36   -40.092960c  -7.75c -4.46c
+
+Converged after 17 iterations.
+
+Dipole moment: (-2.498534, -1.442529, -0.003818) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -143.045108
+Potential:     +105.325211
+External:        +0.000000
+XC:              -7.446905
+Entropy (-ST):   -0.232490
+Local:           +5.190086
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.209205
+Extrapolated:   -40.092960
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.75768    1.59208
+  0    65     -0.64844    1.13388
+  0    66     -0.64843    1.13380
+  0    67      0.13639    0.00102
+
+  1    64     -2.03874    2.00000
+  1    65     -2.02796    2.00000
+  1    66     -0.79936    1.71103
+  1    67     -0.01584    0.00467
+
+
+Fermi level: -0.62151
+
+Gap: 0.390 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.435 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00397    0.00229    0.04823
+  1 Cu   -0.00397    0.00229    0.04823
+  2 Cu   -0.00000   -0.00458    0.04823
+  3 Cu    0.00000   -0.00000    0.10143
+  4 Cu    0.00000    0.10600    0.11474
+  5 Cu    0.00000   -0.00000    0.10326
+  6 Cu   -0.09180   -0.05300    0.11474
+  7 Cu    0.09180   -0.05300    0.11474
+  8 Cu    0.00000    0.00000    0.15820
+  9 Cu    0.00000   -0.75660   -0.22867
+ 10 Cu   -0.65523    0.37830   -0.22867
+ 11 Cu    0.65523    0.37830   -0.22867
+ 12 H     0.00000   -0.00000   -0.17436
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.478204   10.130448    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.040796    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.272494    3.682227   10.130448    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.832817    3.682227   10.130448    ( 0.0000,  0.0000,  0.0000)
+   8 Cu    -0.000000   -0.000000   12.140431    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.055359   12.267941    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.324270    2.182985   12.267941    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.781041    2.182985   12.267941    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.344914    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:31:38   -40.201220   -2.80
+iter:   2 13:31:40   -40.127949   -3.33  -2.39
+iter:   3 13:31:42   -40.122784   -4.33  -2.79
+iter:   4 13:31:43   -40.119293   -3.91  -2.98
+iter:   5 13:31:45   -40.117564   -4.14  -3.19
+iter:   6 13:31:46   -40.117546   -5.33  -3.45
+iter:   7 13:31:48   -40.117526c  -4.73  -3.49
+iter:   8 13:31:50   -40.117341   -5.56  -3.79
+iter:   9 13:31:51   -40.117385   -5.94  -3.93
+iter:  10 13:31:53   -40.117369c  -6.53  -4.05c
+iter:  11 13:31:55   -40.117336c  -6.44  -4.12c
+iter:  12 13:31:56   -40.117323c  -6.72  -4.33c
+iter:  13 13:31:58   -40.117323c  -7.04  -4.48c
+iter:  14 13:31:59   -40.117325c  -7.19  -4.62c
+iter:  15 13:32:01   -40.117326c  -8.08c -4.88c
+
+Converged after 15 iterations.
+
+Dipole moment: (-2.081517, -1.201765, -0.007010) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -143.655247
+Potential:     +105.795056
+External:        +0.000000
+XC:              -7.332224
+Entropy (-ST):   -0.232623
+Local:           +5.191401
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.233638
+Extrapolated:   -40.117326
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.76005    1.58254
+  0    65     -0.65407    1.13555
+  0    66     -0.65405    1.13547
+  0    67      0.13706    0.00096
+
+  1    64     -2.04148    2.00000
+  1    65     -2.03098    2.00000
+  1    66     -0.80807    1.71941
+  1    67     -0.01162    0.00425
+
+
+Fermi level: -0.62679
+
+Gap: 0.388 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.432 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00782    0.00452    0.05061
+  1 Cu   -0.00782    0.00452    0.05061
+  2 Cu    0.00000   -0.00903    0.05061
+  3 Cu   -0.00000    0.00000    0.09295
+  4 Cu   -0.00000    0.07733    0.10710
+  5 Cu    0.00000   -0.00000    0.08013
+  6 Cu   -0.06697   -0.03867    0.10710
+  7 Cu    0.06697   -0.03867    0.10710
+  8 Cu    0.00000    0.00000    0.11712
+  9 Cu   -0.00000   -0.53402   -0.15157
+ 10 Cu   -0.46248    0.26701   -0.15157
+ 11 Cu    0.46248    0.26701   -0.15157
+ 12 H     0.00000    0.00000   -0.34987
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.482338   10.136380    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.044305    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.268914    3.680160   10.136380    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.836397    3.680160   10.136380    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.145731    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.027501   12.260780    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.300144    2.196914   12.260780    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.805167    2.196914   12.260780    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.325921    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:32:03   -40.194316   -2.53
+iter:   2 13:32:05   -40.175715   -3.82  -2.54
+iter:   3 13:32:06   -40.164156   -3.78  -2.72
+iter:   4 13:32:08   -40.162015   -4.00  -2.94
+iter:   5 13:32:10   -40.159391   -3.93  -3.01
+iter:   6 13:32:11   -40.159155   -4.86  -3.34
+iter:   7 13:32:13   -40.159614   -4.67  -3.48
+iter:   8 13:32:14   -40.158914   -4.91  -3.61
+iter:   9 13:32:16   -40.158947   -6.13  -3.89
+iter:  10 13:32:18   -40.158988c  -5.73  -3.97
+iter:  11 13:32:19   -40.159001c  -6.09  -4.12c
+iter:  12 13:32:21   -40.158931c  -6.58  -4.37c
+iter:  13 13:32:22   -40.158918c  -6.78  -4.50c
+iter:  14 13:32:24   -40.158914c  -8.13c -4.65c
+
+Converged after 14 iterations.
+
+Dipole moment: (-1.122848, -0.648277, -0.007953) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -144.197450
+Potential:     +106.216200
+External:        +0.000000
+XC:              -7.253739
+Entropy (-ST):   -0.231579
+Local:           +5.191864
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.274704
+Extrapolated:   -40.158914
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77488    1.60408
+  0    65     -0.66012    1.12508
+  0    66     -0.66011    1.12500
+  0    67      0.12954    0.00096
+
+  1    64     -2.04549    2.00000
+  1    65     -2.03537    2.00000
+  1    66     -0.79494    1.66394
+  1    67     -0.00857    0.00380
+
+
+Fermi level: -0.63498
+
+Gap: 0.393 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.438 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00467    0.00270    0.07083
+  1 Cu   -0.00467    0.00270    0.07083
+  2 Cu    0.00000   -0.00539    0.07083
+  3 Cu   -0.00000   -0.00000    0.10203
+  4 Cu   -0.00000    0.00006    0.04101
+  5 Cu    0.00000    0.00000    0.08808
+  6 Cu   -0.00005   -0.00003    0.04101
+  7 Cu    0.00005   -0.00003    0.04101
+  8 Cu   -0.00000    0.00000    0.10240
+  9 Cu   -0.00000   -0.15176   -0.08015
+ 10 Cu   -0.13143    0.07588   -0.08015
+ 11 Cu    0.13143    0.07588   -0.08015
+ 12 H     0.00000    0.00000   -0.42494
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.486126   10.145977    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.045346    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.265632    3.678266   10.145977    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.839678    3.678266   10.145977    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.149223    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.005582   12.260793    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.281162    2.207874   12.260793    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.824149    2.207874   12.260793    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.273975    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:32:26   -40.339573   -2.51
+iter:   2 13:32:28   -40.197376   -3.05  -2.21
+iter:   3 13:32:29   -40.185133   -4.54  -2.84
+iter:   4 13:32:31   -40.182373   -4.02  -3.00
+iter:   5 13:32:33   -40.182574   -4.62  -3.21
+iter:   6 13:32:34   -40.182107   -4.79  -3.32
+iter:   7 13:32:36   -40.182082   -5.90  -3.56
+iter:   8 13:32:37   -40.181751   -5.23  -3.71
+iter:   9 13:32:39   -40.181703   -6.28  -3.92
+iter:  10 13:32:41   -40.181684c  -6.13  -4.02c
+iter:  11 13:32:42   -40.181739c  -6.00  -4.23c
+iter:  12 13:32:44   -40.181771c  -6.70  -4.36c
+iter:  13 13:32:46   -40.181750c  -7.23  -4.44c
+iter:  14 13:32:47   -40.181720c  -6.93  -4.67c
+iter:  15 13:32:49   -40.181713c  -7.76c -4.96c
+
+Converged after 15 iterations.
+
+Dipole moment: (-0.362461, -0.209267, -0.005168) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -144.068163
+Potential:     +106.119865
+External:        +0.000000
+XC:              -7.310226
+Entropy (-ST):   -0.229628
+Local:           +5.191624
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.296527
+Extrapolated:   -40.181713
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.79059    1.64324
+  0    65     -0.66045    1.11253
+  0    66     -0.66043    1.11245
+  0    67      0.11652    0.00106
+
+  1    64     -2.04714    2.00000
+  1    65     -2.03655    2.00000
+  1    66     -0.76462    1.56072
+  1    67     -0.01047    0.00376
+
+
+Fermi level: -0.63785
+
+Gap: 0.404 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.452 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu   -0.00260   -0.00150    0.09164
+  1 Cu    0.00260   -0.00150    0.09164
+  2 Cu    0.00000    0.00300    0.09164
+  3 Cu    0.00000    0.00000    0.12309
+  4 Cu   -0.00000   -0.06277   -0.04051
+  5 Cu    0.00000   -0.00000    0.10572
+  6 Cu    0.05436    0.03138   -0.04051
+  7 Cu   -0.05436    0.03138   -0.04051
+  8 Cu   -0.00000    0.00000    0.12424
+  9 Cu    0.00000    0.08071   -0.07201
+ 10 Cu    0.06990   -0.04036   -0.07201
+ 11 Cu   -0.06990   -0.04036   -0.07201
+ 12 H     0.00000    0.00000   -0.32227
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.486951   10.151315    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.045757    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.264918    3.677853   10.151315    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.840393    3.677853   10.151315    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.151455    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.000928   12.263180    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.275524    2.211129   12.263180    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.829787    2.211129   12.263180    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.232989    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:32:51   -40.293665   -2.93
+iter:   2 13:32:52   -40.198881   -3.22  -2.30
+iter:   3 13:32:54   -40.190925   -4.78  -3.02
+iter:   4 13:32:56   -40.189785   -4.65  -3.26
+iter:   5 13:32:57   -40.190086   -5.14  -3.42
+iter:   6 13:32:59   -40.189909   -5.23  -3.48
+iter:   7 13:33:00   -40.189824   -5.65  -3.61
+iter:   8 13:33:02   -40.189765   -5.77  -3.95
+iter:   9 13:33:04   -40.189604   -5.70  -3.93
+iter:  10 13:33:05   -40.189610   -7.09  -4.28c
+iter:  11 13:33:07   -40.189626c  -7.31  -4.44c
+iter:  12 13:33:09   -40.189673c  -6.77  -4.55c
+iter:  13 13:33:10   -40.189679c  -7.74c -4.72c
+
+Converged after 13 iterations.
+
+Dipole moment: (-0.136045, -0.078546, -0.003418) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -143.757079
+Potential:     +105.879383
+External:        +0.000000
+XC:              -7.391471
+Entropy (-ST):   -0.228158
+Local:           +5.193568
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.303758
+Extrapolated:   -40.189679
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.79850    1.66901
+  0    65     -0.65904    1.11119
+  0    66     -0.65902    1.11111
+  0    67      0.10561    0.00119
+
+  1    64     -2.04765    2.00000
+  1    65     -2.03632    2.00000
+  1    66     -0.74192    1.48235
+  1    67     -0.01666    0.00405
+
+
+Fermi level: -0.63671
+
+Gap: 0.412 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.461 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu   -0.00660   -0.00381    0.09957
+  1 Cu    0.00660   -0.00381    0.09957
+  2 Cu    0.00000    0.00762    0.09957
+  3 Cu   -0.00000    0.00000    0.13665
+  4 Cu    0.00000   -0.07914   -0.07628
+  5 Cu    0.00000   -0.00000    0.11409
+  6 Cu    0.06854    0.03957   -0.07628
+  7 Cu   -0.06854    0.03957   -0.07628
+  8 Cu    0.00000   -0.00000    0.13398
+  9 Cu    0.00000    0.10696   -0.10346
+ 10 Cu    0.09263   -0.05348   -0.10346
+ 11 Cu   -0.09263   -0.05348   -0.10346
+ 12 H     0.00000    0.00000   -0.19208
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.485934   10.153181    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.047644    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.265799    3.678362   10.153181    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.839512    3.678362   10.153181    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.154816    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.001907   12.263422    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.274676    2.211618   12.263422    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.830634    2.211618   12.263422    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.204036    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:33:12   -40.229556   -3.39
+iter:   2 13:33:14   -40.197853   -3.68  -2.53
+iter:   3 13:33:15   -40.194869   -5.24  -3.19
+iter:   4 13:33:17   -40.194176   -4.69  -3.43
+iter:   5 13:33:19   -40.194423   -5.19  -3.67
+iter:   6 13:33:20   -40.194208   -5.72  -3.59
+iter:   7 13:33:22   -40.194129   -5.74  -3.81
+iter:   8 13:33:24   -40.194089c  -6.48  -4.23c
+iter:   9 13:33:25   -40.194074c  -5.97  -3.98
+iter:  10 13:33:27   -40.194076c  -7.62c -4.62c
+
+Converged after 10 iterations.
+
+Dipole moment: (-0.094025, -0.054286, -0.002728) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -143.434711
+Potential:     +105.627373
+External:        +0.000000
+XC:              -7.466875
+Entropy (-ST):   -0.227354
+Local:           +5.193814
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.307753
+Extrapolated:   -40.194076
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.80129    1.68227
+  0    65     -0.65828    1.11773
+  0    66     -0.65826    1.11766
+  0    67      0.09646    0.00134
+
+  1    64     -2.04707    2.00000
+  1    65     -2.03479    2.00000
+  1    66     -0.72633    1.42887
+  1    67     -0.01702    0.00415
+
+
+Fermi level: -0.63462
+
+Gap: 0.418 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.468 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu   -0.00597   -0.00345    0.10580
+  1 Cu    0.00597   -0.00345    0.10580
+  2 Cu    0.00000    0.00689    0.10580
+  3 Cu    0.00000    0.00000    0.14583
+  4 Cu    0.00000   -0.07175   -0.08511
+  5 Cu    0.00000   -0.00000    0.10114
+  6 Cu    0.06214    0.03587   -0.08511
+  7 Cu   -0.06214    0.03587   -0.08511
+  8 Cu    0.00000    0.00000    0.13004
+  9 Cu    0.00000    0.06774   -0.13060
+ 10 Cu    0.05866   -0.03387   -0.13060
+ 11 Cu   -0.05866   -0.03387   -0.13060
+ 12 H     0.00000    0.00000   -0.08552
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.483268   10.152483    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.052370    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.268107    3.679695   10.152483    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.837204    3.679695   10.152483    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.161543    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.002030   12.259465    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.274570    2.211680   12.259465    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.830741    2.211680   12.259465    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.178123    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:33:29   -40.207629   -3.45
+iter:   2 13:33:30   -40.200873   -4.27  -2.86
+iter:   3 13:33:32   -40.199756   -5.58  -3.26
+iter:   4 13:33:34   -40.199172   -4.34  -3.37
+iter:   5 13:33:35   -40.199048   -5.25  -3.70
+iter:   6 13:33:37   -40.199004   -5.42  -3.82
+iter:   7 13:33:39   -40.198872   -5.69  -4.08c
+iter:   8 13:33:40   -40.198852   -5.96  -4.21c
+iter:   9 13:33:42   -40.198846c  -7.46c -4.40c
+
+Converged after 9 iterations.
+
+Dipole moment: (-0.067410, -0.038919, -0.001467) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -143.269269
+Potential:     +105.519787
+External:        +0.000000
+XC:              -7.533092
+Entropy (-ST):   -0.226711
+Local:           +5.197083
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.312202
+Extrapolated:   -40.198846
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.80014    1.68730
+  0    65     -0.65763    1.12951
+  0    66     -0.65761    1.12944
+  0    67      0.08652    0.00152
+
+  1    64     -2.04614    2.00000
+  1    65     -2.03195    2.00000
+  1    66     -0.71148    1.37952
+  1    67     -0.01352    0.00413
+
+
+Fermi level: -0.63158
+
+Gap: 0.426 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.475 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu   -0.00052   -0.00030    0.11368
+  1 Cu    0.00052   -0.00030    0.11368
+  2 Cu    0.00000    0.00060    0.11368
+  3 Cu    0.00000    0.00000    0.15354
+  4 Cu   -0.00000   -0.04816   -0.08325
+  5 Cu    0.00000   -0.00000    0.05690
+  6 Cu    0.04171    0.02408   -0.08325
+  7 Cu   -0.04171    0.02408   -0.08325
+  8 Cu    0.00000    0.00000    0.09304
+  9 Cu    0.00000    0.02308   -0.14561
+ 10 Cu    0.01999   -0.01154   -0.14561
+ 11 Cu   -0.01999   -0.01154   -0.14561
+ 12 H     0.00000    0.00000   -0.00675
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.477505   10.147729    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.062771    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.273099    3.682577   10.147729    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.832212    3.682577   10.147729    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000   -0.000000   12.175783    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.002474   12.246682    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.274185    2.211902   12.246682    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.831126    2.211902   12.246682    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.145587    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:33:44   -40.218153   -2.87
+iter:   2 13:33:45   -40.210592   -4.30  -2.76
+iter:   3 13:33:47   -40.207490   -4.20  -2.91
+iter:   4 13:33:49   -40.206682   -4.55  -3.14
+iter:   5 13:33:50   -40.205882   -4.46  -3.33
+iter:   6 13:33:52   -40.205788   -5.41  -3.56
+iter:   7 13:33:53   -40.206098   -4.84  -3.63
+iter:   8 13:33:55   -40.205873   -5.97  -3.84
+iter:   9 13:33:57   -40.205729   -5.34  -3.93
+iter:  10 13:33:58   -40.205747   -6.40  -4.24c
+iter:  11 13:34:00   -40.205723c  -6.01  -4.28c
+iter:  12 13:34:02   -40.205730c  -7.79c -4.56c
+
+Converged after 12 iterations.
+
+Dipole moment: (0.001267, 0.000732, -0.000839) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.940970
+Potential:     +105.289161
+External:        +0.000000
+XC:              -7.637190
+Entropy (-ST):   -0.225923
+Local:           +5.196230
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.318692
+Extrapolated:   -40.205730
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.79792    1.68213
+  0    65     -0.66262    1.15533
+  0    66     -0.66260    1.15526
+  0    67      0.06772    0.00184
+
+  1    64     -2.04879    2.00000
+  1    65     -2.03004    2.00000
+  1    66     -0.69513    1.30877
+  1    67     -0.00834    0.00393
+
+
+Fermi level: -0.63130
+
+Gap: 0.438 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.486 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.01530    0.00884    0.11257
+  1 Cu   -0.01530    0.00884    0.11257
+  2 Cu    0.00000   -0.01767    0.11257
+  3 Cu    0.00000   -0.00000    0.15056
+  4 Cu   -0.00000   -0.00119   -0.06809
+  5 Cu   -0.00000    0.00000   -0.02808
+  6 Cu    0.00103    0.00059   -0.06809
+  7 Cu   -0.00103    0.00059   -0.06809
+  8 Cu    0.00000    0.00000    0.02421
+  9 Cu    0.00000   -0.01798   -0.12991
+ 10 Cu   -0.01557    0.00899   -0.12991
+ 11 Cu    0.01557    0.00899   -0.12991
+ 12 H     0.00000    0.00000    0.07891
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.473026   10.140863    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.070454    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.276977    3.684816   10.140863    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.828334    3.684816   10.140863    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.186370    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.001572   12.233316    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.274966    2.211451   12.233316    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.830345    2.211451   12.233316    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.140716    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:34:04   -40.283289   -2.89
+iter:   2 13:34:05   -40.215326   -3.34  -2.40
+iter:   3 13:34:07   -40.212176   -4.47  -2.88
+iter:   4 13:34:08   -40.210659   -4.26  -3.03
+iter:   5 13:34:10   -40.209995   -4.74  -3.38
+iter:   6 13:34:12   -40.209995   -5.55  -3.62
+iter:   7 13:34:13   -40.210072c  -4.98  -3.62
+iter:   8 13:34:15   -40.209967c  -6.51  -3.84
+iter:   9 13:34:17   -40.209971c  -5.77  -3.98
+iter:  10 13:34:18   -40.209940c  -6.56  -4.30c
+iter:  11 13:34:20   -40.209939c  -7.69c -4.46c
+
+Converged after 11 iterations.
+
+Dipole moment: (0.010561, 0.006098, -0.000512) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.874894
+Potential:     +105.264242
+External:        +0.000000
+XC:              -7.682300
+Entropy (-ST):   -0.226262
+Local:           +5.196143
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.323070
+Extrapolated:   -40.209939
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.79002    1.66363
+  0    65     -0.66519    1.17338
+  0    66     -0.66518    1.17332
+  0    67      0.06049    0.00200
+
+  1    64     -2.04840    2.00000
+  1    65     -2.02658    2.00000
+  1    66     -0.69228    1.30099
+  1    67      0.00011    0.00366
+
+
+Fermi level: -0.63016
+
+Gap: 0.444 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.489 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.02957    0.01707    0.11084
+  1 Cu   -0.02957    0.01707    0.11084
+  2 Cu   -0.00000   -0.03414    0.11084
+  3 Cu    0.00000    0.00000    0.14154
+  4 Cu    0.00000    0.03548   -0.04387
+  5 Cu    0.00000   -0.00000   -0.10716
+  6 Cu   -0.03073   -0.01774   -0.04387
+  7 Cu    0.03073   -0.01774   -0.04387
+  8 Cu   -0.00000    0.00000   -0.04649
+  9 Cu   -0.00000   -0.02606   -0.08888
+ 10 Cu   -0.02257    0.01303   -0.08888
+ 11 Cu    0.02257    0.01303   -0.08888
+ 12 H     0.00000    0.00000    0.05577
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.471450   10.135572    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.072450    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.278342    3.685604   10.135572    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.826969    3.685604   10.135572    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.190413    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.001015   12.224216    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.275448    2.211172   12.224216    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.829863    2.211172   12.224216    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.149294    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:34:22   -40.294879   -3.05
+iter:   2 13:34:23   -40.215022   -3.33  -2.37
+iter:   3 13:34:25   -40.212754   -4.64  -3.03
+iter:   4 13:34:27   -40.211892   -4.50  -3.16
+iter:   5 13:34:28   -40.211572   -5.21  -3.56
+iter:   6 13:34:30   -40.211518   -5.66  -3.77
+iter:   7 13:34:32   -40.211577c  -5.51  -3.78
+iter:   8 13:34:33   -40.211552c  -6.95  -4.05c
+iter:   9 13:34:35   -40.211533c  -6.03  -4.11c
+iter:  10 13:34:36   -40.211541c  -7.24  -4.51c
+iter:  11 13:34:38   -40.211535c  -7.36  -4.67c
+iter:  12 13:34:40   -40.211517c  -7.70c -4.66c
+
+Converged after 12 iterations.
+
+Dipole moment: (0.007171, 0.004140, -0.001371) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.790671
+Potential:     +105.198521
+External:        +0.000000
+XC:              -7.700935
+Entropy (-ST):   -0.226940
+Local:           +5.195037
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.324988
+Extrapolated:   -40.211517
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.78417    1.64550
+  0    65     -0.66745    1.18192
+  0    66     -0.66744    1.18186
+  0    67      0.06071    0.00199
+
+  1    64     -2.04783    2.00000
+  1    65     -2.02472    2.00000
+  1    66     -0.69690    1.31959
+  1    67      0.00556    0.00345
+
+
+Fermi level: -0.63066
+
+Gap: 0.445 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.488 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.03297    0.01903    0.10206
+  1 Cu   -0.03297    0.01903    0.10206
+  2 Cu    0.00000   -0.03807    0.10206
+  3 Cu   -0.00000   -0.00000    0.12510
+  4 Cu   -0.00000    0.04403   -0.02415
+  5 Cu    0.00000    0.00000   -0.13551
+  6 Cu   -0.03814   -0.02202   -0.02415
+  7 Cu    0.03814   -0.02202   -0.02415
+  8 Cu    0.00000    0.00000   -0.08212
+  9 Cu    0.00000    0.00134   -0.04716
+ 10 Cu    0.00116   -0.00067   -0.04716
+ 11 Cu   -0.00116   -0.00067   -0.04716
+ 12 H    -0.00000   -0.00000   -0.00871
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.471848   10.133292    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.070317    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.277998    3.685405   10.133292    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.827313    3.685405   10.133292    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.189662    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655   -0.000330   12.220758    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.276042    2.210829   12.220758    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.829269    2.210829   12.220758    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.155091    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:34:42   -40.240877   -3.62
+iter:   2 13:34:43   -40.212800   -3.84  -2.61
+iter:   3 13:34:45   -40.212440   -5.28  -3.39
+iter:   4 13:34:46   -40.212292   -5.21  -3.48
+iter:   5 13:34:48   -40.212177   -5.87  -3.86
+iter:   6 13:34:50   -40.212153   -6.35  -4.11c
+iter:   7 13:34:51   -40.212190c  -6.19  -4.06c
+iter:   8 13:34:53   -40.212173c  -7.34  -4.45c
+iter:   9 13:34:55   -40.212191c  -7.46c -4.57c
+
+Converged after 9 iterations.
+
+Dipole moment: (-0.020623, -0.011907, -0.001431) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.694582
+Potential:     +105.117695
+External:        +0.000000
+XC:              -7.716409
+Entropy (-ST):   -0.227243
+Local:           +5.194727
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.325812
+Extrapolated:   -40.212191
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.78164    1.63758
+  0    65     -0.66820    1.18477
+  0    66     -0.66819    1.18471
+  0    67      0.06351    0.00193
+
+  1    64     -2.04705    2.00000
+  1    65     -2.02388    2.00000
+  1    66     -0.69977    1.33170
+  1    67      0.00869    0.00333
+
+
+Fermi level: -0.63082
+
+Gap: 0.445 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.488 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.03166    0.01828    0.09315
+  1 Cu   -0.03166    0.01828    0.09315
+  2 Cu    0.00000   -0.03656    0.09315
+  3 Cu    0.00000    0.00000    0.11384
+  4 Cu    0.00000    0.03615   -0.01834
+  5 Cu    0.00000    0.00000   -0.13313
+  6 Cu   -0.03131   -0.01808   -0.01834
+  7 Cu    0.03131   -0.01808   -0.01834
+  8 Cu   -0.00000   -0.00000   -0.09010
+  9 Cu    0.00000    0.01321   -0.03210
+ 10 Cu    0.01144   -0.00660   -0.03210
+ 11 Cu   -0.01144   -0.00660   -0.03210
+ 12 H     0.00000    0.00000   -0.04123
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.473543   10.128120    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.061969    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.276530    3.684557   10.128120    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.828781    3.684557   10.128120    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.185807    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.001483   12.212479    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.277612    2.209923   12.212479    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827699    2.209923   12.212479    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.161619    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:34:57   -40.365159   -2.84
+iter:   2 13:34:58   -40.218729   -3.10  -2.24
+iter:   3 13:35:00   -40.215425   -4.54  -3.00
+iter:   4 13:35:01   -40.214216   -4.46  -3.10
+iter:   5 13:35:03   -40.213904   -5.25  -3.49
+iter:   6 13:35:05   -40.213776   -5.52  -3.72
+iter:   7 13:35:06   -40.213809c  -5.75  -3.76
+iter:   8 13:35:08   -40.213806c  -6.36  -4.08c
+iter:   9 13:35:10   -40.213753c  -6.12  -4.07c
+iter:  10 13:35:11   -40.213781c  -6.83  -4.37c
+iter:  11 13:35:13   -40.213785c  -7.38  -4.63c
+iter:  12 13:35:14   -40.213775c  -7.74c -4.72c
+
+Converged after 12 iterations.
+
+Dipole moment: (-0.102520, -0.059190, -0.002646) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.536874
+Potential:     +105.002816
+External:        +0.000000
+XC:              -7.762071
+Entropy (-ST):   -0.227679
+Local:           +5.196194
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.327614
+Extrapolated:   -40.213775
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77698    1.62056
+  0    65     -0.67090    1.19305
+  0    66     -0.67089    1.19299
+  0    67      0.06946    0.00180
+
+  1    64     -2.04575    2.00000
+  1    65     -2.02237    2.00000
+  1    66     -0.70397    1.34597
+  1    67      0.01636    0.00306
+
+
+Fermi level: -0.63180
+
+Gap: 0.446 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.488 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.02694    0.01556    0.07432
+  1 Cu   -0.02694    0.01556    0.07432
+  2 Cu    0.00000   -0.03111    0.07432
+  3 Cu   -0.00000    0.00000    0.09434
+  4 Cu    0.00000    0.01206   -0.00478
+  5 Cu    0.00000    0.00000   -0.11112
+  6 Cu   -0.01045   -0.00603   -0.00478
+  7 Cu    0.01045   -0.00603   -0.00478
+  8 Cu   -0.00000    0.00000   -0.09711
+  9 Cu    0.00000    0.01640   -0.00521
+ 10 Cu    0.01420   -0.00820   -0.00521
+ 11 Cu   -0.01420   -0.00820   -0.00521
+ 12 H     0.00000    0.00000   -0.08882
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.476019   10.123485    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.050023    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.274385    3.683319   10.123485    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.830926    3.683319   10.123485    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.179895    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.002019   12.203504    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.278076    2.209655   12.203504    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827235    2.209655   12.203504    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.156758    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:35:16   -40.376873   -2.79
+iter:   2 13:35:18   -40.221972   -3.07  -2.22
+iter:   3 13:35:20   -40.218080   -4.47  -2.95
+iter:   4 13:35:21   -40.216465   -4.36  -3.06
+iter:   5 13:35:23   -40.216041   -5.10  -3.43
+iter:   6 13:35:24   -40.215928   -5.40  -3.66
+iter:   7 13:35:26   -40.215957c  -5.57  -3.69
+iter:   8 13:35:28   -40.215955c  -6.31  -4.01c
+iter:   9 13:35:29   -40.215868c  -6.01  -4.00c
+iter:  10 13:35:31   -40.215891c  -6.88  -4.36c
+iter:  11 13:35:33   -40.215901c  -7.35  -4.57c
+iter:  12 13:35:34   -40.215898c  -7.73c -4.64c
+
+Converged after 12 iterations.
+
+Dipole moment: (-0.146469, -0.084564, -0.003203) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -142.147008
+Potential:     +104.703168
+External:        +0.000000
+XC:              -7.856826
+Entropy (-ST):   -0.227504
+Local:           +5.198520
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.329650
+Extrapolated:   -40.215898
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77397    1.60921
+  0    65     -0.67371    1.20348
+  0    66     -0.67370    1.20341
+  0    67      0.07450    0.00170
+
+  1    64     -2.04400    2.00000
+  1    65     -2.02008    2.00000
+  1    66     -0.70190    1.33396
+  1    67      0.02466    0.00280
+
+
+Fermi level: -0.63244
+
+Gap: 0.451 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.491 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.01719    0.00993    0.04975
+  1 Cu   -0.01719    0.00993    0.04975
+  2 Cu    0.00000   -0.01985    0.04975
+  3 Cu   -0.00000   -0.00000    0.07312
+  4 Cu    0.00000   -0.02311   -0.00135
+  5 Cu    0.00000    0.00000   -0.06055
+  6 Cu    0.02002    0.01156   -0.00135
+  7 Cu   -0.02002    0.01156   -0.00135
+  8 Cu    0.00000   -0.00000   -0.09478
+  9 Cu    0.00000    0.02362    0.01408
+ 10 Cu    0.02045   -0.01181    0.01408
+ 11 Cu   -0.02045   -0.01181    0.01408
+ 12 H     0.00000    0.00000   -0.10248
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.478071   10.119072    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.036100    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.272608    3.682293   10.119072    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.832703    3.682293   10.119072    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.172690    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.002144   12.193732    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.278184    2.209593   12.193732    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827127    2.209593   12.193732    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.137879    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:35:36   -40.365605   -2.77
+iter:   2 13:35:38   -40.225132   -3.09  -2.24
+iter:   3 13:35:39   -40.221024   -4.45  -2.90
+iter:   4 13:35:41   -40.219155   -4.29  -3.02
+iter:   5 13:35:43   -40.218558   -4.88  -3.36
+iter:   6 13:35:44   -40.218532   -5.23  -3.62
+iter:   7 13:35:46   -40.218513c  -5.12  -3.56
+iter:   8 13:35:48   -40.218490c  -6.44  -3.92
+iter:   9 13:35:49   -40.218369   -5.80  -3.94
+iter:  10 13:35:51   -40.218380c  -7.22  -4.36c
+iter:  11 13:35:52   -40.218414c  -6.68  -4.44c
+iter:  12 13:35:54   -40.218400c  -7.47c -4.47c
+
+Converged after 12 iterations.
+
+Dipole moment: (-0.173074, -0.099924, -0.002954) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -141.579233
+Potential:     +104.273679
+External:        +0.000000
+XC:              -8.001002
+Entropy (-ST):   -0.226634
+Local:           +5.201473
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.331717
+Extrapolated:   -40.218400
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77213    1.60371
+  0    65     -0.67654    1.21746
+  0    66     -0.67652    1.21739
+  0    67      0.07657    0.00167
+
+  1    64     -2.04203    2.00000
+  1    65     -2.01672    2.00000
+  1    66     -0.69199    1.28972
+  1    67      0.03448    0.00254
+
+
+Fermi level: -0.63234
+
+Gap: 0.459 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.498 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00639    0.00369    0.02125
+  1 Cu   -0.00639    0.00369    0.02125
+  2 Cu    0.00000   -0.00738    0.02125
+  3 Cu    0.00000    0.00000    0.05509
+  4 Cu    0.00000   -0.05085   -0.00438
+  5 Cu    0.00000   -0.00000    0.00601
+  6 Cu    0.04403    0.02542   -0.00438
+  7 Cu   -0.04403    0.02542   -0.00438
+  8 Cu    0.00000    0.00000   -0.08313
+  9 Cu   -0.00000    0.01479    0.02039
+ 10 Cu    0.01281   -0.00740    0.02039
+ 11 Cu   -0.01281   -0.00740    0.02039
+ 12 H     0.00000    0.00000   -0.06977
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.477800   10.117760    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.030953    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.272843    3.682429   10.117760    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.832468    3.682429   10.117760    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.169188    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.001852   12.190081    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.277932    2.209738   12.190081    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827379    2.209738   12.190081    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.120297    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:35:56   -40.232135   -3.62
+iter:   2 13:35:58   -40.220581   -4.16  -2.79
+iter:   3 13:35:59   -40.220265   -5.33  -3.28
+iter:   4 13:36:01   -40.220005   -5.01  -3.39
+iter:   5 13:36:02   -40.219719   -5.18  -3.70
+iter:   6 13:36:04   -40.219720   -6.40  -3.82
+iter:   7 13:36:06   -40.219784c  -5.46  -3.85
+iter:   8 13:36:07   -40.219762c  -6.77  -4.16c
+iter:   9 13:36:09   -40.219739c  -6.76  -4.29c
+iter:  10 13:36:11   -40.219740c  -7.03  -4.51c
+iter:  11 13:36:12   -40.219726c  -7.17  -4.55c
+iter:  12 13:36:14   -40.219725c  -7.97c -4.81c
+
+Converged after 12 iterations.
+
+Dipole moment: (-0.162513, -0.093827, -0.002361) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -141.116014
+Potential:     +103.905377
+External:        +0.000000
+XC:              -8.098001
+Entropy (-ST):   -0.225743
+Local:           +5.201784
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.332596
+Extrapolated:   -40.219725
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77310    1.60790
+  0    65     -0.67812    1.22664
+  0    66     -0.67810    1.22658
+  0    67      0.07369    0.00172
+
+  1    64     -2.04143    2.00000
+  1    65     -2.01498    2.00000
+  1    66     -0.68266    1.24808
+  1    67      0.03857    0.00245
+
+
+Fermi level: -0.63199
+
+Gap: 0.465 eV
+Transition (v -> c):
+  (s=0, k=0, n=66, [0.00, 0.00, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.504 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00132    0.00076    0.01042
+  1 Cu   -0.00132    0.00076    0.01042
+  2 Cu    0.00000   -0.00153    0.01042
+  3 Cu   -0.00000   -0.00000    0.05243
+  4 Cu   -0.00000   -0.04786   -0.01250
+  5 Cu    0.00000    0.00000    0.02651
+  6 Cu    0.04144    0.02393   -0.01250
+  7 Cu   -0.04144    0.02393   -0.01250
+  8 Cu    0.00000    0.00000   -0.07092
+  9 Cu    0.00000   -0.00455    0.01116
+ 10 Cu   -0.00394    0.00228    0.01116
+ 11 Cu    0.00394    0.00228    0.01116
+ 12 H    -0.00000    0.00000   -0.01853
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.476689   10.117389    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.030295    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.273805    3.682984   10.117389    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.831506    3.682984   10.117389    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.167167    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.001604   12.189468    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.277717    2.209862   12.189468    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827594    2.209862   12.189468    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.112493    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:36:16   -40.220568   -4.58
+iter:   2 13:36:17   -40.220349   -5.93  -3.61
+iter:   3 13:36:19   -40.220352   -6.45  -3.74
+iter:   4 13:36:21   -40.220303c  -5.72  -3.86
+iter:   5 13:36:22   -40.220243c  -6.29  -4.18c
+iter:   6 13:36:24   -40.220243c  -7.34  -4.41c
+iter:   7 13:36:26   -40.220276c  -6.61  -4.45c
+iter:   8 13:36:27   -40.220262c  -7.38  -4.65c
+iter:   9 13:36:29   -40.220254c  -7.23  -4.72c
+iter:  10 13:36:30   -40.220255c  -8.74c -5.03c
+
+Converged after 10 iterations.
+
+Dipole moment: (-0.144084, -0.083187, -0.001863) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -140.965808
+Potential:     +103.788969
+External:        +0.000000
+XC:              -8.131853
+Entropy (-ST):   -0.225275
+Local:           +5.201074
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.332893
+Extrapolated:   -40.220255
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77427    1.61185
+  0    65     -0.67868    1.22972
+  0    66     -0.67866    1.22966
+  0    67      0.07095    0.00177
+
+  1    64     -2.04157    2.00000
+  1    65     -2.01449    2.00000
+  1    66     -0.67820    1.22746
+  1    67      0.03993    0.00241
+
+
+Fermi level: -0.63190
+
+Gap: 0.467 eV
+Transition (v -> c):
+  (s=0, k=1, n=66, [0.33, -0.33, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.506 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00117    0.00068    0.00716
+  1 Cu   -0.00117    0.00068    0.00716
+  2 Cu   -0.00000   -0.00135    0.00716
+  3 Cu    0.00000    0.00000    0.05375
+  4 Cu    0.00000   -0.03148   -0.01648
+  5 Cu    0.00000    0.00000    0.02738
+  6 Cu    0.02726    0.01574   -0.01648
+  7 Cu   -0.02726    0.01574   -0.01648
+  8 Cu   -0.00000    0.00000   -0.06060
+  9 Cu    0.00000   -0.01491    0.00229
+ 10 Cu   -0.01291    0.00746    0.00229
+ 11 Cu    0.01291    0.00746    0.00229
+ 12 H     0.00000    0.00000    0.00785
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.475307   10.116434    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.029893    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.275002    3.683676   10.116434    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.830309    3.683676   10.116434    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.164063    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.001312   12.188648    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.277464    2.210008   12.188648    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.827847    2.210008   12.188648    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.108121    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:36:32   -40.223174   -4.42
+iter:   2 13:36:34   -40.220669   -4.88  -3.16
+iter:   3 13:36:36   -40.220718   -6.03  -3.64
+iter:   4 13:36:37   -40.220725c  -5.72  -3.77
+iter:   5 13:36:39   -40.220636c  -6.01  -4.07c
+iter:   6 13:36:40   -40.220637c  -7.11  -4.25c
+iter:   7 13:36:42   -40.220666c  -6.43  -4.29c
+iter:   8 13:36:44   -40.220670c  -7.62c -4.58c
+
+Converged after 8 iterations.
+
+Dipole moment: (-0.120817, -0.069754, -0.001196) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -140.770002
+Potential:     +103.628178
+External:        +0.000000
+XC:              -8.168667
+Entropy (-ST):   -0.224943
+Local:           +5.202293
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.333141
+Extrapolated:   -40.220670
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77477    1.61548
+  0    65     -0.67865    1.23276
+  0    66     -0.67864    1.23269
+  0    67      0.06963    0.00181
+
+  1    64     -2.04087    2.00000
+  1    65     -2.01313    2.00000
+  1    66     -0.67442    1.21268
+  1    67      0.04233    0.00237
+
+
+Fermi level: -0.63123
+
+Gap: 0.465 eV
+Transition (v -> c):
+  (s=0, k=1, n=66, [0.33, -0.33, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.508 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00297    0.00172    0.00298
+  1 Cu   -0.00297    0.00172    0.00298
+  2 Cu   -0.00000   -0.00343    0.00298
+  3 Cu    0.00000   -0.00000    0.05496
+  4 Cu    0.00000   -0.00771   -0.01831
+  5 Cu   -0.00000    0.00000    0.02593
+  6 Cu    0.00667    0.00385   -0.01831
+  7 Cu   -0.00667    0.00385   -0.01831
+  8 Cu    0.00000    0.00000   -0.04522
+  9 Cu    0.00000   -0.01933   -0.00166
+ 10 Cu   -0.01674    0.00967   -0.00166
+ 11 Cu    0.01674    0.00967   -0.00166
+ 12 H     0.00000    0.00000    0.01727
+
+System changes: positions 
+
+Initializing position-dependent things.
+
+Density initialized from wave functions
+                               
+                               
+                               
+                               
+                               
+              H                
+            Cu    Cu           
+       Cu    Cu    Cu          
+                               
+        Cu    Cu               
+               Cu    Cu        
+                               
+           Cu    Cu            
+                               
+                               
+                               
+                               
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 Cu     1.276328    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   1 Cu     3.828983    0.736888    8.000000    ( 0.0000,  0.0000,  0.0000)
+   2 Cu     2.552655    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   3 Cu     5.105311    2.947553    8.000000    ( 0.0000,  0.0000,  0.0000)
+   4 Cu    -0.000000    1.473977   10.114684    ( 0.0000,  0.0000,  0.0000)
+   5 Cu     2.552655    1.473776   10.029047    ( 0.0000,  0.0000,  0.0000)
+   6 Cu     1.276154    3.684341   10.114684    ( 0.0000,  0.0000,  0.0000)
+   7 Cu     3.829157    3.684341   10.114684    ( 0.0000,  0.0000,  0.0000)
+   8 Cu     0.000000    0.000000   12.158992    ( 0.0000,  0.0000,  0.0000)
+   9 Cu     2.552655    0.000608   12.187290    ( 0.0000,  0.0000,  0.0000)
+  10 Cu     1.276855    2.210360   12.187290    ( 0.0000,  0.0000,  0.0000)
+  11 Cu     3.828456    2.210360   12.187290    ( 0.0000,  0.0000,  0.0000)
+  12 H      2.552655    1.473776   13.105648    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    5.105311    0.000000    0.000000    21     0.2105
+  2. axis:    yes    2.552655    4.421329    0.000000    21     0.2105
+  3. axis:    no     0.000000    0.000000   20.168469    81     0.2490
+
+  Lengths:   5.105311   5.105311  20.168469
+  Angles:   90.000000  90.000000  60.000000
+
+Effective grid spacing dv^(1/3) = 0.2336
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens
+iter:   1 13:36:46   -40.231011   -3.92
+iter:   2 13:36:47   -40.221240   -4.26  -2.85
+iter:   3 13:36:49   -40.221109   -5.49  -3.46
+iter:   4 13:36:51   -40.221116c  -5.38  -3.62
+iter:   5 13:36:52   -40.221012c  -5.98  -3.95
+iter:   6 13:36:54   -40.221006c  -6.89  -4.17c
+iter:   7 13:36:55   -40.221037c  -6.28  -4.18c
+iter:   8 13:36:57   -40.221037c  -7.32  -4.38c
+iter:   9 13:36:59   -40.221042c  -7.27  -4.49c
+iter:  10 13:37:00   -40.221040c  -7.83c -4.76c
+
+Converged after 10 iterations.
+
+Dipole moment: (-0.082867, -0.047843, -0.001698) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -540269.912256)
+
+Kinetic:       -140.761252
+Potential:     +103.635550
+External:        +0.000000
+XC:              -8.184612
+Entropy (-ST):   -0.224689
+Local:           +5.201619
+SIC:             +0.000000
+--------------------------
+Free energy:    -40.333384
+Extrapolated:   -40.221040
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0    64     -0.77649    1.61722
+  0    65     -0.68038    1.23545
+  0    66     -0.68036    1.23539
+  0    67      0.06760    0.00182
+
+  1    64     -2.04151    2.00000
+  1    65     -2.01363    2.00000
+  1    66     -0.67299    1.20029
+  1    67      0.04399    0.00231
+
+
+Fermi level: -0.63239
+
+Gap: 0.464 eV
+Transition (v -> c):
+  (s=0, k=1, n=66, [0.33, -0.33, 0.00]) -> (s=0, k=2, n=67, [0.33, 0.33, 0.00])
+Direct/indirect transitions are different
+Direct gap: 0.509 eV
+Transition at: (s=0, k=2, n=66, [0.33, 0.33, 0.00])
+
+Forces in eV/Ang:
+  0 Cu    0.00311    0.00180   -0.00308
+  1 Cu   -0.00311    0.00180   -0.00308
+  2 Cu    0.00000   -0.00359   -0.00308
+  3 Cu   -0.00000    0.00000    0.05215
+  4 Cu    0.00000    0.01139   -0.01789
+  5 Cu    0.00000   -0.00000    0.03249
+  6 Cu   -0.00987   -0.00570   -0.01789
+  7 Cu    0.00987   -0.00570   -0.01789
+  8 Cu   -0.00000   -0.00000   -0.02499
+  9 Cu    0.00000   -0.01106   -0.00301
+ 10 Cu   -0.00958    0.00553   -0.00301
+ 11 Cu    0.00958    0.00553   -0.00301
+ 12 H     0.00000    0.00000    0.01971
+
+Timing:                                      incl.     excl.
+-------------------------------------------------------------------
+Density initialized from wave functions:     2.609     2.537   0.6% |
+ Symmetrize density:                         0.071     0.071   0.0% |
+Forces:                                      4.893     4.893   1.1% |
+Hamiltonian:                                 5.788     0.012   0.0% |
+ Atomic:                                     4.275     0.012   0.0% |
+  XC Correction:                             4.263     4.263   1.0% |
+ Calculate atomic Hamiltonians:              0.341     0.341   0.1% |
+ Communicate:                                0.000     0.000   0.0% |
+ Initialize Hamiltonian:                     0.000     0.000   0.0% |
+ Poisson:                                    0.009     0.009   0.0% |
+ XC 3D grid:                                 1.150     1.150   0.3% |
+LCAO initialization:                         1.529     0.014   0.0% |
+ LCAO eigensolver:                           0.320     0.000   0.0% |
+  Calculate projections:                     0.001     0.001   0.0% |
+  DenseAtomicCorrection:                     0.001     0.001   0.0% |
+  Distribute overlap matrix:                 0.000     0.000   0.0% |
+  Orbital Layouts:                           0.006     0.006   0.0% |
+  Potential matrix:                          0.310     0.310   0.1% |
+  Sum over cells:                            0.001     0.001   0.0% |
+ LCAO to grid:                               1.033     1.033   0.2% |
+ Set positions (LCAO WFS):                   0.162     0.029   0.0% |
+  Basic WFS set positions:                   0.001     0.001   0.0% |
+  Basis functions set positions:             0.000     0.000   0.0% |
+  P tci:                                     0.093     0.093   0.0% |
+  ST tci:                                    0.035     0.035   0.0% |
+  mktci:                                     0.004     0.004   0.0% |
+PWDescriptor:                                0.003     0.003   0.0% |
+Redistribute:                                0.014     0.014   0.0% |
+SCF-cycle:                                 425.349     0.108   0.0% |
+ Davidson:                                 323.645    42.647   9.6% |---|
+  Apply H:                                  55.470    54.401  12.3% |----|
+   HMM T:                                    1.069     1.069   0.2% |
+  Subspace diag:                            67.729     0.037   0.0% |
+   calc_h_matrix:                           60.620     4.716   1.1% |
+    Apply H:                                55.904    54.639  12.4% |----|
+     HMM T:                                  1.265     1.265   0.3% |
+   diagonalize:                              1.033     1.033   0.2% |
+   rotate_psi:                               6.040     6.040   1.4% ||
+  calc. matrices:                          137.560    26.719   6.0% |-|
+   Apply H:                                110.841   108.724  24.6% |---------|
+    HMM T:                                   2.117     2.117   0.5% |
+  diagonalize:                               8.599     8.599   1.9% ||
+  rotate_psi:                               11.641    11.641   2.6% ||
+ Density:                                   32.709     0.002   0.0% |
+  Atomic density matrices:                   0.266     0.266   0.1% |
+  Mix:                                       5.833     5.833   1.3% ||
+  Multipole moments:                         0.025     0.025   0.0% |
+  Pseudo density:                           26.582    25.705   5.8% |-|
+   Symmetrize density:                       0.877     0.877   0.2% |
+ Hamiltonian:                               67.695     0.129   0.0% |
+  Atomic:                                   50.101     0.136   0.0% |
+   XC Correction:                           49.965    49.965  11.3% |----|
+  Calculate atomic Hamiltonians:             4.019     4.019   0.9% |
+  Communicate:                               0.001     0.001   0.0% |
+  Poisson:                                   0.113     0.113   0.0% |
+  XC 3D grid:                               13.333    13.333   3.0% ||
+ Orthonormalize:                             1.192     0.003   0.0% |
+  calc_s_matrix:                             0.197     0.197   0.0% |
+  inverse-cholesky:                          0.015     0.015   0.0% |
+  projections:                               0.712     0.712   0.2% |
+  rotate_psi_s:                              0.265     0.265   0.1% |
+Set symmetry:                                0.001     0.001   0.0% |
+Other:                                       1.907     1.907   0.4% |
+-------------------------------------------------------------------
+Total:                                               442.092 100.0%
+
+Memory usage: 439.43 MiB
+Date: Tue Sep 22 13:37:01 2026

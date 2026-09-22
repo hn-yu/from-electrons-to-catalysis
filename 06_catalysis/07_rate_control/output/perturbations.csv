@@ -1,0 +1,11 @@
+parameter,index,shift_eV,TOF_ratio
+states_eV,1,-0.1,0.1445597517571971
+states_eV,1,0.1,6.9165723290212915
+states_eV,2,-0.1,0.9999795308806712
+states_eV,2,0.1,1.000002959009109
+transition_states_eV,0,-0.1,1.0223673206232073
+transition_states_eV,0,0.1,0.8685488776814559
+transition_states_eV,1,-0.1,1.0025166972667112
+transition_states_eV,1,0.1,0.9829303298204093
+transition_states_eV,2,-0.1,5.919099045386159
+transition_states_eV,2,0.1,0.14816990101506508

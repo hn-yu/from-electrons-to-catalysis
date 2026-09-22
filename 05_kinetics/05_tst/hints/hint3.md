@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：先在对数域解释不确定性
 
-A timescale is a single-state waiting time under this model, not a whole experiment.
+当速率跨越许多个数量级时，比较绝对差没有意义。
+
+$$\ln(k_2/k_1)=-\delta G^\ddagger/(k_BT).$$
+
+直接报告能量误差对应的倍率，并说明是否还忽略了前因子变化。极大势垒时保存 ln k 可避免指数下溢，不应把数值零解释成严格禁止反应。

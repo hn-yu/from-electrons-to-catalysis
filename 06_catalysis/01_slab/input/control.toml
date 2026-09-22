@@ -1,0 +1,2 @@
+backend = "gpaw"
+tolerance_eV = 0.05

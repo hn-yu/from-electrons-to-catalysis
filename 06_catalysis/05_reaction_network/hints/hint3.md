@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：元素守恒与位点守恒分开核对
 
-A transition-state shift changes both directions together.
+气相 A/B 在此是形式相同组成的异构态；表面每个占据物种消耗一个位点。
+
+$\sum_i\theta_i=1$ 来自位点平衡，不能替代检查每步原子组成守恒。
+
+Cantera 会检查机制定义，但不会替你判断抽象物种是否代表研究中的真实中间体。真实机制还需要正确组成、吸附计量和一致热化学。

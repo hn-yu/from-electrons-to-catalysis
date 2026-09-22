@@ -1,3 +1,10 @@
-# Worked analysis: Kinetics checkpoint
+# 参考分析
 
-Specify the initial metastable state, temperature, free-energy versus potential-energy barrier, prefactor, transmission/recrossing treatment, competing escape paths and observation timescale. At fixed T compare waiting time 1/k to residence time and competing rates. Check the saddle has one unstable mode along the intended coordinate; NEB convergence alone does not prove this.
+
+水的三个内部振动约 2169.85、4139.64、4390.67 cm⁻¹，另外六个刚体模式约在 0.4 cm⁻¹ 以内。微小负曲率可由数值残差产生；应看模式形状及阈值敏感性，不能一概取绝对值，也不能一概判为过渡态。
+
+高对称吸附点可能横向力恰好为零却是鞍点。小扰动后优化或局部 Hessian 可检查稳定性。
+
+600 K 下势垒提高 0.1 eV，速率乘约 0.145。这个倍率假设前因子和状态人口不变；多步网络并不保证这些条件。
+
+扩散系数还需要真实跳跃长度、各方向连接、占据与相关因子；无偏随机步模型可写 $D\sim zkl^2/(2d)$，但 z 和 k 的“每方向/总跳率”定义必须一致。二维模型势垒既没有真实结构也没有可靠能量标定，不能直接代入真实材料预测。

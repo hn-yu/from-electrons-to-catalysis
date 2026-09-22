@@ -1,0 +1,85 @@
+two_level[0].T_K: 50.0
+two_level[0].Z: 1.0000000002497842
+two_level[0].logZ: 2.497841541097831e-10
+two_level[0].populations: 0.9999999997502158, 2.4978415407858707e-10
+two_level[0].U_eV: 2.4978415407858707e-11
+two_level[0].F_eV: -1.0762366497834933e-12
+two_level[0].S_eV_K: 5.21093041152844e-13
+two_level[1].T_K: 100.0
+two_level[1].Z: 1.0000273743029577
+two_level[1].logZ: 2.7373928288360978e-05
+two_level[1].populations: 0.9999726264463742, 2.7373553625804675e-05
+two_level[1].U_eV: 2.7373553625804678e-06
+two_level[1].F_eV: -2.35890262754865e-07
+two_level[1].S_eV_K: 2.9732456253353326e-08
+two_level[2].T_K: 300.0
+two_level[2].Z: 1.0626895558542657
+two_level[2].logZ: 0.060803011413961605
+two_level[2].populations: 0.9410085894710131, 0.05899141052898692
+two_level[2].U_eV: 0.0058991410528986925
+two_level[2].F_eV: -0.0015718794380883403
+two_level[2].S_eV_K: 2.490340163662344e-05
+two_level[3].T_K: 600.0
+two_level[3].Z: 1.4336688455063349
+two_level[3].logZ: 0.36023678489959926
+two_level[3].populations: 0.6975111464090061, 0.3024888535909938
+two_level[3].U_eV: 0.030248885359099382
+two_level[3].F_eV: -0.018625682572580942
+two_level[3].S_eV_K: 8.14576132194672e-05
+two_level[4].T_K: 1000.0
+two_level[4].Z: 1.9400337280223763
+two_level[4].logZ: 0.6627053585026538
+two_level[4].populations: 0.5154549560431488, 0.48454504395685116
+two_level[4].U_eV: 0.04845450439568512
+two_level[4].F_eV: -0.05710752928826645
+two_level[4].S_eV_K: 0.00010556203368395156
+two_level[5].T_K: 1500.0
+two_level[5].Z: 2.3839998478097546
+two_level[5].logZ: 0.8687796853649111
+two_level[5].populations: 0.4194631140260882, 0.5805368859739117
+two_level[5].U_eV: 0.05805368859739118
+two_level[5].F_eV: -0.11229846120256373
+two_level[5].S_eV_K: 0.00011356809986663662
+two_level[6].T_K: 5000.0
+two_level[6].Z: 3.378623422013728
+two_level[6].logZ: 1.2174683549437555
+two_level[6].populations: 0.2959785318139953, 0.7040214681860045
+two_level[6].U_eV: 0.07040214681860045
+two_level[6].F_eV: -0.5245665275332889
+two_level[6].S_eV_K: 0.00011899373487037788
+oscillator[0].T_K: 50.0
+oscillator[0].ZPE_eV: 0.06
+oscillator[0].U_eV: 0.06000000000009632
+oscillator[0].F_eV: 0.05999999999999654
+oscillator[0].S_eV_K: 1.9954871088856406e-15
+oscillator[1].T_K: 100.0
+oscillator[1].ZPE_eV: 0.06
+oscillator[1].U_eV: 0.06000010750974029
+oscillator[1].F_eV: 0.059999992279609615
+oscillator[1].S_eV_K: 1.1523013067338272e-09
+oscillator[2].T_K: 300.0
+oscillator[2].ZPE_eV: 0.06
+oscillator[2].U_eV: 0.06116809185209551
+oscillator[2].F_eV: 0.05974957096339405
+oscillator[2].S_eV_K: 4.72840296233822e-06
+oscillator[3].T_K: 600.0
+oscillator[3].ZPE_eV: 0.06
+oscillator[3].U_eV: 0.0730649595418025
+oscillator[3].F_eV: 0.05465661480842002
+oscillator[3].S_eV_K: 3.068057455563748e-05
+oscillator[4].T_K: 1000.0
+oscillator[4].ZPE_eV: 0.06
+oscillator[4].U_eV: 0.09966851026514244
+oscillator[4].F_eV: 0.03538819712733407
+oscillator[4].S_eV_K: 6.428031313780837e-05
+oscillator[5].T_K: 1500.0
+oscillator[5].ZPE_eV: 0.06
+oscillator[5].U_eV: 0.1384129400021708
+oscillator[5].F_eV: -0.004999511370468682
+oscillator[5].S_eV_K: 9.560830091509298e-05
+oscillator[6].T_K: 5000.0
+oscillator[6].ZPE_eV: 0.06
+oscillator[6].U_eV: 0.4336481535848572
+oscillator[6].F_eV: -0.5493881995450578
+oscillator[6].S_eV_K: 0.000196607270625983
+Tables and arrays are saved alongside this report.

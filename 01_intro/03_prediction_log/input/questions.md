@@ -1,5 +1,16 @@
-# Assignment
+# 案例与问题
 
-Record a falsifiable prediction before computing.
+“结果应该合理”不是预测。你需要在看到结果前写出对象、范围、原因和会推翻它的观察。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+若预测区间为 $[L,U]$，一次结果 y 落在区间内并不能证明模型准确。区间越宽，越容易覆盖结果，但决策价值越低。
+
+$$\delta\ln k=-\delta G^\ddagger/(k_BT)$$
+
+可以先从允许的速率误差倒推所需能量区间宽度，再决定预测是否足够有用。
+
+
+1. 阅读 prediction-template.md，为一个尚未查看输出的扰动写事前预测。
+2. 必须列出目标观测量、单位、固定条件、区间或变化符号、理由、失效证据。
+3. 单独追加测量与事后解释，禁止覆盖原预测。
+4. 对已经公开的 H/Cu 示例只能做回顾分析；选择新层数、覆盖度或扰动作为下一次预测。

@@ -1,0 +1,2 @@
+columns: T_K, barrier_eV, TST_s^-1, timescale_s, Arrhenius_s^-1
+Tables and arrays are saved alongside this report.

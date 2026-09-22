@@ -1,0 +1,15 @@
+basis: sto-3g
+results[0].r_A: 0.74
+results[0].HF_Hartree: -1.1167593073964255
+results[0].FCI_Hartree: -1.1372838344885023
+results[0].lda,vwn_Hartree: -1.1212061157024127
+results[0].pbe_Hartree: -1.1520727951590923
+results[0].b3lyp_Hartree: -1.1654184106731211
+results[1].r_A: 2.5
+results[1].HF_Hartree: -0.7029435997235269
+results[1].FCI_Hartree: -0.9360549199556059
+results[1].lda,vwn_Hartree: -0.8225405155022383
+results[1].pbe_Hartree: -0.8619408553806542
+results[1].b3lyp_Hartree: -0.8515256533494837
+reference_scope: FCI is exact only within the specified finite basis; all DFT runs are spin restricted.
+Tables and arrays are saved alongside this report.

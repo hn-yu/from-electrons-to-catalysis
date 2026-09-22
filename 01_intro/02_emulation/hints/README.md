@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-An emulator should isolate one assumption; document what its variables and energy scales mean.
+1. [选择比对层级](hint1.md)
+2. [最小单点先于长轨迹](hint2.md)
+3. [接口契约包含单位](hint3.md)

@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-A barrier without a populated starting state cannot determine experimental flux.
+1. [看模式而不只数负号](hint1.md)
+2. [势能路径缺少什么](hint2.md)
+3. [一个事件率不等于材料扩散率](hint3.md)

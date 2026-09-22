@@ -1,9 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-The lower envelope follows clean → quarter → half coverage as chemical potential rises, with crossings at -0.5 and -0.2 eV. The prediction is confirmed for equal-area cells; configurational/vibrational surface entropy is omitted.
-
-Input SHA-256: `05ac869e04f5d847b01d5378bf1a0eec670e3d79e7d434e5336b1daae2947438`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
-
-![Computed result](figure.svg)
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

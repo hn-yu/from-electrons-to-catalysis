@@ -1,3 +1,8 @@
-# Worked analysis: The prediction log
+# 参考分析
 
-A valid entry includes observable, range, confidence, physical reason and falsifier. Commit it before execution. Append the observed result and diagnosis afterward without replacing the original. Example: kBT at 300 K should be 0.02–0.03 eV because 1 eV corresponds to about 11600 K; high confidence; outside this range falsifies the unit conversion.
+
+合格条目可以是：“在固定 1 ML、相同 k 点与约束下，从 4 层增加到 5 层后，吸附能变化绝对值预计仍可能超过 0.05 eV；若相邻两次加厚都进入该阈值，再考虑平台判断。”这是尚待计算的假设，不能把它写成已经发生。
+
+旧教学预测 −0.8 到 +0.3 eV 很宽。三层与四层结果都落入区间，但吸附符号相反，意味着这个区间没有支持“吸附有利”的明确结论。
+
+预测应改变后续计算选择：若厚度不稳定，优先厚度；若数值稳定而位点差很小，优先位点差与方法误差。不能每次都在结果出来后改理由，使任何结果都符合原预期。

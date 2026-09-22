@@ -1,0 +1,13 @@
+backend = "gpaw"
+sites = [
+    "fcc",
+]
+fmax = 0.05
+cutoff_eV = 300
+kpts = [
+    3,
+    3,
+    1,
+]
+smearing_eV = 0.1
+point_group = false

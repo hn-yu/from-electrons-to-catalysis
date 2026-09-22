@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：端点与 image 的物理一致性
 
-A highest image is an approximate barrier; refine it before claiming a saddle.
+每个 image 必须有相同原子数、元素顺序、晶胞与约束含义。原子重排不能靠文件中的行顺序碰运气。
+
+周期体系插值还要处理最小镜像，避免 H 绕远路穿过晶胞。
+
+先检查端点的最大力和最终位点，再讨论带上的势垒；如果一个端点已经不是局部极小值，路径问题本身就定义错了。

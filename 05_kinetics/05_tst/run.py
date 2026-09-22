@@ -1,6 +1,13 @@
-"""Run this project; install the repository with pip install -e . first."""
+"""Read scientific input files, execute the stated method, and report observables."""
 from pathlib import Path
-from catalysis.cli import run_project
+import numpy as np
+from catalysis.teaching_io import arguments, controls, table, column, write_table, record, summary, read_xyz, atom_string
+args = arguments(Path(__file__).parent)
+c = controls(args.input)
+from catalysis.experiments import tst
+c['temperatures_K']=column(args.input/'temperatures.csv','T_K')
+result=tst(c,args.output)
 
-if __name__ == "__main__":
-    run_project(Path(__file__).parent)
+from catalysis.teaching_io import export_tables
+export_tables(args.output, result)
+record(args, result, '\n'.join(summary(result)) + '\nTables and arrays are saved alongside this report.')

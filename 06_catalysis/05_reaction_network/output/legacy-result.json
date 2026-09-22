@@ -1,0 +1,79 @@
+{
+  "project": "05_reaction_network",
+  "input": {
+    "experiment": "reaction_network",
+    "parameters": {
+      "model": {
+        "states_eV": [
+          0.0,
+          -0.3,
+          -0.15
+        ],
+        "product_eV": -0.1,
+        "transition_states_eV": [
+          0.15,
+          0.45,
+          0.55
+        ]
+      },
+      "temperature_K": 600
+    }
+  },
+  "input_sha256": "43851319dc3ded9bbb3782e2a384d26ffa21dc6d8d036019607d000c356ea796",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "species": [
+      "vacancy",
+      "A_ads",
+      "B_ads"
+    ],
+    "stoichiometry": [
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "deltaG_eV": [
+      -0.3,
+      0.15,
+      0.04999999999999999
+    ],
+    "forward_s^-1": [
+      687122163848.5717,
+      6269830.094059595,
+      16490631.517517108
+    ],
+    "reverse_s^-1": [
+      2075605748.0150518,
+      114077584.92494416,
+      43372934.15720817
+    ],
+    "detailed_balance_log_residual": [
+      0.0,
+      0.0,
+      -1.1102230246251565e-16
+    ]
+  }
+}

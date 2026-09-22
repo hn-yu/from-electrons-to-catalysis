@@ -1,3 +1,13 @@
-# Hint 1
+# 提示 1：二阶误差从哪里来
 
-Central differences have O(h^2) truncation error.
+展开 $E(r+h)$ 和 $E(r-h)$ 后相减。常数、二阶项消去，一阶项留下 $2hE'(r)$，三阶项留下 $h^3E′′′(r)/3$。
+
+除以 $2h$ 再取负号，误差是 $O(h^2)$。
+
+用两次相邻结果估计阶数：
+
+```python
+order = np.log(error_h / error_half_h) / np.log(2)
+```
+
+只在截断误差区解释这个阶数；跨越误差谷底时不能期待它恒为 2。

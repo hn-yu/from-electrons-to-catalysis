@@ -1,5 +1,14 @@
-# Assignment
+# 案例与问题
 
-Assess the proposal: species X migrates via Y, therefore run NEB.
+提案：“物种 X 经 Y 迁移，所以我们算一条 NEB，就能解释催化活性。”请拆解其中每一个需要证据的推断。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+$$\Delta G^\ddagger=k_BT\ln\left[\frac{k_BT}{h}\tau\right],$$
+
+这是 κ=1 的单步 TST 反演，只用于已占据初态的平均等待时间。宏观扩散还取决于跳长、网络与相关性；催化活性还取决于人口与反应通量。
+
+
+1. 将“存在路径”“主导微观跳跃”“实验时间内可见”“控制 TOF”拆成四个命题。
+2. 根据 input/observation.csv 的温度与观察时间，反推可见单步势垒量级。
+3. 对每个命题列出最便宜的否定实验，包括端点稳定性和竞争逃逸。
+4. 提出不超过三项的下一步计算，并说明每项为什么比直接加密 NEB 更有决策价值。

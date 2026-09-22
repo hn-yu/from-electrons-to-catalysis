@@ -1,0 +1,7 @@
+barriers_eV = [
+    0.0,
+    3.0,
+    31,
+]
+"prefactor_s^-1" = 10000000000000.0
+temperature_table = "temperatures.csv"

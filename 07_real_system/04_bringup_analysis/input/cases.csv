@@ -1,0 +1,9 @@
+scenario,parameter,value,directory,coverage_ML
+baseline,baseline,baseline,baseline,1.0
+cutoff_eV-0,cutoff_eV,300,cutoff_eV-0,1.0
+kpts-0,kpts,"[4, 4, 1]",kpts-0,1.0
+vacuum_A-0,vacuum_A,8.0,vacuum_A-0,1.0
+size-0,size,"[1, 1, 4]",size-0,1.0
+size-1,size,"[2, 2, 3]",size-1,0.25
+fixed_layers-0,fixed_layers,0,fixed_layers-0,1.0
+smearing_eV-0,smearing_eV,0.05,smearing_eV-0,1.0

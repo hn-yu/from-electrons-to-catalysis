@@ -1,53 +1,50 @@
-# Validation record
+# 验证对象、结果与限制
 
-All substantive example calculations and full tests were submitted to the CPU Slurm partition, with four requested CPU threads per job. No GPU calculation was needed. Inputs and teaching predictions were frozen in commit `700c827` before the first numerical run; the atomic continuation prediction was added in a later commit before its run. Local user Hamiltonian notes were retained.
+本次重做的重点是把公式、科学输入、中间数据与独立参考连起来。下面记录实际运行的证据；教学质量还需要通过项目中的推导和受控实验判断，不能由测试数量替代。
 
-## Independent numerical checks
+## 自己实现后与成熟工具比较
 
-- Self-written RHF energies for H2, HeH+ and LiH match PySCF within 1.3e-12 Hartree in the example environment. The suite additionally checks electron number and the final commutator residual.
-- Molecular RRHO Gibbs energies for optimized H2, CO, CO2 and H2O agree with ASE to about 2.3e-7 eV. Geometry gradients, internal-mode positivity and vibrational mode counts are checked separately.
-- The hand-written Muller–Brown NEB barrier is approximately 1.056244 eV; the ASE difference is about 0.000320 eV. The band residual and stationary endpoints have independent checks.
-- Seeded WHAM shape errors against exact 1D and integrated 2D marginals are about 0.00225 and 0.00256 eV. Exact biased-histogram WHAM, normalization and overlap tests are distinct from the stochastic example.
-- Microkinetic direct steady-state, BDF integration and a matrix exponential agree. Detailed balance, site conservation, equilibrium zero flux and a finite-difference degree-of-rate-control sum provide physical and limiting-case checks.
-- The atomic ASE/EMT continuation gives a 0.009493 eV hop barrier on a fixed Cu substrate; it remains explicitly an empirical-potential workflow example.
+| 对象 | 独立路径 | 实际观察 |
+|---|---|---|
+| Morse 能量/力 | ASE MorsePotential，匹配参数与截断 | 径向及笛卡尔力在浮点精度内一致 |
+| LCAO | 自己正交化；SciPy generalized eigh | 本征值、度量归一化与残差一致 |
+| RHF | 文本 AO 积分上的自写 SCF；从 XYZ 新运行 PySCF | H₂、HeH⁺、LiH、H₂O 能量差 <10⁻¹² Hartree；电子数、D、F 也核对 |
+| 水的振动 | 自写质量加权；ASE VibrationsData | 内部频率约 2169.851、4139.636、4390.673 cm⁻¹；差 <2×10⁻⁵ cm⁻¹ |
+| RRHO | 自写 H/S/G；ASE IdealGasThermo | 四个分子 G 的差约 10⁻⁷ eV；同几何/频率/标准态 |
+| 优化 | 自写 Armijo 下降；SciPy BFGS | 比较各起点的驻点、能量与力，不比较迭代数 |
+| Verlet | 自写积分器；ASE VelocityVerlet | 同势、质量、初态、内部时间单位，最大轨迹差约 4×10⁻¹⁵ Å |
+| NEB | 自写投影；ASE NEB/FIRE | 模型势垒约 1.056244 eV，两者差约 0.000320 eV |
+| WHAM | 自写分箱自洽；PyMBAR FES | 同轨迹形状 RMS 差约 0.000053/0.000149 eV，分别为一维/二维 |
+| 表面稳态 | 自写质量作用方程；Cantera 原生 YAML | 多个 T/p 点的覆盖度与净通量一致；600 K 基准 TOF≈752320.86 s⁻¹ |
+| 速率控制 | 过渡态能量差分；Cantera 正逆共同倍率 | Xi≈(0.02558,0.00294,0.97148)，差分误差内一致 |
 
-## Failures found and retained
+相同输入上的软件对照检查实现。RHF 近似、RRHO 范围、采样遍历性和机制完整性是额外问题，正文专门给出反例。
 
-The first NEB attempt exposed in-place aliasing between a normalized tangent and the spring displacement vectors. A dedicated analytic straight-band check catches this error. The fix copies the tangent before normalizing it. A rate-conservation test also needed a scale-aware residual: subtracting rates near 1e12/s can leave a tiny absolute residual while conserving the dynamics to floating-point precision.
+## 真实结构与 GPAW
 
-The first GPAW installation attempts exposed compiler and LibXC-linkage issues, documented in INSTALL.md. The successful environment uses GPAW 25.7.0. A slab relaxation then exposed a changing point group; slab calculations now disable point-group symmetry while retaining time-reversal symmetry. Completed convergence tasks can be reused only when input, source and library-version checks match.
+Slurm 705355 从 `Al.cif` 重新生成 PBE 体积扫描；新曲线拟合 a₀≈4.047757 Å、B≈79.944 GPa。扫描点与历史曲线不同，所以不要求拟合参数逐位一致。新 GPAW 日志、能量表与记录位于周期项目 output/native-cif-dft。
 
-The actual PBE slab results are evaluated against the input's 0.05 eV target. A failed threshold is a scientific result, not a software-test failure. In particular, three-to-four-layer sensitivity is roughly 0.35 eV, so the original thin-slab setup does not establish a converged adsorption energy. The worked bringup analysis explains what to calculate next.
+Slurm 705354 直接读取 H/Cu 基准 `fcc.POSCAR`，执行 PBE 单点并核对坐标/晶胞保持原输入。能量约 −11.985586 eV；最大允许自由度力约 1.66949 eV/Å，明确是**未松弛单点接口检查**，不作为吸附能或驻点结果。文件位于真实 DFT 项目 output/native-poscar-check。
 
-## Reproduce the audit
+主吸附案例分析先前实际执行的 PBE 数据，能量三元组导出为 CSV，各 case 提供完整起始结构与软件参数。保留已有原始软件日志和历史记录；新的 `--calculate` 驱动关闭点群对称，旧数据部分保留初始对称，故重新优化路径可能不同。
+
+三层→四层的吸附能变化约 0.35 eV，超过既定 0.05 eV。这一失败保留；新接口、更多提示和测试通过都没有消除它。横向单 H 扩胞同时改变覆盖度，也明确单独解释。
+
+## 运行与审计
+
+- 705334：PySCF 从四组 XYZ 生成带指标的真实 AO 文本积分。
+- 705335：PySCF 优化水并生成 9×9 笛卡尔 Hessian。
+- 705344/705345：原生文件入口的核心/分子案例；含 ASE、PyMBAR、Cantera 对照。
+- 705360：再次独立检查 XYZ/积分/电子数及 RHF 总能、密度、Fock 矩阵。
+- 705362：所有计算项目通过公开 run.py 入口重新运行；周期/表面默认模式为已执行 PBE 数据分析。
+- 705363：当前完整测试，含修改 XYZ 会改变力及输入哈希、独立 Cantera 温压点、积分与真实坐标匹配。
+
+`python scripts/check_projects.py` 检查所有项目的原生输入、输出及源码文件 SHA-256，并检查当前 README/hints 的本地链接。报告中记录实际源文件哈希、启动 HEAD、软件版本和作业号；工作树尚未提交时，不把 HEAD 误称为源文件的完整身份。
 
 ```bash
 sbatch scripts/slurm.sh -m pytest -q
 python scripts/check_projects.py
-sbatch scripts/slurm.sh scripts/run_all.py --tiers core quantum
-# Run long periodic examples separately as documented in each project.
+sbatch scripts/slurm.sh scripts/run_all.py --tiers core quantum periodic
 ```
 
-GitHub Actions runs the core/molecular tests and the project-layout/input-hash audit on every push. Periodic result checks inspect executed reference outputs; they do not masquerade as fresh GPAW calculations on CI. Dependency versions are stored both in `requirements-lock.txt` and in each result JSON. Source hashes were added after the first run, so the earliest periodic reference contains the pre-run Git revision; later outputs also contain an exact Python source hash.
-
-## Periodic refinement
-
-After observing the Al 4→6 k-mesh sensitivity, a separate prediction commit (`a2b8ee0`) set prospective tolerances of 0.005 A and 2 GPa for the 6→8 refinement. The 8×8×8 result is a0=4.038165 A and B=77.754768 GPa; changes of -0.003882 A and -1.703719 GPa satisfy both declared pairwise thresholds. This is evidence for this refinement, not a claim of exact bulk properties.
-
-## Execution provenance
-
-The initial core/quantum runs were Slurm jobs 705291 and 705292; the first NEB run intentionally remains part of the debugging history. Regenerated core/quantum outputs came from job 705307, with the explicit partition-sum addition regenerated by 705317. Atomic diffusion was regenerated by 705308. The initial periodic Al sweep was 705302 and its prospective refinement 705321. The real-slab sweep used array 705306 (tasks 0–7), with aggregation in 705319. Each archived task result contains its own input, source digest, versions, clean/H2 references and final adsorption geometry; the aggregate's job ID identifies assembly, not a new independent recomputation of every task.
-
-## Completed suite
-
-After publishing all 26 computational results, Slurm job 705323 reported **49 passed, no skips**. The separate project audit verified all **37** project directories, required documents, computational inputs and output hashes. These tests passed before the main implementation/output commit was pushed. Later optional artifacts are checked separately when added.
-
-The project CLI now captures the Git revision before launching a long calculation, alongside the source digest. This prevents later commits made while a Slurm calculation is running from being mistaken for its launch revision. The entrypoint/provenance regression test passed in job 705324.
-
-Restart validation was extended to the actual Cu/H PAW dataset contents, including replacement at the same file path. The input/dataset invalidation regression passed in Slurm job 705327. The unchanged reference environment's dataset hashes are archived in `07_real_system/02_real_dft/output/paw-data.json`; new checkpoints record these hashes at execution time.
-
-## Final supplemental audit
-
-The four-site PBE comparison completed in job 705303 and was archived by 705325. It reports adsorption energies of +0.531111 (atop), +0.048063 (bridge), -0.089783 (fcc), and -0.082735 eV (hcp) on the stated 2×2×3 slab. The source at launch is reconstructed and explicitly distinguished from the legacy runner's completion-time revision. Force convergence and energy-reference bookkeeping pass; the separate thickness failure still limits physical interpretation.
-
-After adding those outputs and the restart-invalidation regression, Slurm job **705326 reported 51 passed with no skips**. The 37-project structure/input-hash audit also passed. The first published implementation already passed GitHub Actions run [35690457450](https://github.com/hn-yu/from-electrons-to-catalysis/actions/runs/35690457450); subsequent pushes automatically rerun the complete suite.
+GitHub Actions 安装 quantum/reference/test 依赖，运行数值测试和原生输入审计。CI 不安装 GPAW 编译栈，新 DFT 已在 Slurm 单独执行。此前计算与预测的验证历史保存在 [PREVIOUS_VALIDATION.md](docs/PREVIOUS_VALIDATION.md)。

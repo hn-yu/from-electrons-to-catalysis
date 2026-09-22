@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：WHAM 的任意常数与数值稳定性
 
-Unsampled bins are missing data, not zero free energy.
+所有 $f_k$ 同加常数不改变归一化后的概率。每次迭代令 $f_0=0$ 可固定这个自由度。
+
+分母中的指数跨度很大，使用 logsumexp；零计数箱不进入 log。
+
+比较两条 F 曲线时先减去共同定义的参考值或拟合一个常数，再计算形状误差。不同的自由能零点不是算法错误。

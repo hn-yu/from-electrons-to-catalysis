@@ -1,28 +1,43 @@
 {
   "project": "05_dft",
-  "input": {
-    "experiment": "dft",
-    "parameters": {
-      "basis": "sto-3g",
-      "bond_lengths_A": [
-        0.74,
-        2.5
-      ]
-    }
+  "input_files_sha256": {
+    "H2_0.74.xyz": "d343f707afbcedf0da946d30f08b0c36339cb828445a1bcca5b10bd0cce347d9",
+    "H2_2.50.xyz": "1825c4d55976941e925ce4aff0381eacdef4f357f437ce4f98441c59c1e80654",
+    "O2.xyz": "21f5541fbb1387c01b3b74f7e746e6992d69d8a2a56bc094a5aaee9f2d89cdde",
+    "README.md": "77ea77e0417289a3de9b0985d054278ba6face22b54c7ead200c21bab07422a5",
+    "control.toml": "8b9794c80c2a431cbe267b7d1d80cb3318983c0ca29e79747438dcda7a67c80e",
+    "geometries.csv": "ece1ea6d8082a335017fa58ebf7e1c4860352f1a75c9da3cf637e5911619635e"
   },
-  "input_sha256": "c9fce017bf04e3ae1d72089e4d7112623832140d4429dff0ccb5b6230099d72c",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "03_electronic_structure/05_dft/run.py": "5865a81777ad4a6d9fc929492c17177f1ea8b3fb2dce29da42e237bdf6f0bb20",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
     "basis": "sto-3g",
     "results": [
@@ -31,7 +46,7 @@
         "HF_Hartree": -1.1167593073964255,
         "FCI_Hartree": -1.1372838344885023,
         "lda,vwn_Hartree": -1.1212061157024127,
-        "pbe_Hartree": -1.1520727951590926,
+        "pbe_Hartree": -1.1520727951590923,
         "b3lyp_Hartree": -1.1654184106731211
       },
       {
@@ -39,8 +54,8 @@
         "HF_Hartree": -0.7029435997235269,
         "FCI_Hartree": -0.9360549199556059,
         "lda,vwn_Hartree": -0.8225405155022383,
-        "pbe_Hartree": -0.861940855380654,
-        "b3lyp_Hartree": -0.8515256533494835
+        "pbe_Hartree": -0.8619408553806542,
+        "b3lyp_Hartree": -0.8515256533494837
       }
     ],
     "reference_scope": "FCI is exact only within the specified finite basis; all DFT runs are spin restricted."

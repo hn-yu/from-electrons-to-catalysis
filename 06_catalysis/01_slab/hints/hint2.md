@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：几何约束也是模型参数
 
-Recompute reference energies with compatible settings.
+固定底层可模拟体相支撑，但固定多少层影响松弛和表面响应。
+
+POSCAR 的 Selective dynamics 标记必须与设想一致；并不是 Python 里写了一个 fixed_layers 数字就自动证明结构正确。
+
+查看输入坐标和约束，再查看输出最大力。受约束原子的投影力为零不能当作它们在自由空间达到驻点的证据。

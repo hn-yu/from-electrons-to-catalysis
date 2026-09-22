@@ -1,3 +1,9 @@
-# Hint 3
+# 提示 3：用斜率检验整张扫描表
 
-The constant-entropy toy reference is not a full thermochemical database.
+固定 T 时
+
+$$\frac{\partial\Delta G_{ads}}{\partial\ln p}=-k_BT.$$
+
+取两个任意正压力点检查这个斜率，比只核对某个预先给出的数值更强。
+
+若相差因子 $\ln10$，很可能混用了自然对数与常用对数。画 log10 p 横轴时，斜率应是 $-k_BT\ln10$。

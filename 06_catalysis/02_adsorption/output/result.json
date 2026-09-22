@@ -1,90 +1,100 @@
 {
   "project": "02_adsorption",
-  "input": {
-    "experiment": "adsorption",
-    "parameters": {
-      "backend": "emt",
-      "size": [
-        2,
-        2,
-        3
-      ],
-      "vacuum_A": 8.0,
-      "fixed_layers": 1,
-      "sites": [
-        "ontop",
-        "bridge",
-        "fcc",
-        "hcp"
-      ],
-      "fmax": 0.04
-    }
+  "input_files_sha256": {
+    "DATA_SOURCE.md": "6bc139701dd8eceae2388037d01a3395d6c4455d749f6673e76c86fba71fe4b0",
+    "README.md": "3526854d15d0e73f878543b8111ddb9f76f74cc7d2845f84136ad9e453742adf",
+    "baseline/H2.extxyz": "071e1e5cfb99dae23986a6b3bb23141694308438ae1858ef5846e4bf4980512c",
+    "baseline/bridge.POSCAR": "5d1094afc1d575473ffb28aafef2ade6e872454257d05bd2bc08f0292f1bbfcf",
+    "baseline/calculator.toml": "4ee3dc2d9a31910c15317722907a800be5738eca6358edcdc4f3038f61fa6f85",
+    "baseline/clean.POSCAR": "28956a247055f48e80d846e034bb32ad761c11617adc843554cfd65714d4edce",
+    "baseline/fcc.POSCAR": "e1603e4fa7be69671d827ef57e1ed2e21dc5c4847a8abc91383e0da1d0b1396e",
+    "baseline/hcp.POSCAR": "113eac0a46538a2cae81e9c347c5685b1560551724b7fe0390f88eacb9197250",
+    "baseline/ontop.POSCAR": "9bde32797d9f1d714ac8bee1249c9a41b1e76f6496b81ec39fafc67f09787137",
+    "cases.csv": "36ef7769af963c91ad17eab8c20ff3e36b816f8ff7f416ba563a9ca8900e36f6",
+    "control.toml": "38c3f532a0c842023b870716db6a5321de26415a85108951a5400e88c3a4d3ff",
+    "energies.csv": "201cdd7addb5fec4813ceeb86c8650a8a71bf1fd48097ed512e34c166696a4af"
   },
-  "input_sha256": "f45d4d57ea174c45acde75f3d4452ff1046ed5baa0ec6e1898b41b9263ac3d03",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "06_catalysis/02_adsorption/run.py": "e7c798c61e766eb185aee3c2a15a2b23bada3a692c40f4d7ecc294aaeaf71d59",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
-    "backend": "emt",
-    "reference": "E(slab+H)-E(slab)-0.5 E(H2)",
+    "backend": "gpaw",
     "coverage_ML": 0.25,
-    "clean_eV": 2.8402760046582713,
-    "H2_eV": 1.0705412692469816,
+    "clean_eV": -36.842150445181304,
+    "H2_eV": -6.5923090093646906,
     "sites": [
       {
         "initial_site": "ontop",
-        "total_eV": 2.9398901001227866,
-        "adsorption_eV": -0.4356565391589755,
+        "total_eV": -39.607194000190844,
+        "adsorption_eV": 0.5311109496728044,
+        "force_max_eV_A": 0.03319100046610585,
         "final_H_position_A": [
-          1.9189603371554953e-16,
-          2.4228526999516596e-16,
-          14.011430290360252
-        ],
-        "force_max_eV_A": 0.037692327499928575
+          -7.267431589112657e-20,
+          2.448636292354312e-20,
+          13.691902634303924
+        ]
       },
       {
         "initial_site": "bridge",
-        "total_eV": 2.893435609273947,
-        "adsorption_eV": -0.4821110300078151,
+        "total_eV": -40.09024201123972,
+        "adsorption_eV": 0.04806293862393218,
+        "force_max_eV_A": 0.03947402080376796,
         "final_H_position_A": [
-          1.276327740041719,
-          -3.788262840624602e-05,
-          13.82186817731419
-        ],
-        "force_max_eV_A": 0.026961382628043713
+          1.2763114620834413,
+          0.007814039663266006,
+          13.24892898471376
+        ]
       },
       {
         "initial_site": "fcc",
-        "total_eV": 2.8843167050478113,
-        "adsorption_eV": -0.4912299342339508,
+        "total_eV": -40.228088167018846,
+        "adsorption_eV": -0.08978321715519755,
+        "force_max_eV_A": 0.027254049959165787,
         "final_H_position_A": [
-          1.2763277400417188,
-          0.7368881642872727,
-          13.787701611371395
-        ],
-        "force_max_eV_A": 0.031923668370180014
+          1.2762839764553353,
+          0.7368628973688949,
+          13.102710845056679
+        ]
       },
       {
         "initial_site": "hcp",
-        "total_eV": 2.8840734909248096,
-        "adsorption_eV": -0.49147314835695255,
+        "total_eV": -40.221039884685624,
+        "adsorption_eV": -0.0827349348219748,
+        "force_max_eV_A": 0.03248747849902858,
         "final_H_position_A": [
           2.5526554800834367,
           1.4737763285745453,
-          13.790846834332761
-        ],
-        "force_max_eV_A": 0.03945127626802547
+          13.105647535565705
+        ]
       }
     ],
-    "scope": "EMT is a workflow emulator, not a DFT adsorption prediction."
+    "execution": "Analysis of previously executed PBE calculations; see input/DATA_SOURCE.md"
   }
 }

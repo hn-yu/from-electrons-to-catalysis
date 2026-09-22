@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-emt adsorption energies (eV): ontop: -0.435657, bridge: -0.482111, fcc: -0.491230, hcp: -0.491473. The initial-site ordering must be checked against final positions. A symmetry-preserving relaxation may remain on a lateral saddle; displace adsorbates or compute curvature before claiming all sites are metastable.
-
-Input SHA-256: `f45d4d57ea174c45acde75f3d4452ff1046ed5baa0ec6e1898b41b9263ac3d03`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

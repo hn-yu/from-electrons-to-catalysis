@@ -1,3 +1,9 @@
-# Hint 2
+# 提示 2：压力对数要除以标准压力
 
-Adsorption consumes one gas molecule, so subtract its chemical potential.
+$\ln p$ 单独写不完整。$\ln(p/p^\circ)$ 才无量纲。
+
+```python
+mu = mu0 + kBT * np.log(pressure_bar / 1.0)
+```
+
+如果输入是 Pa，标准压力必须写 100000 Pa。单位改变不应改变同一物理状态的 μ。零压力只能作为极限，不能直接取对数。

@@ -1,0 +1,103 @@
+description: Abstract isomer cycle, not hydrogen chemistry. Equal 
+  occupied-species cp cancels in reaction free energies.
+units:
+  length: m
+  quantity: kmol
+  activation-energy: J/kmol
+phases:
+- name: gas
+  thermo: ideal-gas
+  elements:
+  - H
+  species:
+  - A_g
+  - B_g
+  state:
+    T: 600.0
+    P: 1.01 bar
+    X:
+      A_g: 1.0
+      B_g: 0.01
+- name: surface
+  thermo: ideal-surface
+  adjacent-phases:
+  - gas
+  elements:
+  - H
+  species:
+  - X
+  - A_ads
+  - B_ads
+  kinetics: surface
+  reactions: all
+  site-density: 2.7e-8 kmol/m^2
+  state:
+    T: 600.0
+    coverages:
+      X: 1
+species:
+- name: A_g
+  composition:
+    H: 1
+  thermo:
+    model: constant-cp
+    T0: 298.15 K
+    h0: 0 J/kmol
+    s0: 0 J/kmol/K
+    cp0: 20786.1565453831 J/kmol/K
+    reference-pressure: 1 bar
+- name: B_g
+  composition:
+    H: 1
+  thermo:
+    model: constant-cp
+    T0: 298.15 K
+    h0: -9648533.212331003 J/kmol
+    s0: 0 J/kmol/K
+    cp0: 20786.1565453831 J/kmol/K
+    reference-pressure: 1 bar
+- name: X
+  composition: {}
+  thermo:
+    model: constant-cp
+    T0: 298.15 K
+    h0: 0 J/kmol
+    s0: 0 J/kmol/K
+    cp0: 0 J/kmol/K
+    reference-pressure: 1 bar
+- name: A_ads
+  composition:
+    H: 1
+  thermo:
+    model: constant-cp
+    T0: 298.15 K
+    h0: -67539732.48631701 J/kmol
+    s0: 0 J/kmol/K
+    cp0: 20786.1565453831 J/kmol/K
+    reference-pressure: 1 bar
+- name: B_ads
+  composition:
+    H: 1
+  thermo:
+    model: constant-cp
+    T0: 298.15 K
+    h0: -4824266.606165501 J/kmol
+    s0: 0 J/kmol/K
+    cp0: 20786.1565453831 J/kmol/K
+    reference-pressure: 1 bar
+reactions:
+- equation: A_g + X <=> A_ads
+  rate-constant:
+    A: 1732452908.2830138
+    b: 2
+    Ea: 62715465.88015151
+- equation: A_ads <=> B_ads
+  rate-constant:
+    A: 20836619127.981792
+    b: 1
+    Ea: 86836798.910979
+- equation: B_ads <=> B_g + X
+  rate-constant:
+    A: 20836619127.981792
+    b: 1
+    Ea: 53066932.66782051

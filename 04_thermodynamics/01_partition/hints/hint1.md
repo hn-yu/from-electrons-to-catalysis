@@ -1,3 +1,7 @@
-# Hint 1
+# 提示 1：简并度放在哪里
 
-p_i includes degeneracy but entropy is over microstates.
+若能级 i 有 $g_i$ 个相同能量的微观态，每个态的权重是 $e^{-\beta E_i}$，整个能级才乘 $g_i$。
+
+$$p_i/p_j=(g_i/g_j)e^{-\beta(E_i-E_j)}.$$
+
+用这个比值独立核对代码。把简并度当作乘在能量上的系数，会改变物理模型。

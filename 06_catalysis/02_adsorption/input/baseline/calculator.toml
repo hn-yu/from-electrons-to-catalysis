@@ -1,0 +1,15 @@
+backend = "gpaw"
+sites = [
+    "ontop",
+    "bridge",
+    "fcc",
+    "hcp",
+]
+fmax = 0.04
+cutoff_eV = 300
+kpts = [
+    3,
+    3,
+    1,
+]
+point_group = false

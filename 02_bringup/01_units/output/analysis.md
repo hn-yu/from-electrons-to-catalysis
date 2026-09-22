@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-kBT (eV): [0.025851999786435, 0.05170399957287, 0.08617333262145, 0.129259998932175]. The predicted scale is confirmed; conversion round trips and dimensional rejection pass.
-
-Input SHA-256: `b302c5a09eb406e0351f46cadb8a6c77c32da38f72339b89278845ac505804c7`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

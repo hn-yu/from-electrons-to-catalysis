@@ -1,0 +1,3 @@
+columns: T_K, p_bar, mu_minus_Egas_eV, adsorption_G_eV
+model: constant gas entropy approximation; standard pressure 1 bar
+Tables and arrays are saved alongside this report.

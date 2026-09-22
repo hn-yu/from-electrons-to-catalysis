@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-LJ dimer energy span: 1.8e-05 reduced units. Harmonic dt=2.01 gives final energy 1.57e+51, confirming loss of stability above dt=2. Stable timestep errors scale quadratically; bounded oscillation alone is not sampling convergence.
-
-Input SHA-256: `d49175c0e44774f8f333f7e738157eb69b1722796decf2bfa2929a7d8dccc53a`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

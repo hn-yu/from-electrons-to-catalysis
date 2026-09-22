@@ -1,5 +1,15 @@
-# Input contract
+# 输入文件、格式与单位
 
-`example.json` contains the experiment name and all model parameters. Energies are eV and distances angstrom unless a key or the README explicitly specifies atomic/reduced units. Random experiments have a fixed seed.
+从 [项目正文](../README.md) 的物理模型开始。`run.py --input` 接收本目录的副本，而不是一个 JSON 文件。
 
-Change parameters in a copy, record a new prediction, and pass `--input your.json`. The result embeds the exact input and its SHA-256 hash.
+## [control.toml](control.toml)
+
+控制参数；字段中的 eV、A、K、bar 明确单位，数组仅表示扫描或软件设置。
+
+## [hamiltonian.dat](hamiltonian.dat)
+
+完整对称一电子 Hamiltonian，Hartree。
+
+## [overlap.dat](overlap.dat)
+
+完整重叠矩阵，无量纲；必须正定。

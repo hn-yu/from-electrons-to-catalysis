@@ -1,0 +1,5 @@
+temperature_K = 600
+pA_bar = 1.0
+pB_bar = 0.01
+temperature_table = "temperatures.csv"
+pressure_table = "pressures.csv"

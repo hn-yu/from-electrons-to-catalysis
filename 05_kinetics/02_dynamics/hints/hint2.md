@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：为什么比较完整轨迹
 
-For omega=1 the Verlet stability boundary is dt=2.
+一个周期之后终点可能碰巧接近正确值；沿途相位和能量已经有明显误差。
+
+$$\delta r_{max}=\max_{n,i,\alpha}|r^{own}_{ni\alpha}-r^{ASE}_{ni\alpha}|.$$
+
+本例同一势与单位下轨迹差约为浮点舍入量级。长时间混沌体系不应要求坐标逐点永远相同，需改比较守恒量和统计量。

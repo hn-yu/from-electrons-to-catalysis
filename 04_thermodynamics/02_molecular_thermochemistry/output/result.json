@@ -1,124 +1,44 @@
 {
   "project": "02_molecular_thermochemistry",
-  "input": {
-    "experiment": "molecular_thermo",
-    "parameters": {
-      "basis": "sto-3g",
-      "temperature_K": 298.15,
-      "pressure_bar": 1.0,
-      "molecules": [
-        {
-          "name": "H2",
-          "symbols": [
-            "H",
-            "H"
-          ],
-          "positions_A": [
-            [
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              0.74
-            ]
-          ],
-          "symmetry": 2,
-          "linear": true
-        },
-        {
-          "name": "CO",
-          "symbols": [
-            "C",
-            "O"
-          ],
-          "positions_A": [
-            [
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              1.13
-            ]
-          ],
-          "symmetry": 1,
-          "linear": true
-        },
-        {
-          "name": "CO2",
-          "symbols": [
-            "O",
-            "C",
-            "O"
-          ],
-          "positions_A": [
-            [
-              0,
-              0,
-              -1.16
-            ],
-            [
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              1.16
-            ]
-          ],
-          "symmetry": 2,
-          "linear": true
-        },
-        {
-          "name": "H2O",
-          "symbols": [
-            "O",
-            "H",
-            "H"
-          ],
-          "positions_A": [
-            [
-              0,
-              0,
-              0
-            ],
-            [
-              0.758,
-              0,
-              0.504
-            ],
-            [
-              -0.758,
-              0,
-              0.504
-            ]
-          ],
-          "symmetry": 2,
-          "linear": false
-        }
-      ]
-    }
+  "input_files_sha256": {
+    "CO.xyz": "ac2d2a14f261468a59f8c0896f62df2914e0fa3f34e03dff50f2b17c883dcb5b",
+    "CO2.xyz": "eb66a502e2bc4011cf14fd54ebfdb986bb4779495f9fdb428428e9b89a391c43",
+    "H2.xyz": "d343f707afbcedf0da946d30f08b0c36339cb828445a1bcca5b10bd0cce347d9",
+    "H2O.xyz": "098639a560de31d337e86b4175283cc2f42a2b1e66d315824d78e2299c8fbf4c",
+    "README.md": "91f64532d9371a4b3501b55550920742d0ea1fbf5896e388b0fa26a736a0d94a",
+    "control.toml": "6c6e406aec655aa76cb9fb04c0c96c778f9f4f207892e7f9a15ab29bfa75b4d0",
+    "molecules.csv": "14f54b9e530993ef528d920514ca6873fdb2e18fb4540368a9100d676e5e6b70"
   },
-  "input_sha256": "33148070f4f75ffd7b2f7d7fd05a52f8bdb828151304556cf35700d8f936e413",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "04_thermodynamics/02_molecular_thermochemistry/run.py": "cd28b0b21181b0187280374f908abe90cc6b6589522bd9a1cd6a19879518c2ae",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
     "method": "RHF/sto-3g optimized geometry and analytic Hessian; ideal-gas RRHO",
     "results": [
@@ -153,97 +73,97 @@
         "molecule": "CO",
         "positions_A": [
           [
-            1.5710938086730052e-16,
-            6.16341532851241e-17,
-            -0.00774028886038286
+            -1.0903310492036713e-15,
+            -2.242979126886275e-15,
+            -0.007740288860381891
           ],
           [
-            -1.57109380867366e-16,
-            -6.163415328512265e-17,
-            1.1377402888604058
+            1.0903310492036914e-15,
+            2.2429791268862443e-15,
+            1.137740288860359
           ]
         ],
         "frequencies_cm^-1": [
-          2462.0888084539592
+          2462.0888084543776
         ],
-        "electronic_eV": -3026.598667112786,
-        "ZPE_eV": 0.15263005369375832,
-        "thermal_enthalpy_eV": 0.08992613899785057,
-        "H_eV": -3026.3561109200946,
-        "S_eV_K": 0.0020507229686657835,
-        "G_eV": -3026.967533973202,
-        "ASE_G_eV": -3026.967533766005,
+        "electronic_eV": -3026.598667112787,
+        "ZPE_eV": 0.15263005369378424,
+        "thermal_enthalpy_eV": 0.08992613899782465,
+        "H_eV": -3026.3561109200955,
+        "S_eV_K": 0.0020507229686657765,
+        "G_eV": -3026.967533973203,
+        "ASE_G_eV": -3026.967533766006,
         "G_error_eV": -2.0719699023175053e-07,
-        "gradient_max_Hartree_A": 5.939063444327143e-07
+        "gradient_max_Hartree_A": 5.939069117366338e-07
       },
       {
         "molecule": "CO2",
         "positions_A": [
           [
-            5.331020724349924e-16,
-            -1.2579096787665576e-16,
-            -1.1879258638717147
+            -5.498170041707278e-17,
+            -2.883834389177415e-16,
+            -1.1879258638713712
           ],
           [
-            -1.9441180513152624e-17,
-            -1.106929771821451e-16,
-            4.525333874561796e-13
+            -4.2798130272099263e-17,
+            -4.822826583469208e-16,
+            -1.9872390751584407e-13
           ],
           [
-            -5.136608919218799e-16,
-            2.3648394505875774e-16,
-            1.1879258638712367
+            9.777983068920826e-17,
+            7.706660972646414e-16,
+            1.187925863871565
           ]
         ],
         "frequencies_cm^-1": [
-          565.8604270221001,
-          565.8604270222238,
-          1435.249585706119,
-          2535.2357732432556
+          565.8604270241218,
+          565.8604270241335,
+          1435.2495857041606,
+          2535.2357732425116
         ],
-        "electronic_eV": -5035.967457559768,
-        "ZPE_eV": 0.31629647377945824,
-        "thermal_enthalpy_eV": 0.0998832751155887,
-        "H_eV": -5035.551277810873,
-        "S_eV_K": 0.00223346044094204,
-        "G_eV": -5036.21718404134,
-        "ASE_G_eV": -5036.217183815649,
+        "electronic_eV": -5035.967457559767,
+        "ZPE_eV": 0.31629647377953446,
+        "thermal_enthalpy_eV": 0.09988327511551248,
+        "H_eV": -5035.551277810872,
+        "S_eV_K": 0.002233460440941711,
+        "G_eV": -5036.217184041339,
+        "ASE_G_eV": -5036.217183815648,
         "G_error_eV": -2.2569111024495214e-07,
-        "gradient_max_Hartree_A": 4.400955321641218e-07
+        "gradient_max_Hartree_A": 4.400952434769202e-07
       },
       {
         "molecule": "H2O",
         "positions_A": [
           [
-            3.908813710539228e-14,
-            2.930580171553006e-16,
-            -0.08786576554472515
+            -1.5566592778770044e-14,
+            -4.740012138633033e-16,
+            -0.08786576554476754
           ],
           [
-            0.7580782569325891,
-            6.805889373259454e-16,
-            0.5479328827723448
+            0.7580782569325966,
+            -9.503990179693569e-17,
+            0.5479328827723726
           ],
           [
-            -0.7580782569326328,
-            -9.736469544812586e-16,
-            0.5479328827723817
+            -0.7580782569325824,
+            5.690411156602613e-16,
+            0.5479328827723597
           ]
         ],
         "frequencies_cm^-1": [
-          2169.8441589501517,
-          4139.682640158132,
-          4390.7227072222995
+          2169.844158950027,
+          4139.68264015795,
+          4390.722707222102
         ],
         "electronic_eV": -2039.9260926212214,
-        "ZPE_eV": 0.6633309290388207,
-        "thermal_enthalpy_eV": 0.10277794431532117,
+        "ZPE_eV": 0.6633309290387894,
+        "thermal_enthalpy_eV": 0.10277794431535248,
         "H_eV": -2039.1599837478673,
-        "S_eV_K": 0.0019647794122151533,
+        "S_eV_K": 0.001964779412215158,
         "G_eV": -2039.7457827296191,
-        "ASE_G_eV": -2039.7457825312285,
-        "G_error_eV": -1.983905804081587e-07,
-        "gradient_max_Hartree_A": 1.1884143997676528e-05
+        "ASE_G_eV": -2039.7457825312288,
+        "G_error_eV": -1.9839035303448327e-07,
+        "gradient_max_Hartree_A": 1.188414400858622e-05
       }
     ]
   }

@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：把自旋量的三个名称分开
 
-Report S^2; broken symmetry is not a spin-pure correlated solution.
+单重态 $S=0$，三重态 $S=1$；对应 $2S$ 分别为 0、2，多重度分别为 1、3。
+
+UHF 固定 $M_S=(N_\alpha-N_\beta)/2$，不保证波函数是 $\hat S^2$ 的本征态。
+
+因此设置 `spin=0` 的 UHF 仍可能有非零 $\langle S^2\rangle$。将输入 spin 和输出 S² 同时保留，不能只标注“singlet”。

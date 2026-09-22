@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-Negative modes: minimum 0, saddle 1. Morse frequency: 3966.90 cm^-1. This confirms the predicted stationary-point classification; inspect the eigenvector before assigning a reaction.
-
-Input SHA-256: `13549928f2e74fb8dd6a9500155e368b819e287a042b8329f8d70ff92afacc32`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

@@ -15,7 +15,7 @@ if not (a.source/'result.json').is_file():
     raise SystemExit('Source has no completed result.json')
 json.loads((a.source/'result.json').read_text())
 for source in a.source.rglob('*'):
-    if source.is_file() and source.suffix in {'.json','.csv','.extxyz','.svg'}:
+    if source.is_file() and source.suffix in {'.json','.csv','.extxyz','.svg','.dat','.txt','.xyz'}:
         destination=a.destination/source.relative_to(a.source)
         if source.name=='completed.json':
             # Archive task provenance without making the reference tree a live cache.

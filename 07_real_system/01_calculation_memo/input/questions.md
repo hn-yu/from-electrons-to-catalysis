@@ -1,5 +1,14 @@
-# Assignment
+# 案例与问题
 
-Audit the H/Cu(111) calculation before submission.
+在申请一组 DFT 作业前，明确这笔计算将改变哪个判断。案例是高覆盖度 H/Cu(111) 的吸附符号。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+$$E_{ads}=E_{slab+H}-E_{slab}-\frac12E_{H_2},\qquad\theta_H=N_H/N_{surface\ sites}.$$
+
+输入给出基准 clean/fcc POSCAR 与 calculator.toml。基准为 1×1×3，一个 H 即 1 ML。电子结构模型是中性、真空、PBE，不含溶剂、电位或有限温构型熵。
+
+
+1. 按原子坐标核对层数、横向胞和覆盖度；列出固定原子。
+2. 写一句可检验的问题、一个目标观测量、误差容限和最便宜的否定实验。
+3. 分别列出数值误差与物理模型失效，不把软件设置清单当作研究问题。
+4. 估算要算哪些独立参考，说明如何在 Slurm 分配资源与保存日志。

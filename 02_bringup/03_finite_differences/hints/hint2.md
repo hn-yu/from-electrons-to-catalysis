@@ -1,3 +1,9 @@
-# Hint 2
+# 提示 2：消减为什么产生反比于 h 的误差
 
-Subtraction loses significant digits at tiny h.
+设两次能量分别含绝对误差 $\delta E_+$、$\delta E_-$，则力误差为
+
+$$\delta F=-(\delta E_+-\delta E_-)/(2h).$$
+
+更小的分母放大误差。若两个数已经舍入成完全一样的浮点数，差分力会变为零。
+
+打印两次能量及其差的高精度表示，并用 `np.spacing(E)` 观察当前量级相邻浮点数之间的距离。

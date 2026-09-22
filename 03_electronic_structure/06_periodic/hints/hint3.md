@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：保持 k 网格的比较含义
 
-Do not use an EMT k-point sweep; EMT has no electrons.
+改变体积时 k 网格的整数维度可以保持相同，从而形成可比较曲线。改变 k 网格密度则应重新生成整条 E(V)。
+
+只在一个体积处更密 k 点，不能修正整条曲线的斜率和曲率。
+
+电子展宽有助于金属积分，但它不是材料温度。对每个参考一致使用 extrapolated energy，并单独检查展宽趋小的趋势。

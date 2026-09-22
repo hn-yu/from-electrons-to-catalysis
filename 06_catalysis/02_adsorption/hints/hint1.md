@@ -1,3 +1,7 @@
-# Hint 1
+# 提示 1：每个 H 对应半个 H₂
 
-Initial site labels do not guarantee final site identities.
+反应是 $\tfrac12H_2+*\rightarrow H*$。
+
+如果使用整个 H₂ 能量，差异不是小的单位误差，而是反应计量错误。
+
+扩展到两个 H 时使用 $E_{slab+2H}-E_{slab}-E_{H_2}$；若报告每 H，再除以 2。先写反应式，再写 Python 表达式。

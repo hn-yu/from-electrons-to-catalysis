@@ -1,9 +1,32 @@
-# The internal-advisor defense
+# 05 · 对“算一个 NEB 就证明迁移”进行答辩
 
-Assess the proposal: species X migrates via Y, therefore run NEB.
+提案：“物种 X 经 Y 迁移，所以我们算一条 NEB，就能解释催化活性。”请拆解其中每一个需要证据的推断。
 
-1. Read [the assignment](input/questions.md).
-2. Write your answer before consulting [the hint](hints/README.md).
-3. Compare with [the worked analysis](output/answer.md).
+## 这个项目应该自己完成什么
 
-This is a written project; the output is an analysis, not invented computational data. Assess it for numerical meaning (units and observable), physical assumptions, and a limiting-case or falsification argument.
+本项目要求**手写推理、量纲检查和可否定的判断**。引用前面计算项目的成熟软件结果；不把讨论题包装成返回 true/false 的脚本。必要算术可以使用 NumPy，电子结构、采样与动力学仍由对应项目的软件完成。
+
+## 输入案例
+
+- [observation.csv](input/observation.csv)
+
+
+
+
+$$\Delta G^\ddagger=k_BT\ln\left[\frac{k_BT}{h}\tau\right],$$
+
+这是 κ=1 的单步 TST 反演，只用于已占据初态的平均等待时间。宏观扩散还取决于跳长、网络与相关性；催化活性还取决于人口与反应通量。
+
+
+## 作业步骤
+
+1. 将“存在路径”“主导微观跳跃”“实验时间内可见”“控制 TOF”拆成四个命题。
+2. 根据 input/observation.csv 的温度与观察时间，反推可见单步势垒量级。
+3. 对每个命题列出最便宜的否定实验，包括端点稳定性和竞争逃逸。
+4. 提出不超过三项的下一步计算，并说明每项为什么比直接加密 NEB 更有决策价值。
+
+将回答写入自己的 `runs/05_advisor_defense/answer.md`，保留输入数据、公式、计算出的数值与结论范围。先完成回答，再查看 [参考分析](output/answer.md)。历史回答保存在 output/previous-answer.md；其中事前预测与事后测量不能互换身份。
+
+## 提示
+
+[逐步提示](hints/README.md) 给出三个具体推理环节。完整课程的 [实现边界表](../../docs/IMPLEMENTATION_BOUNDARIES.md) 解释哪些工作应交给库。

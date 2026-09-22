@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Use the actual generated result; a template is not a completed DFT observation.
+1. [重新算差值，而不照抄结论](hint1.md)
+2. [把覆盖度轴单独解释](hint2.md)
+3. [下一步取决于最弱的推断](hint3.md)

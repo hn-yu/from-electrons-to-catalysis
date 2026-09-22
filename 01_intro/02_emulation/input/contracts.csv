@@ -1,0 +1,5 @@
+task,handwritten,library,comparison
+force,Morse derivative,ASE MorsePotential,energy and Cartesian forces
+SCF,D F energy DIIS,PySCF integrals,RHF energy and residual
+DFT,energy bookkeeping,GPAW PBE,convergence across settings
+kinetics,mass action RHS,Cantera,coverages and TOF

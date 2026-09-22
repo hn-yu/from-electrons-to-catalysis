@@ -1,0 +1,109 @@
+{
+  "project": "04_break_hf",
+  "input": {
+    "experiment": "hf_failures",
+    "parameters": {
+      "bond_lengths_A": [
+        0.74,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "bases": [
+        "sto-3g",
+        "6-31g",
+        "cc-pvdz",
+        "cc-pvtz"
+      ]
+    }
+  },
+  "input_sha256": "71f89e89474f3420c9d6405a2a0af6c612a7ac301a36b6249d6ff057c47315e0",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "stretch": [
+      {
+        "r_A": 0.74,
+        "RHF_Hartree": -1.1167593073964255,
+        "UHF_Hartree": -1.1167593073964253,
+        "UHF_S2": 0.0,
+        "converged": true
+      },
+      {
+        "r_A": 1.5,
+        "RHF_Hartree": -0.9108735545943865,
+        "UHF_Hartree": -0.957706793405533,
+        "UHF_S2": 0.6948937737644093,
+        "converged": true
+      },
+      {
+        "r_A": 2.0,
+        "RHF_Hartree": -0.783792654277353,
+        "UHF_Hartree": -0.9372128330856888,
+        "UHF_S2": 0.9458654417799218,
+        "converged": true
+      },
+      {
+        "r_A": 3.0,
+        "RHF_Hartree": -0.6560482511455911,
+        "UHF_Hartree": -0.9332846583338112,
+        "UHF_S2": 0.9985907250091697,
+        "converged": true
+      },
+      {
+        "r_A": 5.0,
+        "RHF_Hartree": -0.5990248715061531,
+        "UHF_Hartree": -0.9331637220050206,
+        "UHF_S2": 0.9999998646827213,
+        "converged": true
+      }
+    ],
+    "oxygen": [
+      {
+        "spin_2S": 0,
+        "energy_Hartree": -147.55124892857697,
+        "S2": 1.5027978861326119e-12,
+        "converged": true
+      },
+      {
+        "spin_2S": 2,
+        "energy_Hartree": -147.6340485050547,
+        "S2": 2.0034110263213876,
+        "converged": true
+      }
+    ],
+    "basis_sweep": [
+      {
+        "basis": "sto-3g",
+        "energy_Hartree": -1.1167593073964255,
+        "converged": true
+      },
+      {
+        "basis": "6-31g",
+        "energy_Hartree": -1.1267553171969311,
+        "converged": true
+      },
+      {
+        "basis": "cc-pvdz",
+        "energy_Hartree": -1.1287000935564415,
+        "converged": true
+      },
+      {
+        "basis": "cc-pvtz",
+        "energy_Hartree": -1.132967682922137,
+        "converged": true
+      }
+    ]
+  }
+}

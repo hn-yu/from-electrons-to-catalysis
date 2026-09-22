@@ -1,0 +1,43 @@
+backend: gpaw
+baseline.backend: gpaw
+baseline.coverage_ML: 1.0
+baseline.clean_eV: -9.357079982855794
+baseline.H2_eV: -6.485204909265862
+baseline.sites[0].initial_site: fcc
+baseline.sites[0].total_eV: -12.554081054962252
+baseline.sites[0].adsorption_eV: 0.045601382526473166
+baseline.sites[0].force_max_eV_A: 0.045167236463648154
+baseline.sites[0].final_H_position_A: 1.2766648181250455, 0.7370808203183089, 11.194583982585494
+sweep[0].parameter: cutoff_eV
+sweep[0].value: 300
+sweep[0].adsorption_eV: 0.05332561586182161
+sweep[0].delta_from_baseline_eV: 0.0077242333353484405
+sweep[1].parameter: kpts
+sweep[1].value: [4, 4, 1]
+sweep[1].adsorption_eV: 0.01754384667338993
+sweep[1].delta_from_baseline_eV: -0.028057535853083237
+sweep[2].parameter: vacuum_A
+sweep[2].value: 8.0
+sweep[2].adsorption_eV: 0.050762555731751924
+sweep[2].delta_from_baseline_eV: 0.005161173205278757
+sweep[3].parameter: size
+sweep[3].value: [1, 1, 4]
+sweep[3].adsorption_eV: -0.30181690712002673
+sweep[3].delta_from_baseline_eV: -0.3474182896464999
+sweep[4].parameter: size
+sweep[4].value: [2, 2, 3]
+sweep[4].adsorption_eV: -0.08851244401812774
+sweep[4].delta_from_baseline_eV: -0.1341138265446009
+sweep[5].parameter: fixed_layers
+sweep[5].value: 0
+sweep[5].adsorption_eV: 0.048626757883112326
+sweep[5].delta_from_baseline_eV: 0.0030253753566391595
+sweep[6].parameter: smearing_eV
+sweep[6].value: 0.05
+sweep[6].adsorption_eV: 0.05306972845784319
+sweep[6].delta_from_baseline_eV: 0.007468345931370024
+tolerance_eV: 0.05
+all_variations_within_tolerance: False
+execution: Analysis of previously executed PBE calculations; see input/DATA_SOURCE.md
+Each adsorption energy subtracts its own clean slab and half its own H2 reference.
+A slab thickness change also changes relaxation; a lateral cell change changes coverage.

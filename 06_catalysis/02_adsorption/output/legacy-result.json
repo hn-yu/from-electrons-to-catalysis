@@ -1,0 +1,90 @@
+{
+  "project": "02_adsorption",
+  "input": {
+    "experiment": "adsorption",
+    "parameters": {
+      "backend": "emt",
+      "size": [
+        2,
+        2,
+        3
+      ],
+      "vacuum_A": 8.0,
+      "fixed_layers": 1,
+      "sites": [
+        "ontop",
+        "bridge",
+        "fcc",
+        "hcp"
+      ],
+      "fmax": 0.04
+    }
+  },
+  "input_sha256": "f45d4d57ea174c45acde75f3d4452ff1046ed5baa0ec6e1898b41b9263ac3d03",
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0"
+  },
+  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
+  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
+  "source_dirty": false,
+  "slurm_job_id": "705307",
+  "result": {
+    "backend": "emt",
+    "reference": "E(slab+H)-E(slab)-0.5 E(H2)",
+    "coverage_ML": 0.25,
+    "clean_eV": 2.8402760046582713,
+    "H2_eV": 1.0705412692469816,
+    "sites": [
+      {
+        "initial_site": "ontop",
+        "total_eV": 2.9398901001227866,
+        "adsorption_eV": -0.4356565391589755,
+        "final_H_position_A": [
+          1.9189603371554953e-16,
+          2.4228526999516596e-16,
+          14.011430290360252
+        ],
+        "force_max_eV_A": 0.037692327499928575
+      },
+      {
+        "initial_site": "bridge",
+        "total_eV": 2.893435609273947,
+        "adsorption_eV": -0.4821110300078151,
+        "final_H_position_A": [
+          1.276327740041719,
+          -3.788262840624602e-05,
+          13.82186817731419
+        ],
+        "force_max_eV_A": 0.026961382628043713
+      },
+      {
+        "initial_site": "fcc",
+        "total_eV": 2.8843167050478113,
+        "adsorption_eV": -0.4912299342339508,
+        "final_H_position_A": [
+          1.2763277400417188,
+          0.7368881642872727,
+          13.787701611371395
+        ],
+        "force_max_eV_A": 0.031923668370180014
+      },
+      {
+        "initial_site": "hcp",
+        "total_eV": 2.8840734909248096,
+        "adsorption_eV": -0.49147314835695255,
+        "final_H_position_A": [
+          2.5526554800834367,
+          1.4737763285745453,
+          13.790846834332761
+        ],
+        "force_max_eV_A": 0.03945127626802547
+      }
+    ],
+    "scope": "EMT is a workflow emulator, not a DFT adsorption prediction."
+  }
+}

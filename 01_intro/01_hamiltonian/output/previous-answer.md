@@ -1,0 +1,3 @@
+# Worked analysis: The electron-nuclear Hamiltonian
+
+The kinetic terms are negative Laplacians for electrons and nuclei; Coulomb terms are attractive electron–nuclear and repulsive electron–electron/nuclear–nuclear. In the Born–Oppenheimer approximation solve the electronic problem at fixed nuclear positions, then add nuclear repulsion to form the PES. This separation can fail near degeneracies and nonadiabatic crossings. HF neglects correlation beyond exchange; DFT approximates exchange-correlation; statistical mechanics sums states; TST maps conditional free-energy barriers to rates; microkinetics combines rates and populations.

@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Read input/example.json of real_dft and verify it matches this memo before submitting.
+1. [从坐标数出覆盖度](hint1.md)
+2. [最便宜的否定实验](hint2.md)
+3. [软件任务与研究结论分开](hint3.md)

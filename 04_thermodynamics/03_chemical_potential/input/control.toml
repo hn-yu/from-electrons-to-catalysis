@@ -1,0 +1,4 @@
+gas_entropy_eV_K = 0.0015
+adsorption_energy_eV = -0.6
+temperature_table = "temperatures.csv"
+pressure_table = "pressures.csv"

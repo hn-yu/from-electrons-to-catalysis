@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：基组误差与关联误差不是同一个方向
 
-A converged excited or incorrect spin state remains the wrong model.
+完整基组极限 RHF 仍限制在单个闭壳层 Slater 行列式。
+
+H₂ 解离时需要恰当组合共价组态；增加 AO 数目并不会解除单行列式限制。
+
+先固定方法改变基组，再固定基组改变方法。若同时改变两者，能量变化无法归因，下一项目的 FCI 对照也会失去基准意义。

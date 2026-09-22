@@ -1,97 +1,73 @@
 {
   "project": "03_hessian",
-  "input": {
-    "experiment": "hessian",
-    "parameters": {
-      "minimum_start": [
-        -0.6,
-        1.4
-      ],
-      "saddle_start": [
-        -0.8,
-        0.6
-      ],
-      "morse_mass_amu": 0.5039
-    }
+  "input_files_sha256": {
+    "H2O.xyz": "f4725c0424dd14251022cd7fcdfea50aa6898ad39335ebbe012aded07c042cc9",
+    "H2O_optimized.xyz": "e16481ef57f54d5c33b5942d40cea11dee7879671ab85c5000417c8f1963b5d6",
+    "README.md": "f8dfe81d4eb4b67f7e01e300f9f7c8fde2657579342879619e456f8c5276bbb5",
+    "control.toml": "7bdfe52d3b679149b737f72c7241d7c38be76d8bed680d1828ef02516a839101",
+    "hessian.dat": "088bbf2435696a8a7459aa7ef2bf2b76cba6bcd5bfa63abfeebc30c42e91599f",
+    "masses.dat": "8c79e126a016dbb85d60690fa293ad2e265f0b8019d0acefa0f79bde9b88b2ff",
+    "stationary_guesses.dat": "03ba44be0960f4f0d1deccf85f1d4d020b08f3370d7eafe1a7308a6d99f84fa8"
   },
-  "input_sha256": "13549928f2e74fb8dd6a9500155e368b819e287a042b8329f8d70ff92afacc32",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "05_kinetics/03_hessian/run.py": "b5fb392d567102b3bbd0eaf835a88fa87e3aaa05ca5f9362b4f1e68da26ba354",
+    "05_kinetics/03_hessian/prepare_hessian.py": "cb24d0409941571f658a4ec786a81d9d75e7aae7f22ab8ef64ae1496990e9aae",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
-    "minimum": {
-      "point": [
-        -0.5582236827824901,
-        1.441725795333846
-      ],
-      "hessian": [
-        [
-          22.411184999151097,
-          -18.288329375656662
-        ],
-        [
-          -18.288329376712625,
-          22.37611230821723
-        ]
-      ],
-      "mass_weighted_eigenvalues": [
-        4.105310869860547,
-        40.681986437507774
-      ],
-      "modes": [
-        [
-          -0.7067676841368838,
-          -0.7074457156982337
-        ],
-        [
-          -0.7074457156982337,
-          0.7067676841368838
-        ]
-      ],
-      "negative_modes": 0
-    },
-    "saddle": {
-      "point": [
-        -0.8220015587327467,
-        0.6243128028148698
-      ],
-      "hessian": [
-        [
-          -2.292571906282641,
-          6.126124399218223
-        ],
-        [
-          6.126124471373326,
-          -0.31364769045715
-        ]
-      ],
-      "mass_weighted_eigenvalues": [
-        -7.508626365080769,
-        4.902406768340978
-      ],
-      "modes": [
-        [
-          -0.7613963455402672,
-          -0.6482866688417446
-        ],
-        [
-          0.6482866688417446,
-          -0.7613963455402672
-        ]
-      ],
-      "negative_modes": 1
-    },
-    "morse_frequency_cm^-1": [
-      3966.9037728200387
-    ]
+    "molecule": "H2O",
+    "frequencies_cm^-1": [
+      -0.4032308087147154,
+      -0.3060282320261616,
+      -0.23314512786133373,
+      -0.002825122592188617,
+      -0.0017132596750795027,
+      -0.0011740730635077482,
+      2169.8513808820235,
+      4139.635537690205,
+      4390.673255214585
+    ],
+    "ASE_signed_cm^-1": [
+      -0.40323080549152807,
+      -0.3060282338836951,
+      -0.23314512753931482,
+      -0.002825099961235487,
+      -0.0017135105046217672,
+      -0.0011738948189839178,
+      2169.8513893228574,
+      4139.635553793599,
+      4390.673272294529
+    ],
+    "frequency_error_max_cm^-1": 1.7079943972930778e-05,
+    "morse_curvature": 29.16000110224124,
+    "morse_mass_weighted_curvature": 57.868626914549,
+    "toy_minimum_negative_modes": 0,
+    "toy_saddle_negative_modes": 1
   }
 }

@@ -1,0 +1,14 @@
+one_dimension.iterations: 462
+one_dimension.shape_RMSE_eV: 0.002249000576244232
+one_dimension.PyMBAR_shape_RMSE_eV: 5.283532163904199e-05
+hidden_coordinate.iterations: 465
+hidden_coordinate.shape_RMSE_eV: 0.002559910905193068
+hidden_coordinate.PyMBAR_shape_RMSE_eV: 0.00014875182393532898
+bad_coordinate[0].initial_y: -1.0
+bad_coordinate[0].mean_y: -0.9865092162238028
+bad_coordinate[0].sign_switches: 0
+bad_coordinate[1].initial_y: 1.0
+bad_coordinate[1].mean_y: 0.9825596141284052
+bad_coordinate[1].sign_switches: 0
+F-comparison.csv compares binned WHAM with unbinned MBAR weights.
+Trajectories are correlated: no independent-sample uncertainty is claimed.

@@ -1,3 +1,7 @@
-# Hint 1
+# 提示 1：普朗克常数必须与 kBT 配套
 
-The Eyring prefactor is kBT/h.
+若能量使用 eV，普朗克常数必须使用 eV·s。
+
+$$[k_BT/h]=\mathrm{s^{-1}}.$$
+
+使用 J·s 的 h 却配 eV 的 kBT 会产生巨大误差。600 K 的 $k_BT/h$ 约为 $1.25\times10^{13}$ s⁻¹，可作为量级检查。

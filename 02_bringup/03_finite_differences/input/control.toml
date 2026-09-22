@@ -1,0 +1,6 @@
+log10_step_range = [
+    -15,
+    -1,
+    50,
+]
+geometry = "bonds.xyz"

@@ -1,3 +1,10 @@
-# Worked analysis: Electronic-structure checkpoint
+# 参考分析
 
-A finite basis may bias relative energies; the functional may miss relevant correlation; an incorrect spin/charge state may be stable numerically; geometry may be unconverged or in a different basin; periodic images and k sampling may alter the target; reference stoichiometry may be inconsistent; a 0 K energy may not answer a finite-T question. Each requires a separate falsifying check.
+
+本例 H₂O 为十电子，使用自旋求和 D，故 Tr(DS)=10。若为 5，可能用了单自旋密度却沿用 D 约定的 Fock 或能量公式。
+
+本例核排斥约 8.002399 Hartree，自写和 PySCF 总能约 −74.942074626124 Hartree。应先比积分和核排斥，再比 D/F/能量；只对总能有时会漏掉抵消的错误。
+
+SCF 驻点只满足所选近似方程。RHF H₂ 解离的单行列式限制仍存在；UHF 能量降低却可能自旋污染。有限基组 FCI 可帮助区分同一基空间的关联误差，但不消除基组误差。
+
+周期体系还增加 Brillouin 区积分、PAW 数据和电子展宽等层次。分子算法对照通过不能替代周期目标观测量的收敛。

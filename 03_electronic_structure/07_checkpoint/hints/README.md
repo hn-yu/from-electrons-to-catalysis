@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Residual SCF error is only one axis of an error budget.
+1. [先排密度因子](hint1.md)
+2. [交换子残差说明什么](hint2.md)
+3. [把误差分层写出来](hint3.md)

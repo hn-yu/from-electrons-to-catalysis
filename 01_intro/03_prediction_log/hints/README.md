@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-A prediction is not a post hoc explanation. Keep failed expectations visible.
+1. [先定义 y](hint1.md)
+2. [预测宽度要对应决策](hint2.md)
+3. [时间顺序也是数据](hint3.md)

@@ -1,3 +1,9 @@
-# Hint 3
+# 提示 3：反应级数包含覆盖度响应
 
-Use logarithmic pressure perturbations and slopes versus 1/T.
+反应级数定义为
+
+$$n_A=\frac{\partial\ln\mathrm{TOF}}{\partial\ln p_A}.$$
+
+每次扰动 pA 后都需重新求稳态。固定 θ 再求导只得到局部速率表达式的显式压力幂，不是整体反应级数。
+
+同样，表观活化能的温度导数必须包含覆盖度与 TST 前因子的温度变化。

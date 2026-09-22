@@ -1,3 +1,9 @@
-# Hint 2
+# 提示 2：投影应满足的两个正交关系
 
-Energy-weighted tangents avoid kinks at extrema.
+真实力的垂直分量应满足
+
+$$\mathbf F_i^\perp\cdot\hat\tau_i=0.$$
+
+弹簧力减去自身切向投影后应为零。把这两个中间量分别打印，能定位投影符号或切线归一化错误。
+
+曲线路径上直接使用完整弹簧向量会产生切角；NEB 的 nudging 正是为了控制这类耦合。

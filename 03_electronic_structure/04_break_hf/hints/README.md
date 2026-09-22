@@ -1,5 +1,7 @@
-# Progressive hints
+# 分步提示
 
-1. [Hint 1](hint1.md)
-2. [Hint 2](hint2.md)
-3. [Hint 3](hint3.md)
+这些提示对应「04 · 让 Hartree–Fock 暴露自己的近似」的三个容易混淆的环节。每完成一个环节，先保存对应的中间量再继续。
+
+1. [主动破缺初猜对称性](hint1.md)
+2. [把自旋量的三个名称分开](hint2.md)
+3. [基组误差与关联误差不是同一个方向](hint3.md)

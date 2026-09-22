@@ -1,0 +1,46 @@
+method: RHF/sto-3g optimized geometry and analytic Hessian; ideal-gas RRHO
+results[0].molecule: H2
+results[0].frequencies_cm^-1: 5480.757187272872
+results[0].electronic_eV: -30.408884272047526
+results[0].ZPE_eV: 0.3397636433355134
+results[0].thermal_enthalpy_eV: 0.08992402692601592
+results[0].H_eV: -29.979196601785997
+results[0].S_eV_K: 0.0013439527287433268
+results[0].G_eV: -30.37989610786082
+results[0].ASE_G_eV: -30.379895972188034
+results[0].G_error_eV: -1.3567278500659086e-07
+results[0].gradient_max_Hartree_A: 1.3570143431772824e-06
+results[1].molecule: CO
+results[1].frequencies_cm^-1: 2462.0888084543776
+results[1].electronic_eV: -3026.598667112787
+results[1].ZPE_eV: 0.15263005369378424
+results[1].thermal_enthalpy_eV: 0.08992613899782465
+results[1].H_eV: -3026.3561109200955
+results[1].S_eV_K: 0.0020507229686657765
+results[1].G_eV: -3026.967533973203
+results[1].ASE_G_eV: -3026.967533766006
+results[1].G_error_eV: -2.0719699023175053e-07
+results[1].gradient_max_Hartree_A: 5.939069117366338e-07
+results[2].molecule: CO2
+results[2].frequencies_cm^-1: 565.8604270241218, 565.8604270241335, 1435.2495857041606, 2535.2357732425116
+results[2].electronic_eV: -5035.967457559767
+results[2].ZPE_eV: 0.31629647377953446
+results[2].thermal_enthalpy_eV: 0.09988327511551248
+results[2].H_eV: -5035.551277810872
+results[2].S_eV_K: 0.002233460440941711
+results[2].G_eV: -5036.217184041339
+results[2].ASE_G_eV: -5036.217183815648
+results[2].G_error_eV: -2.2569111024495214e-07
+results[2].gradient_max_Hartree_A: 4.400952434769202e-07
+results[3].molecule: H2O
+results[3].frequencies_cm^-1: 2169.844158950027, 4139.68264015795, 4390.722707222102
+results[3].electronic_eV: -2039.9260926212214
+results[3].ZPE_eV: 0.6633309290387894
+results[3].thermal_enthalpy_eV: 0.10277794431535248
+results[3].H_eV: -2039.1599837478673
+results[3].S_eV_K: 0.001964779412215158
+results[3].G_eV: -2039.7457827296191
+results[3].ASE_G_eV: -2039.7457825312288
+results[3].G_error_eV: -1.9839035303448327e-07
+results[3].gradient_max_Hartree_A: 1.188414400858622e-05
+Tables and arrays are saved alongside this report.

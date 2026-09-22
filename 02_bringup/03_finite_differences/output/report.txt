@@ -1,0 +1,5 @@
+r_A: 1.1
+analytic_force_eV_A: -4.041362317659903
+columns: h_A, absolute_error_eV_A
+best_step_A: 2.6826957952797274e-06
+Tables and arrays are saved alongside this report.

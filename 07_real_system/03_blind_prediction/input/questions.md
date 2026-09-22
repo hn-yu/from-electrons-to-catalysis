@@ -1,5 +1,16 @@
-# Assignment
+# 案例与问题
 
-Freeze the adsorption-energy range before the DFT run.
+这个案例的结果已经公开。任务是审查历史预测的价值，并为尚未执行的下一轮计算制定新的预测。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+历史区间：$E_{ads}\in[-0.8,+0.3]$ eV，低置信度。容限：0.05 eV。区间覆盖度与数值收敛是两个不同命题。
+
+$$\Delta_{layers}=E_{ads}^{4L}-E_{ads}^{3L}.$$
+
+不要用已知的 Δlayers 来伪造一条声称更早写下的精确预测。
+
+
+1. 阅读 input/historical-prediction.md，分别识别原始预测与追加的 postmortem。
+2. 评价这个区间能回答“吸附符号是否可靠”吗？
+3. 为 5/6 层的未执行实验填 prediction-template.md，给出物理理由、容限和失败标准。
+4. 说明如何保留原条目，再追加实际测量；没有计算时不得填写测量值。

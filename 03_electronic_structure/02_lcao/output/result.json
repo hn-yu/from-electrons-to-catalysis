@@ -1,71 +1,51 @@
 {
   "project": "02_lcao",
-  "input": {
-    "experiment": "lcao",
-    "parameters": {
-      "H_Hartree": [
-        [
-          -1.0,
-          -0.3
-        ],
-        [
-          -0.3,
-          -1.0
-        ]
-      ],
-      "S": [
-        [
-          1.0,
-          0.2
-        ],
-        [
-          0.2,
-          1.0
-        ]
-      ]
-    }
+  "input_files_sha256": {
+    "README.md": "8781d0a341800552160af82eae5c9638352f7d0ca272aa54583a9cc01eb6e2ce",
+    "control.toml": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hamiltonian.dat": "1e92760a47fe8a35a2f3528e8568efe16eab43e71d0c54f691a04cfa4052c941",
+    "overlap.dat": "5940e2a4da4b67f9713b6d6ce1d7c541462dd295e488e1740a149a59378c15f2"
   },
-  "input_sha256": "2e9d856c963d219e4fa9e9684b2b752ac5697cf7975fa77f7b3b5a40a8cb2324",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "03_electronic_structure/02_lcao/run.py": "2c40cf68d6da3578ee9680f2db90b774b24569fea24bad49f9d65b17bbd19273",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
     "energies_Hartree": [
+      -1.083333333333333,
+      -0.8749999999999998
+    ],
+    "SciPy_energies_Hartree": [
       -1.0833333333333333,
       -0.875
     ],
-    "coefficients": [
-      [
-        -0.6454972243679029,
-        0.7905694150420948
-      ],
-      [
-        -0.6454972243679028,
-        -0.790569415042095
-      ]
-    ],
-    "orthonormality": [
-      [
-        1.0000000000000002,
-        8.767332719583525e-17
-      ],
-      [
-        7.205076249421737e-17,
-        1.0
-      ]
-    ],
-    "basis_vector_Rayleigh_Hartree": [
-      -1.0,
-      -1.0
-    ]
+    "max_reference_error": 2.220446049250313e-16,
+    "generalized_residual": 4.2998752849492583e-16
   }
 }

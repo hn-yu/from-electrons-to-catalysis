@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：为什么稳定的中间体会毒化表面
 
-A deeply populated intermediate changes which escape process controls flux.
+降低 A* 能量会增加它的平衡占据，同时提高从它出发、固定绝对过渡态能量的活化自由能。
+
+体系可能长时间停在 A*，使空位或后续中间体稀少。局部能垒并没有单独包含这种人口分配。
+
+把 θ 与 Xi 一起读，才能解释控制来自哪个状态和哪条逃逸通道。

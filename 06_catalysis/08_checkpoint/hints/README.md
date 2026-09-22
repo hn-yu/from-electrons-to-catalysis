@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-List uncertainties at each modeling layer instead of assigning one universal DFT error bar.
+1. [检查流量守恒](hint1.md)
+2. [响应系数必须重新求稳态](hint2.md)
+3. [一致实现不能弥补不完整机制](hint3.md)

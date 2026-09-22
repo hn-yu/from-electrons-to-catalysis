@@ -1,5 +1,7 @@
-# Progressive hints
+# 分步提示
 
-1. [Hint 1](hint1.md)
-2. [Hint 2](hint2.md)
-3. [Hint 3](hint3.md)
+这些提示对应「02 · 用能量误差检验 Velocity Verlet」的三个容易混淆的环节。每完成一个环节，先保存对应的中间量再继续。
+
+1. [两次力对应两个不同位置](hint1.md)
+2. [为什么比较完整轨迹](hint2.md)
+3. [区分数值积分误差与物理耗散](hint3.md)

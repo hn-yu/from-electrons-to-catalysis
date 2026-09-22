@@ -1,3 +1,10 @@
-# Worked analysis: Emulation and environment
+# 参考分析
 
-Use Morse for derivative signs, a harmonic oscillator for integration error, Muller–Brown for competing minima and paths, two-level states for entropy, and a reversible cycle for detailed balance. EMT tests ASE workflow plumbing but does not validate DFT adsorption chemistry. Install the core environment first and optional quantum/periodic extras separately. Use scripts/slurm.sh for computational runs on a scheduler.
+
+模型势能快速检查力负号、原子索引、边界处理和优化停止条件；它不能检查 PBE 的 k 点积分、平面波截断或实际金属电子态。
+
+迁移顺序是：同一结构的原子数/胞/约束→单点能量和力→小位移差分检查→端点松弛→目标能量差的数值收敛。每一步都保存软件原始输出。
+
+EMT 与 GPAW 共用 ASE API，使流程可复用；它们不是同一 Hamiltonian 的两个求解器。单点吻合也可能是误差抵消，不能据此把 EMT 的 NEB 势垒当作 PBE 势垒。
+
+最有价值的重写位于正在学习的物理或数值核心，如力、SCF 密度、NEB 投影。通用线代、积分、PAW、结构 I/O 与生产级优化应交给成熟工具，并清楚说明接口中的单位和约束。

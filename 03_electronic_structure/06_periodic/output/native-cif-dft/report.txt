@@ -1,0 +1,8 @@
+backend: gpaw
+a0_A: 4.047756577872069
+bulk_modulus_GPa: 79.94414749418938
+minimum_energy_eV_atom: -3.6886091940339845
+convergence_fits.baseline.a0_A: 4.047756577872069
+convergence_fits.baseline.bulk_modulus_GPa: 79.94414749418938
+convergence_fits.baseline.minimum_energy_eV_atom: -3.6886091940339845
+execution: New GPAW calculation

@@ -1,3 +1,9 @@
-# Hint 3
+# 提示 3：虚频要看模式，零模要看尺度
 
-A negative eigenvalue is an imaginary frequency, not a negative real vibration.
+对 $E(x)=-kx^2/2$，力为 $F=kx$，Hessian 为 −k。因此负本征值描述远离驻点的加速，而不是振荡。用负的实数表示虚频只是输出约定，不代表一个“负频率的稳定振动”。
+
+对于水分子的平移模式，三个原子的 Cartesian 位移应近似相同；转动模式应近似 $\delta\mathbf r_A=\boldsymbol\omega\times(\mathbf r_A-\mathbf R_{COM})$。这比“频率排在前六个，所以删掉”更有物理依据。
+
+检查微小虚频时，依次问：几何力是否足够小？Hessian 差分步长是否稳定？输入单位是否正确？模式是整体转动还是内部扭转？只有在回答这些问题后，才能判断是否存在真实的不稳定方向。
+
+第一阶鞍点的预期是一个负的**内部**模式。沿该模式两侧下降并分别优化，才有助于判断它是否对应你要研究的反应，而非另一个构象变化。

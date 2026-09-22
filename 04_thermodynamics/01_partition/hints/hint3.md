@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：何时显式求和需要更多能级
 
-Include the harmonic zero-point contribution exactly once.
+高温时 $\beta\hbar\omega$ 变小，激发态权重衰减更慢。固定 n_max 的截断误差会随温度增大。
+
+尾项是几何级数，可估计剩余概率约按 $e^{-\beta\hbar\omega n_{max}}$ 衰减。
+
+比较时先保证截断足够大，再讨论解析实现是否正确；有限和与无限和并非同一个数值对象。

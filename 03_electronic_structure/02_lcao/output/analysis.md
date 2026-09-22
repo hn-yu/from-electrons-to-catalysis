@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-Energies: [-1.0833333333333333, -0.875] Hartree. The lower state lies below either one-basis Rayleigh quotient, as predicted. Overlap normalization and generalized residual are checked independently.
-
-Input SHA-256: `2e9d856c963d219e4fa9e9684b2b752ac5697cf7975fa77f7b3b5a40a8cb2324`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

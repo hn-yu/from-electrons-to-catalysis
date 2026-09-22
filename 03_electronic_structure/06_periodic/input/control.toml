@@ -1,0 +1,8 @@
+backend = "gpaw"
+cutoff_eV = 250
+kpts = [
+    4,
+    4,
+    4,
+]
+smearing_eV = 0.1

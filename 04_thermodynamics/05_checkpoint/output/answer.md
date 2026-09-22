@@ -1,3 +1,10 @@
-# Worked analysis: Thermodynamics checkpoint
+# 参考分析
 
-For H(g) adsorption from a half-H2 reservoir: specify T, H2 partial pressure and reference state; clean and adsorbed slab areas/coverage; electronic and vibrational contributions; ideal gas translation and rotation; the choice of canonical slab versus grand-canonical adsorbate treatment. Omitted terms can include lateral/configurational entropy, solvent, anharmonicity and multiple surface states. A gas standard state at 1 bar is not interchangeable with 1 mol/L.
+
+气体 μ 增加 $k_BT\ln10\approx0.11905$ eV，因此单气体分子吸附的 ΔG 减少相同量；若反应消费半个 H₂，则减少半个量。计量系数必须先确定。
+
+CO₂ 有 3N−5=4 个内部模式、σ=2；H₂O 有 3N−6=3 个、σ=2。刚体零模不属于独立的内部谐振子，否则会产生不合理大熵。
+
+例如常熵模型 Eads=−0.6 eV、s_gas=0.0015 eV/K，在 600 K、1 bar 时 ΔG=−0.6+0.9=+0.3 eV。这个例子只说明气体熵可以改变符号；真实定量值应采用对应分子 RRHO 和吸附态修正。
+
+不同覆盖度的相图还需构型熵与侧向相互作用；独立分子气相 RRHO 不能自动补足这些项。

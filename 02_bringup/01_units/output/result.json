@@ -1,99 +1,100 @@
 {
   "project": "01_units",
-  "input": {
-    "experiment": "units_experiment",
-    "parameters": {
-      "temperatures_K": [
-        300,
-        600,
-        1000,
-        1500
-      ],
-      "conversions": [
-        {
-          "value": 1,
-          "from": "eV",
-          "to": "kJ/mol"
-        },
-        {
-          "value": 1,
-          "from": "Hartree",
-          "to": "eV"
-        },
-        {
-          "value": 1000,
-          "from": "cm^-1",
-          "to": "eV"
-        },
-        {
-          "value": 1,
-          "from": "bar",
-          "to": "Pa"
-        },
-        {
-          "value": 1,
-          "from": "ps",
-          "to": "fs"
-        }
-      ]
-    }
+  "input_files_sha256": {
+    "README.md": "8efd436825bcc8c4592a714740d20642e6203970f50f93de74105523c6274377",
+    "control.toml": "be6e1b906691865dda00d5064c5a6899d18f6c2b97dbe7eb408d951ed13a8ab5",
+    "conversions.csv": "de4f7453b47aa101e9aab66f41351c2c6f933b176f6b9187da1e5817427a0f5e",
+    "temperatures.csv": "799516021bef9e394d795366d8e28dbc095bd38c60d9f2c4e67621e9b3f465ce"
   },
-  "input_sha256": "b302c5a09eb406e0351f46cadb8a6c77c32da38f72339b89278845ac505804c7",
   "versions": {
-    "python": "3.11.13",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "ase": "3.29.0",
     "pyscf": "2.14.0",
-    "gpaw": "25.7.0"
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
   },
-  "source_revision": "4906057488fae95c3c679605154a61530d864c64",
-  "source_sha256": "791cf332e9e38f15142d905cb4cb827b6dee12095a3e902251acebd63c3d06da",
-  "source_dirty": false,
-  "slurm_job_id": "705307",
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "02_bringup/01_units/run.py": "e1875e250019c11dcf8e6cd568a099c71f97ef1d787d2375eb1a1f1595112621",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "4cf3b140a5dc16dc490130340b8e45930f8fbd27f9294c8b46831d9cabe31c0d",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "aaf1d4b20510db0dacc33886c67e0f41cee51945d19d5bebcad1d8933a9d9f02"
+  },
+  "slurm_job_id": "705362",
   "result": {
-    "temperatures_K": [
-      300,
-      600,
-      1000,
-      1500
-    ],
-    "kBT_eV": [
-      0.025851999786435,
-      0.05170399957287,
-      0.08617333262145,
-      0.129259998932175
-    ],
     "conversions": [
       {
-        "value": 1,
-        "from": "eV",
-        "to": "kJ/mol",
-        "result": 96.4853321233
+        "value": "1",
+        "from_unit": "eV",
+        "to_unit": "kJ/mol",
+        "own": 96.4853321233,
+        "ASE": 96.48533288249877,
+        "difference": -7.591987696287106e-07
       },
       {
-        "value": 1,
-        "from": "Hartree",
-        "to": "eV",
-        "result": 27.211386245988
+        "value": "1",
+        "from_unit": "Hartree",
+        "to_unit": "eV",
+        "own": 27.211386245988,
+        "ASE": 27.211386024367243,
+        "difference": 2.2162075552500937e-07
       },
       {
-        "value": 1000,
-        "from": "cm^-1",
-        "to": "eV",
-        "result": 0.1239841984332
+        "value": "1000",
+        "from_unit": "cm^-1",
+        "to_unit": "eV",
+        "own": 0.1239841984332,
+        "ASE": 0.12398419739640719,
+        "difference": 1.0367928043875096e-09
       },
       {
-        "value": 1,
-        "from": "bar",
-        "to": "Pa",
-        "result": 100000.0
+        "value": "1",
+        "from_unit": "bar",
+        "to_unit": "Pa",
+        "own": 100000.0,
+        "ASE": 100000.0,
+        "difference": 0.0
       },
       {
-        "value": 1,
-        "from": "ps",
-        "to": "fs",
-        "result": 999.9999999999999
+        "value": "1",
+        "from_unit": "ps",
+        "to_unit": "fs",
+        "own": 999.9999999999999,
+        "ASE": 1000.0,
+        "difference": -1.1368683772161603e-13
+      }
+    ],
+    "thermal_scales": [
+      {
+        "T_K": 300.0,
+        "kBT_eV": 0.025851999786435
+      },
+      {
+        "T_K": 600.0,
+        "kBT_eV": 0.05170399957287
+      },
+      {
+        "T_K": 1000.0,
+        "kBT_eV": 0.08617333262145
+      },
+      {
+        "T_K": 1500.0,
+        "kBT_eV": 0.129259998932175
       }
     ]
   }

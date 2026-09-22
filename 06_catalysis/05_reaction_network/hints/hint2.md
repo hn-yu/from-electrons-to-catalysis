@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：浓度单位为何改变温度幂
 
-Gas activities belong in mass action, not hidden in standard-state energies.
+手写吸附项是 $k^+(p/p^\circ)\theta_*$；Cantera 质量作用项除以位点密度后是 $k_c C_A\theta_*$。
+
+令两者相等，得到 $k_c=k^+RT/p^\circ$。
+
+TST 的 k⁺ 已含一个 T，再乘 RT 后变成 T²，所以吸附 YAML 的 b=2。这个温度幂不是额外物理假设，而是浓度与活度定义的转换。

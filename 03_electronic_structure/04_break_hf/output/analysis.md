@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-At 5.0 A, RHF=-0.59902487 and UHF=-0.93316372 Hartree, UHF S²=1.00000. The broken-symmetry prediction is confirmed. Report spin contamination alongside the energy lowering; the nominal singlet O2 run need not be spin pure.
-
-Input SHA-256: `71f89e89474f3420c9d6405a2a0af6c612a7ac301a36b6249d6ff057c47315e0`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

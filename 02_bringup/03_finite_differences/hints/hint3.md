@@ -1,3 +1,7 @@
-# Hint 3
+# 提示 3：把步长与求解精度一起设计
 
-Do not benchmark at a symmetry point with an exactly zero derivative.
+对 $Ah^2+B\epsilon/h$ 求极小值得到 $h_{\rm opt}\propto\epsilon^{1/3}$。
+
+这不是通用固定步长：系数还含能量尺度和局部曲率。
+
+若要用 GPAW 力差分得到 Hessian，先固定几何并收紧电子求解精度，再扫描位移步长。把不收敛的能量交给高阶差分公式不会自动产生准确导数。

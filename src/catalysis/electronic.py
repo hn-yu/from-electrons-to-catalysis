@@ -30,14 +30,28 @@ def rhf(atom, basis='sto-3g', charge=0, tolerance=1e-9, maxiter=200):
     mol = gto.M(atom=atom, basis=basis, charge=charge, spin=0, verbose=0)
     if mol.nelectron % 2:
         raise ValueError('RHF requires an even electron count')
-    overlap = mol.intor('int1e_ovlp')
-    core = mol.intor('int1e_kin')+mol.intor('int1e_nuc')
-    eri = mol.intor('int2e')
+    result = rhf_from_integrals(mol.intor('int1e_ovlp'),
+                               mol.intor('int1e_kin')+mol.intor('int1e_nuc'),
+                               mol.intor('int2e'), mol.nelectron, mol.energy_nuc(),
+                               tolerance=tolerance, maxiter=maxiter)
+    reference = scf.RHF(mol).run(conv_tol=tolerance*.1)
+    if not reference.converged:
+        raise RuntimeError('PySCF reference did not converge')
+    result['reference_Hartree'] = float(reference.e_tot)
+    result['error_Hartree'] = result['energy_Hartree']-float(reference.e_tot)
+    return result
+
+
+def rhf_from_integrals(overlap, core, eri, nelectron, enuc, tolerance=1e-9, maxiter=200):
+    """Spin-summed AO density; integrals use chemists' (pq|rs) ordering."""
+    overlap, core, eri = map(np.asarray, (overlap, core, eri))
+    if nelectron <= 0 or nelectron % 2 or nelectron > 2*len(overlap):
+        raise ValueError('Invalid closed-shell electron count')
     w, u = eigh(overlap)
     if w.min() < 1e-10:
         raise ValueError('Linearly dependent AO basis')
     x = (u / np.sqrt(w)) @ u.T
-    nocc = mol.nelectron//2
+    nocc = nelectron//2
     def density(fock):
         _, c = eigh(x.T@fock@x)
         c = x@c[:, :nocc]
@@ -47,6 +61,7 @@ def rhf(atom, basis='sto-3g', charge=0, tolerance=1e-9, maxiter=200):
         k = np.einsum('prqs,rs->pq', eri, p)
         return core+j-.5*k
     p = density(core)
+    initial_density = p.copy()
     history, fs, errors = [], [], []
     old = np.inf
     for iteration in range(1, maxiter+1):
@@ -66,7 +81,7 @@ def rhf(atom, basis='sto-3g', charge=0, tolerance=1e-9, maxiter=200):
                 pass
         new = density(f)
         fnew = fock(new)
-        energy = .5*np.sum(new*(core+fnew))+mol.energy_nuc()
+        energy = .5*np.sum(new*(core+fnew))+enuc
         dp = np.linalg.norm(new-p)
         residual_norm = np.linalg.norm(x.T@(fnew@new@overlap-overlap@new@fnew)@x)
         history.append([iteration, float(energy), float(dp), float(residual_norm)])
@@ -76,7 +91,7 @@ def rhf(atom, basis='sto-3g', charge=0, tolerance=1e-9, maxiter=200):
         p, old = new, energy
     else:
         raise RuntimeError('RHF did not converge')
-    reference = scf.RHF(mol).run(conv_tol=tolerance*.1).e_tot
-    return {'energy_Hartree': float(energy), 'reference_Hartree': float(reference),
-            'error_Hartree': float(energy-reference), 'electrons': float(np.trace(p@overlap)),
-            'iterations': iteration, 'history': history}
+    return {'energy_Hartree': float(energy), 'electrons': float(np.trace(p@overlap)),
+            'iterations': iteration, 'history': history,
+            'matrices': {'S':overlap.tolist(), 'X':x.tolist(), 'Hcore':core.tolist(),
+                         'D_initial':initial_density.tolist(), 'D_final':p.tolist(), 'F_final':fnew.tolist()}}

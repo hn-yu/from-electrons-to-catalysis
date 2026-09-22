@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Ask which observable would change the scientific decision; choose calculations only after that.
+1. [先问什么结果会改变决策](hint1.md)
+2. [观察时间与事件数](hint2.md)
+3. [让竞争机制进入问题](hint3.md)

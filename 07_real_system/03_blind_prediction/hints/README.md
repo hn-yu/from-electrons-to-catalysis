@@ -1,3 +1,5 @@
-# Hint
+# 分步提示
 
-Record the repository commit and append observations after execution.
+1. [区间覆盖不是机制解释](hint1.md)
+2. [为未测条件定义判据](hint2.md)
+3. [保持时间顺序可核查](hint3.md)

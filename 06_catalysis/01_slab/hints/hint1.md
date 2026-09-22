@@ -1,3 +1,9 @@
-# Hint 1
+# 提示 1：相减前先核对三套输入
 
-ASE surface tags count from the top; verify which atoms are frozen.
+三个能量必须共享元素势数据、泛函、截断与能量输出约定。气体通常用 Γ 点，slab 用二维 k 网格，这是边界条件差异，不是随意更换电子模型。
+
+```python
+adsorption = E_slab_H - E_clean - 0.5 * E_H2
+```
+
+若只保存相减结果，后续无法发现 H₂ 参考混用。energies.csv 因此保留全部总能量。

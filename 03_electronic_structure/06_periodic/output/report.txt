@@ -1,0 +1,20 @@
+backend: gpaw
+a0_A: 4.047677244916886
+bulk_modulus_GPa: 80.53702589308772
+minimum_energy_eV_atom: -3.688764067518141
+convergence_fits.baseline.a0_A: 4.047677244916886
+convergence_fits.baseline.bulk_modulus_GPa: 80.53702589308772
+convergence_fits.baseline.minimum_energy_eV_atom: -3.688764067518141
+convergence_fits.cutoff_eV-0.a0_A: 4.047613851088922
+convergence_fits.cutoff_eV-0.bulk_modulus_GPa: 80.49790533353831
+convergence_fits.cutoff_eV-0.minimum_energy_eV_atom: -3.6896514445813637
+convergence_fits.kpts-1.a0_A: 4.042047107273235
+convergence_fits.kpts-1.bulk_modulus_GPa: 79.4584871491273
+convergence_fits.kpts-1.minimum_energy_eV_atom: -3.7282916685679255
+convergence_fits.smearing_eV-2.a0_A: 4.047550892283963
+convergence_fits.smearing_eV-2.bulk_modulus_GPa: 80.8726026115282
+convergence_fits.smearing_eV-2.minimum_energy_eV_atom: -3.68300607630449
+convergence_fits.lattice_constants_A-3.a0_A: 4.04778298404555
+convergence_fits.lattice_constants_A-3.bulk_modulus_GPa: 80.88375532685617
+convergence_fits.lattice_constants_A-3.minimum_energy_eV_atom: -3.688814923868545
+execution: Fit of archived GPAW/PBE results; raw example log: output/gpaw-Al-a4.06.txt

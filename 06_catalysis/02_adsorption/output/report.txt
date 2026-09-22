@@ -1,0 +1,27 @@
+backend: gpaw
+coverage_ML: 0.25
+clean_eV: -36.842150445181304
+H2_eV: -6.5923090093646906
+sites[0].initial_site: ontop
+sites[0].total_eV: -39.607194000190844
+sites[0].adsorption_eV: 0.5311109496728044
+sites[0].force_max_eV_A: 0.03319100046610585
+sites[0].final_H_position_A: -7.267431589112657e-20, 2.448636292354312e-20, 13.691902634303924
+sites[1].initial_site: bridge
+sites[1].total_eV: -40.09024201123972
+sites[1].adsorption_eV: 0.04806293862393218
+sites[1].force_max_eV_A: 0.03947402080376796
+sites[1].final_H_position_A: 1.2763114620834413, 0.007814039663266006, 13.24892898471376
+sites[2].initial_site: fcc
+sites[2].total_eV: -40.228088167018846
+sites[2].adsorption_eV: -0.08978321715519755
+sites[2].force_max_eV_A: 0.027254049959165787
+sites[2].final_H_position_A: 1.2762839764553353, 0.7368628973688949, 13.102710845056679
+sites[3].initial_site: hcp
+sites[3].total_eV: -40.221039884685624
+sites[3].adsorption_eV: -0.0827349348219748
+sites[3].force_max_eV_A: 0.03248747849902858
+sites[3].final_H_position_A: 2.5526554800834367, 1.4737763285745453, 13.105647535565705
+execution: Analysis of previously executed PBE calculations; see input/DATA_SOURCE.md
+Each adsorption energy subtracts its own clean slab and half its own H2 reference.
+A slab thickness change also changes relaxation; a lateral cell change changes coverage.

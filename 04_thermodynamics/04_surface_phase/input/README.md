@@ -1,5 +1,29 @@
-# Input contract
+# 输入文件、格式与单位
 
-`example.json` contains the experiment name and all model parameters. Energies are eV and distances angstrom unless a key or the README explicitly specifies atomic/reduced units. Random experiments have a fixed seed.
+从 [项目正文](../README.md) 的物理模型开始。`run.py --input` 接收本目录的副本，而不是一个 JSON 文件。
 
-Change parameters in a copy, record a new prediction, and pass `--input your.json`. The result embeds the exact input and its SHA-256 hash.
+## [clean.POSCAR](clean.POSCAR)
+
+VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标明 Direct/Cartesian 的坐标。
+
+## [control.toml](control.toml)
+
+控制参数；字段中的 eV、A、K、bar 明确单位，数组仅表示扫描或软件设置。
+
+## [half.POSCAR](half.POSCAR)
+
+VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标明 Direct/Cartesian 的坐标。
+
+## [quarter.POSCAR](quarter.POSCAR)
+
+VASP POSCAR；晶胞 Å、元素与原子数、Selective dynamics 约束、标明 Direct/Cartesian 的坐标。
+
+## [states.csv](states.csv)
+
+状态及能量；动力学 G0_eV 为相对标准自由能，相图 energy_eV 为明确合成教学数据。
+
+```csv
+name,energy_eV,adsorbates
+clean,0.0,0
+quarter,-0.5,1
+```

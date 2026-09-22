@@ -1,0 +1,20 @@
+timestep_sweep[0].dt_reduced: 0.01
+timestep_sweep[0].max_energy_error: 1.2499992202874566e-05
+timestep_sweep[1].dt_reduced: 0.05
+timestep_sweep[1].max_energy_error: 0.0003124968722071908
+timestep_sweep[2].dt_reduced: 0.1
+timestep_sweep[2].max_energy_error: 0.0012499278017938376
+timestep_sweep[3].dt_reduced: 0.5
+timestep_sweep[3].max_energy_error: 0.031249717735797933
+timestep_sweep[4].dt_reduced: 1.0
+timestep_sweep[4].max_energy_error: 0.09375
+timestep_sweep[5].dt_reduced: 1.9
+timestep_sweep[5].max_energy_error: 0.4512360997918139
+timestep_sweep[6].dt_reduced: 2.01
+timestep_sweep[6].max_energy_error: 1.5663529652965478e+51
+dt_fs: 0.02036101134231345
+max_position_difference_A: 3.9968028886505635e-15
+max_energy_difference_eV: 8.770761894538737e-15
+cluster_energy_span_eV: 1.8001011733770333e-05
+scope: LJ epsilon=1 eV sigma=1 A mass=1 u model; Ar labels do not imply physical argon parameters.
+Tables and arrays are saved alongside this report.

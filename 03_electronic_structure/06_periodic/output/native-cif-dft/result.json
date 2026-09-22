@@ -1,0 +1,54 @@
+{
+  "project": "06_periodic",
+  "input_files_sha256": {
+    "Al.cif": "dc9cfe3b0044b75ae1dbd42b46b3e2e233d9c5d266438c7d8e5b67e0e9ca6663",
+    "README.md": "d118027d794e63c9a88d1067562bb8aa5581b643aae55a56d429c4227c5c326e",
+    "control.toml": "429fd91167624afe6a21afc75752cb84ebe0c2154caf6ae92c628470f64937ce",
+    "eos.csv": "b2a493c341e8c58dce7e0da70e43309047e0dd8f6666ff5c02983f2fe2cf96a0",
+    "lattice_scan.csv": "a9ab45f97c8573f9b2c42c037e191197d034c5c6b3aa41584264b2ba5d127518"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "ase": "3.29.0",
+    "pyscf": "2.14.0",
+    "gpaw": "25.7.0",
+    "pymbar": "4.0.3",
+    "cantera": "3.2.0"
+  },
+  "source_revision": "d3a388a1f296102f0eb1bc32467066e1410b1874",
+  "source_files_sha256": {
+    "03_electronic_structure/06_periodic/run.py": "b081daa2007e85f5db6af3cb21d9dbf5d0df0b57742adacf7c66e5e982deefe1",
+    "src/catalysis/electronic.py": "0bdcd91278c03083ebb84d8fff289a226ba13a2af3ed4b897a05dfec93dfa2c0",
+    "src/catalysis/network.py": "e8324538bc3976b93e9ef56c6ef06f32f767fc6ec254baa9c2e840cbbf4d2fc0",
+    "src/catalysis/potentials.py": "b1c3144853e5ee09000d005d819ba24ed116124fdbe93781f97a13d88305c23b",
+    "src/catalysis/sampling.py": "ffde1a448c470afd81a2c9a59e4a0c9044dd9b2a2322b220d3f34f23502c1145",
+    "src/catalysis/units.py": "9ca031a8616804e79b1bde58c87aea36d1c1335a0af9af0bd84361ba7770df1d",
+    "src/catalysis/cli.py": "fbb99f5d466bfc0c96714c4cce25eb92027fe732cfd9ce2d22bbf7bf2d5ff74a",
+    "src/catalysis/integral_files.py": "13dbb341b6b0fdf2a57c94d840178840384a669793e4089542f26a5fdf9d2955",
+    "src/catalysis/cantera_reference.py": "00ec160a4bc5577d4b665eafe93c923a6aea73c3f6825b84e0ea87c8ae0463e4",
+    "src/catalysis/__init__.py": "fb0dba9ba2fe4513f8f0aa805645759c97eb56dc5ceb9b71f280710f8c8dd391",
+    "src/catalysis/thermo.py": "1fdba4879d8858c161b2bec7d2ad02579c13c0e26a8254b85cc7c743659c5a78",
+    "src/catalysis/experiments.py": "d62dc20f30e8e636fbc94c024ecc1112e1986c00ab6e48d9d5cd624de62202e3",
+    "src/catalysis/surfaces.py": "e999e55b01bc95000ed3b36b73c753a9714e1aafc3251a66368e66c8824ffc05",
+    "src/catalysis/kinetics.py": "1874fb1948ec8b6448f26135c5170b437eaa473df15a625343f9caae5b4b178e",
+    "src/catalysis/native_dft.py": "729fd52aa5c9af6108669546d5bfb0e92c27375a90c86d133d25e01509426458",
+    "src/catalysis/quantum.py": "086e11592bbd1a6f2ac31c33978b50f2ce1bd8f2f4e2660c12b1711eea4f154c",
+    "src/catalysis/teaching_io.py": "27c954cc6a8138bdc32d31fb23d48d0108f6ed0c0334a4a1265bd97bf9f8a4ca"
+  },
+  "slurm_job_id": "705355",
+  "result": {
+    "backend": "gpaw",
+    "a0_A": 4.047756577872069,
+    "bulk_modulus_GPa": 79.94414749418938,
+    "minimum_energy_eV_atom": -3.6886091940339845,
+    "convergence_fits": {
+      "baseline": {
+        "a0_A": 4.047756577872069,
+        "bulk_modulus_GPa": 79.94414749418938,
+        "minimum_energy_eV_atom": -3.6886091940339845
+      }
+    },
+    "execution": "New GPAW calculation"
+  }
+}

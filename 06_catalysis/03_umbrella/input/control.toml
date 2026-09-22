@@ -1,0 +1,4 @@
+temperature = 600.0
+steps = 16000
+burn = 2000
+seed = 2026

@@ -28,18 +28,21 @@ def wham(counts, bias, temperature, tolerance=1e-9, maxiter=20000):
 
 
 def umbrella(temperature=600., windows=13, steps=16000, burn=2000, seed=2026,
-             dimensions=1, stiffness=2.):
+             dimensions=1, stiffness=2., centers=None, kappas=None, trajectory_dir=None):
+    if centers is not None: windows=len(centers)
     if steps <= burn or windows < 2 or dimensions not in (1,2):
         raise ValueError('Need production steps, multiple windows, and 1D or 2D')
     kt = float(kbt(temperature)); rng = np.random.default_rng(seed)
     potential = DoubleWell()
-    centers = np.linspace(-1.5,1.5,windows)
+    centers = np.linspace(-1.5,1.5,windows) if centers is None else np.asarray(centers)
+    kappas = np.full(windows,stiffness) if kappas is None else np.asarray(kappas)
+    if len(kappas)!=windows or np.any(kappas<=0): raise ValueError("Positive per-window stiffness required")
     edges = np.linspace(-1.8,1.8,121); bins = (edges[1:]+edges[:-1])/2
     counts, accepted, hidden_means = [], [], []
-    for center in centers:
+    for window,(center,kappa) in enumerate(zip(centers,kappas)):
         point = np.zeros(dimensions); point[0] = center
         def energy(x):
-            return potential.energy(x)+.5*stiffness*(x[0]-center)**2
+            return potential.energy(x)+.5*kappa*(x[0]-center)**2
         old = energy(point); samples = []; hidden = []; accept = 0
         for i in range(steps):
             proposal = point+rng.normal(0,.16,dimensions)
@@ -50,10 +53,14 @@ def umbrella(temperature=600., windows=13, steps=16000, burn=2000, seed=2026,
                 samples.append(point[0])
                 if dimensions == 2:
                     hidden.append(point[1])
+        if trajectory_dir is not None:
+            from pathlib import Path
+            folder=Path(trajectory_dir);folder.mkdir(parents=True,exist_ok=True)
+            np.savetxt(folder/f'window-{window:02}.csv',np.column_stack([samples,hidden if hidden else np.zeros(len(samples))]),delimiter=',',header='x_model,y_model',comments='')
         counts.append(np.histogram(samples, edges)[0]); accepted.append(accept/steps)
         hidden_means.append(float(np.mean(hidden)) if hidden else 0.)
     counts = np.array(counts)
-    bias = .5*stiffness*(bins[None,:]-centers[:,None])**2
+    bias = .5*kappas[:,None]*(bins[None,:]-centers[:,None])**2
     p, iterations = wham(counts, bias, temperature)
     fes = np.full_like(p, np.nan); mask = p > 0
     fes[mask] = -kt*np.log(p[mask]); fes[mask] -= np.min(fes[mask])

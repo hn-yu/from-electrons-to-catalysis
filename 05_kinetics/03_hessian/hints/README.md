@@ -1,5 +1,7 @@
-# Progressive hints
+# 分步提示
 
-1. [Hint 1](hint1.md)
-2. [Hint 2](hint2.md)
-3. [Hint 3](hint3.md)
+1. [把四指标 Hessian 映射到 Cartesian 矩阵](hint1.md)
+2. [从广义本征问题推导质量加权](hint2.md)
+3. [用模式形状解释零模和虚频](hint3.md)
+
+先核对一个具体矩阵元，再核对一组质量，再核对频率。最后一个小数相符不能替代这三步。

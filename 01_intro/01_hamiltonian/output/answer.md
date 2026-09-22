@@ -1,3 +1,12 @@
-# Worked analysis: The electron-nuclear Hamiltonian
+# 参考分析
 
-The kinetic terms are negative Laplacians for electrons and nuclei; Coulomb terms are attractive electron–nuclear and repulsive electron–electron/nuclear–nuclear. In the Born–Oppenheimer approximation solve the electronic problem at fixed nuclear positions, then add nuclear repulsion to form the PES. This separation can fail near degeneracies and nonadiabatic crossings. HF neglects correlation beyond exchange; DFT approximates exchange-correlation; statistical mechanics sums states; TST maps conditional free-energy barriers to rates; microkinetics combines rates and populations.
+
+0.74 Å 对应约 1.39840 bohr，因此 $E_{NN}=1/R=0.71510434$ Hartree，是正的排斥能。电子—核吸引使总能量可能为负。电子动能算符前虽有负号，适当边界条件下其期望值非负。
+
+固定 R 后，核动能从电子本征问题中移出，核排斥能是与电子坐标无关的常数。可以把它加在电子方程内或解后加入，但必须声明约定：
+
+$$U(R)=E_{electronic}(R)+E_{NN}(R),\qquad M_A\ddot R_A=-\nabla_AU.$$
+
+RHF 用单个闭壳层行列式近似电子态，DFT 近似交换关联泛函；经典 MD 再把核运动当作经典轨迹。RRHO 是驻点附近的转动/振动统计近似，TST 是穿越分割面的速率近似。它们不是同一个“精度开关”。
+
+近电子简并或非绝热跃迁可能破坏单张势能面描述。即使某一个 SCF 算法逐位正确，也不证明 Born–Oppenheimer、单行列式或经典核足够描述目标实验。

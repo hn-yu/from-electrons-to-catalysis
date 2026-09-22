@@ -1,0 +1,7 @@
+# Preserve native scientific files byte-for-byte for the recorded SHA-256 hashes.
+# CSV uses csv.writer's standard CRLF; ASE and GPAW emit aligned trailing spaces.
+*.csv -text whitespace=cr-at-eol
+*.POSCAR -text whitespace=-blank-at-eol
+*.yaml -text whitespace=-blank-at-eol
+**/output/**/*.txt -text whitespace=-blank-at-eol,-blank-at-eof
+**/output/*.txt -text whitespace=-blank-at-eol,-blank-at-eof

@@ -1,0 +1,4 @@
+GPAW/PBE single point from baseline/fcc.POSCAR
+E_extrapolated_eV = -11.985585652976
+max_unconstrained_force_eV_A = 1.66948747
+This unrelaxed single point checks native I/O, not adsorption convergence.

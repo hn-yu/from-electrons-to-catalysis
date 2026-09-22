@@ -1,5 +1,16 @@
-# Assignment
+# 案例与问题
 
-Decide whether a 1 eV barrier matters.
+优化、Hessian、NEB 和 TST 连在一起后很容易给人“机制已经证明”的错觉。请逐个审查推断。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+驻点满足 $\nabla E=0$；局部极小值要求相关自由度的 Hessian 无负曲率；一阶鞍点应有一个相关负曲率方向。
+
+$$k\approx\frac{k_BT}{h}e^{-\Delta G^\ddagger/(k_BT)},\qquad \tau=1/k.$$
+
+NEB 通常给势能势垒 ΔE‡，TST 需要指定状态和分割面的自由能势垒 ΔG‡。
+
+
+1. 查看 input/normal_modes.csv，解释水的六个近零模式为什么会有很小负号。
+2. 给“最大力很小所以是极小值”找一个反例，并提出最便宜的检查。
+3. 用 600 K、0.1 eV 势垒变化估算速率倍率。
+4. 列出把二维 NEB 势垒迁移为真实表面扩散系数所缺的输入。

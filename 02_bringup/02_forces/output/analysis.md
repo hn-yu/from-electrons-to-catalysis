@@ -1,7 +1,3 @@
-# Measured result and postmortem
+# 结果阅读
 
-Maximum force discrepancy: 6.93e-09 eV/A. The predicted signs and equilibrium zero are confirmed. The Morse dissociation limit is zero by convention.
-
-Input SHA-256: `faa32a181da8c94687da38d5dd32c64b4e3a79d52809394d42e154cda677ffae`. Slurm job: `705307`. Software versions and source revision are in [result.json](result.json).
-
-Predictions remain unchanged in the project README and root predictions.md. Numerical agreement validates the stated model and checks, not an unrestricted scientific claim.
+请先读 [report.txt](report.txt) 与 [输出说明](README.md)，再完成项目 README 的受控实验。旧版分析保存在 previous-analysis.md，不作为当前接口的使用说明。

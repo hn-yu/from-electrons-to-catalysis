@@ -1,5 +1,16 @@
-# Assignment
+# 案例与问题
 
-Compare predictions with measured outputs and choose the next falsification.
+把已执行 DFT 的总能量重新组合成目标观测量，判断哪些结论被否定，并分配下一轮计算。
 
-State the model, observable, assumptions, a falsifier, and one reusable rule.
+
+输入 `energies.csv` 与 `cases.csv` 包含真实 PBE 的基准及变体。独立重算
+
+$$E_{ads}=E_{total}-E_{clean}-E_{H_2}/2.$$
+
+对每个轴记录相对基准差，不只记录“通过/失败”。横向扩胞还改变覆盖度，属于不同物理条件。
+
+
+1. 重建每个吸附能与相对基准变化，指出最大差来自哪个轴。
+2. 对照 0.05 eV 阈值评估“全部变化均在容限内”的命题。
+3. 解释三层与四层符号相反如何影响原吸附假设。
+4. 提出一个比立即做 NEB 更能减少当前主导不确定性的计算序列。

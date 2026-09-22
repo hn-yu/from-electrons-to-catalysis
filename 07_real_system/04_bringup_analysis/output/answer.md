@@ -1,21 +1,10 @@
-# Worked bringup: H/Cu(111) adsorption
+# 参考分析
 
-The 1 ML, 1×1×3 PBE baseline adsorption energy is **+0.045601 eV per H**, relative to half a relaxed H2 molecule. The unchanged pre-run range was -0.8 to +0.3 eV with low confidence. Being inside that broad interval does not resolve the adsorption sign when numerical sensitivity is larger than the baseline energy.
 
-| Axis | Setting | Adsorption energy (eV) | Change from baseline (eV) |
-|---|---|---:|---:|
-| cutoff_eV | `300` | +0.053326 | +0.007724 |
-| kpts | `[4, 4, 1]` | +0.017544 | -0.028058 |
-| vacuum_A | `8.0` | +0.050763 | +0.005161 |
-| size | `[1, 1, 4]` | -0.301817 | -0.347418 |
-| size | `[2, 2, 3]` | -0.088512 | -0.134114 |
-| fixed_layers | `0` | +0.048627 | +0.003025 |
-| smearing_eV | `0.05` | +0.053070 | +0.007468 |
+基准为 +0.045601 eV。cutoff、k 点、真空、固定层、展宽的单次变化约为 +0.007724、−0.028058、+0.005161、+0.003025、+0.007468 eV；这几次小变化不证明各轴完整收敛。
 
-The pre-run numerical target was 0.05 eV. All sampled changes below target: **False**. The four-layer result exposes a large thickness error in the initial slab. The 2×2×3 result additionally changes coverage to 0.25 ML, so it cannot be interpreted as a pure numerical cell-size check.
+四层吸附能约 −0.301817 eV，变化 −0.347418 eV，已否定“全部变化小于 0.05 eV”。2×2×3 单 H 为 −0.088512 eV，它同时把覆盖度降到 0.25 ML。
 
-The implementation completed its calculations, but the original thin-slab numerical-convergence hypothesis failed. Every task's input, matching clean-slab/H2 energies and final adsorbate coordinates are archived as `task_result.json` alongside the final `fcc.extxyz`. The aggregate stores a truthful failure flag instead of relabeling these numbers as converged DFT adsorption chemistry.
+因此当前不能给出稳定吸附符号。最合理的后续是保持覆盖度与约束协议的加厚序列，并在更厚 slab 上复查 k 点。完成这些之后再比较多个位点和路径。
 
-Next cheapest falsification: hold one monolayer, k density, cutoff and reference protocol fixed and extend the layer sequence beyond four. Check thickness oscillations before spending on more sites or NEB. Once a stable slab protocol exists, compare multiple sites at common settings and add vibrational and reservoir corrections before finite-temperature interpretation.
-
-A force-converged geometry is still not automatically a verified minimum; inspect lateral curvature and competing structures. A finite-slab PBE energy does not by itself predict turnover, selectivity or an experimental mechanism.
+这是一项得到有效失败证据的计算，不是可以把 false 改成 true 的软件问题。原始总能量、结构与日志应保留供重新分析。

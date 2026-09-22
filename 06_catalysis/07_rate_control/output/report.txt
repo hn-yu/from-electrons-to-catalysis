@@ -1,0 +1,57 @@
+forward_barriers_eV: 0.65, 0.8999999999999999, 0.55
+response.reaction_orders_A_B: 0.027023940298853688, -0.02699933975991442
+response.apparent_activation_eV: 1.251940480631775
+response.degree_of_rate_control: 0.025580892488804043, 0.002935318746581661, 0.9714838978981398
+perturbations[0].parameter: states_eV
+perturbations[0].index: 1
+perturbations[0].shift_eV: -0.1
+perturbations[0].TOF_ratio: 0.1445597517571971
+perturbations[1].parameter: states_eV
+perturbations[1].index: 1
+perturbations[1].shift_eV: 0.1
+perturbations[1].TOF_ratio: 6.9165723290212915
+perturbations[2].parameter: states_eV
+perturbations[2].index: 2
+perturbations[2].shift_eV: -0.1
+perturbations[2].TOF_ratio: 0.9999795308806712
+perturbations[3].parameter: states_eV
+perturbations[3].index: 2
+perturbations[3].shift_eV: 0.1
+perturbations[3].TOF_ratio: 1.000002959009109
+perturbations[4].parameter: transition_states_eV
+perturbations[4].index: 0
+perturbations[4].shift_eV: -0.1
+perturbations[4].TOF_ratio: 1.0223673206232073
+perturbations[5].parameter: transition_states_eV
+perturbations[5].index: 0
+perturbations[5].shift_eV: 0.1
+perturbations[5].TOF_ratio: 0.8685488776814559
+perturbations[6].parameter: transition_states_eV
+perturbations[6].index: 1
+perturbations[6].shift_eV: -0.1
+perturbations[6].TOF_ratio: 1.0025166972667112
+perturbations[7].parameter: transition_states_eV
+perturbations[7].index: 1
+perturbations[7].shift_eV: 0.1
+perturbations[7].TOF_ratio: 0.9829303298204093
+perturbations[8].parameter: transition_states_eV
+perturbations[8].index: 2
+perturbations[8].shift_eV: -0.1
+perturbations[8].TOF_ratio: 5.919099045386159
+perturbations[9].parameter: transition_states_eV
+perturbations[9].index: 2
+perturbations[9].shift_eV: 0.1
+perturbations[9].TOF_ratio: 0.14816990101506508
+own_steady_state.coverages: 2.4600535327899473e-05, 0.9999719404406732, 3.4590239989351378e-06
+own_steady_state.TOF_s^-1: 1009.7882614878115
+own_steady_state.elementary_rates_s^-1: 1009.7882614878116, 1009.788261487789, 1009.7882614878115
+own_steady_state.balance_residual_s^-1: 7.019570164622075e-11
+own_steady_state.forward_s^-1: 43372934.15720817, 344596.78852983564, 300041849.48933285
+own_steady_state.reverse_s^-1: 57.210742829478285, 99327825172.67493, 114077584.92494416
+Cantera.coverages: 2.4600535327904796e-05, 0.9999719404406731, 3.459023998936014e-06
+Cantera.TOF_s^-1: 1009.7882614882885
+Cantera.elementary_rates_s^-1: 1009.7882614882885, 1009.7882614882864, 1009.7882614882885
+coverage_max_error: 1.1102230246251565e-16
+TOF_relative_error: 4.723998969780041e-13
+Cantera_degree_of_rate_control: 0.025574999244160068, 0.002934593782200068, 0.9714904070463604
+Tables and arrays are saved alongside this report.

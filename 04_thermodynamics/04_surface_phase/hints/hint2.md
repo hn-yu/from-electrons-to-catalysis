@@ -1,3 +1,7 @@
-# Hint 2
+# 提示 2：相交不意味着相变
 
-At a boundary two grand potentials are equal.
+两条高于第三条的直线相交时，稳定态不会改变。
+
+在 −0.35 eV 处，clean 和 half 巨势相同，但 quarter 的巨势更低。
+
+逐个交点计算全部 Ω，或者构造完整下包络；只把所有交点画成“相界”会多报相变。
