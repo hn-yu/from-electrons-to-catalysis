@@ -3,7 +3,7 @@
 对正交归一的占据 MO，$C_{occ}^TSC_{occ}=I$，所以
 
 $$
-\operatorname{Tr}(DS)=2\operatorname{Tr}(C_{occ}^TSC_{occ})=2n_{occ}=N_e.
+\mathrm{Tr}(DS)=2\mathrm{Tr}(C_{occ}^TSC_{occ})=2n_{occ}=N_e.
 $$
 
 这里使用 trace 的循环性质。AO 自身不正交，所以 `trace(D)` 缺少了重叠度量 S。

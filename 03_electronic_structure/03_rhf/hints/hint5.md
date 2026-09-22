@@ -3,7 +3,7 @@
 若用 Dnew 更新了电子分布，应先构造 F(Dnew)，再算
 
 $$
-E[D_{new}]=\tfrac12\operatorname{Tr}[D_{new}(h+F[D_{new}])]+E_{NN}.
+E[D_{new}]=\tfrac12\mathrm{Tr}[D_{new}(h+F[D_{new}])]+E_{NN}.
 $$
 
 对称实矩阵下，逐元素求和 `sum(D*(h+F))` 等于所需 trace；一般复矩阵则必须明确共轭和指标。

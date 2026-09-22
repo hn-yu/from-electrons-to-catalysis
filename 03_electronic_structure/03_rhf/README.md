@@ -85,10 +85,10 @@ $s$ 是重叠矩阵的本征值对角矩阵。$s^{-1/2}$ 表示对**本征值**�
 
 $$
 D_{\mu\nu}=2\sum_{i=1}^{n_{occ}}C_{\mu i}C_{\nu i},
-\qquad N_e=\operatorname{Tr}(DS).
+\qquad N_e=\mathrm{Tr}(DS).
 $$
 
-在非正交基中，$\operatorname{Tr}(D)$ 通常不等于电子数。参考课程有些项目使用单自旋密度 $P=D/2$，对应 $2J-K$；本项目使用 D，对应 $J-K/2$。两种约定都正确，混用就会错。见 [提示 3](hints/hint3.md)。
+在非正交基中，$\mathrm{Tr}(D)$ 通常不等于电子数。参考课程有些项目使用单自旋密度 $P=D/2$，对应 $2J-K$；本项目使用 D，对应 $J-K/2$。两种约定都正确，混用就会错。见 [提示 3](hints/hint3.md)。
 
 ## 第五步：从旧密度构造新的 Fock 矩阵
 
@@ -130,7 +130,7 @@ DIIS 用几步历史 Fock 矩阵的线性组合减小残差：
 
 $$
 F^{DIIS}=\sum_i c_iF_i,\qquad \sum_i c_i=1,
-\qquad B_{ij}=\operatorname{Tr}(R_i^TR_j).
+\qquad B_{ij}=\mathrm{Tr}(R_i^TR_j).
 $$
 
 求带约束的小线性系统，不是“把历史能量平均”。历史残差几乎线性相关时，DIIS 方程会病态；丢弃部分历史或回退到普通更新。见 [提示 6](hints/hint6.md)。
@@ -150,7 +150,7 @@ sbatch scripts/slurm.sh 03_electronic_structure/03_rhf/compare.py
 
 [参考输出](output/report.txt) 包含每轮能量、密度变化、残差和矩阵。各体系输出目录还含 `S.dat`、`X.dat`、`D_initial.dat`、`F_final.dat` 与 `iterations.csv`。H₂/STO-3G、0.74 Å 的总能量应约为 −1.117 Hartree；最后以实际表格的精确值核对。
 
-验收顺序：① 积分与 PySCF 相符；② $X^TSX=I$；③ $\operatorname{Tr}(DS)=N_e$；④ 最终残差小；⑤ 同模型总能量误差小于 $10^{-8}$ Hartree。不要逐元素要求 MO 系数同号，本征矢可以整体乘 −1；简并轨道还可在简并子空间内旋转。
+验收顺序：① 积分与 PySCF 相符；② $X^TSX=I$；③ $\mathrm{Tr}(DS)=N_e$；④ 最终残差小；⑤ 同模型总能量误差小于 $10^{-8}$ Hartree。不要逐元素要求 MO 系数同号，本征矢可以整体乘 −1；简并轨道还可在简并子空间内旋转。
 
 ## 思考与下一项实验
 
