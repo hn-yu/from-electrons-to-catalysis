@@ -51,3 +51,30 @@ def test_eos_and_slab_bookkeeping():
     for site in r['sites']:
         assert site['adsorption_eV']==pytest.approx(site['total_eV']-r['clean_eV']-.5*r['H2_eV'])
         assert site['force_max_eV_A']<=.041
+
+def test_atomic_diffusion_reference():
+    path=ROOT/'05_kinetics/04_neb/output/atom_diffusion/result.json'
+    if not path.exists():pytest.skip('Atomic continuation not generated')
+    r=json.loads(path.read_text())['result']
+    assert 0<r['barrier_eV']<1
+    assert max(r['endpoint_force_max'])<.001
+    assert np.linalg.norm(np.array(r['H_positions_A'][0])-r['H_positions_A'][-1])>.1
+
+def test_periodic_dft_reference():
+    path=ROOT/'03_electronic_structure/06_periodic/output/dft/result.json'
+    if not path.exists():pytest.skip('Periodic reference not generated')
+    r=json.loads(path.read_text())['result']
+    assert r['backend']=='gpaw'
+    assert 3.9<r['a0_A']<4.2
+    assert r['bulk_modulus_GPa']>0
+    cutoff=[x for x in r['convergence_sweep'] if x['parameter']=='cutoff_eV'][0]
+    assert abs(cutoff['a0_A']-r['a0_A'])<.005
+
+def test_real_dft_reference_and_honest_tolerance():
+    r=result('07_real_system/02_real_dft')
+    assert r['backend']=='gpaw'
+    b=r['baseline'];s=b['sites'][0]
+    assert s['adsorption_eV']==pytest.approx(s['total_eV']-b['clean_eV']-.5*b['H2_eV'])
+    assert s['force_max_eV_A']<.051
+    expected=all(abs(x['delta_from_baseline_eV'])<r['tolerance_eV'] for x in r['sweep'])
+    assert r['all_variations_within_tolerance']==expected

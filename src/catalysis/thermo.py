@@ -15,7 +15,9 @@ def partition(energies, temperature, degeneracies=None):
     p = np.exp(logweights-logz)
     u = float(p@e)
     f = -kt*logz
-    return {'logZ': float(logz), 'populations': p.tolist(), 'U_eV': u,
+    # logZ remains authoritative when the partition sum itself over/underflows.
+    z = float(np.exp(logz)) if np.log(np.finfo(float).tiny) < logz < np.log(np.finfo(float).max) else None
+    return {'Z': z, 'logZ': float(logz), 'populations': p.tolist(), 'U_eV': u,
             'F_eV': float(f), 'S_eV_K': float((u-f)/temperature)}
 
 

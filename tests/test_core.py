@@ -181,3 +181,24 @@ def test_wham_exact_histograms_and_unbiased_limit():
     assert probability.sum()==pytest.approx(1) and iterations>1
     p,_=sampling.wham([[1,2,3]],[[0,0,0]],300)
     np.testing.assert_allclose(p,np.array([1,2,3])/6)
+
+def test_rrho_independent_ase_and_pressure_limit():
+    from ase.build import molecule
+    from ase.thermochemistry import IdealGasThermo
+    atoms=molecule('H2O');quanta=[.2,.4,.42]
+    ours=thermo.ideal_gas(atoms,quanta,300,symmetry=2)
+    ref=IdealGasThermo(vib_energies=quanta,atoms=atoms,geometry='nonlinear',symmetrynumber=2,spin=0)
+    assert ours['G_eV']==pytest.approx(ref.get_gibbs_energy(300,1e5,verbose=False),abs=1e-6)
+    highp=thermo.ideal_gas(atoms,quanta,300,pressure_bar=np.e,symmetry=2)
+    assert highp['G_eV']-ours['G_eV']==pytest.approx(units.kbt(300))
+    assert ours['H_eV']-300*ours['S_eV_K']==pytest.approx(ours['G_eV'])
+
+def test_transverse_free_energy_by_quadrature():
+    from scipy.integrate import quad
+    p=DoubleWell();kt=units.kbt(600)
+    points=[0.,.5,1.]
+    integrals=[quad(lambda y:np.exp(-p.energy([x,y])/kt),-5,5,epsabs=1e-12)[0] for x in points]
+    f=-kt*np.log(integrals)
+    analytic=np.array([.15*(x*x-1)**2+.5*kt*np.log(1+x*x) for x in points])
+    np.testing.assert_allclose(f-f[0],analytic-analytic[0],atol=1e-10)
+    assert analytic[0]-analytic[-1]<.15
