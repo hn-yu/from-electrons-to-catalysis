@@ -28,6 +28,7 @@ def execute(project,input_path,output):
         source_hash.update(source.read_bytes())
     dirty = subprocess.run(['git','status','--porcelain','--','src'],
                            capture_output=True,text=True,cwd=project)
+    git = subprocess.run(['git','rev-parse','HEAD'],capture_output=True,text=True,cwd=project)
     result = EXPERIMENTS[config['experiment']](config['parameters'],output)
     versions = {'python':platform.python_version()}
     for package in ['numpy','scipy','ase','pyscf','gpaw']:
@@ -35,7 +36,6 @@ def execute(project,input_path,output):
             versions[package] = importlib.metadata.version(package)
         except importlib.metadata.PackageNotFoundError:
             pass
-    git = subprocess.run(['git','rev-parse','HEAD'],capture_output=True,text=True,cwd=project)
     payload = {'project':str(Path(project).name), 'input':config, 'input_sha256':hashlib.sha256(raw).hexdigest(),
                'versions':versions, 'source_revision':git.stdout.strip() if git.returncode == 0 else None,
                'source_sha256':source_hash.hexdigest(), 'source_dirty':bool(dirty.stdout.strip()),
