@@ -79,7 +79,7 @@ sbatch scripts/slurm.sh 04_thermodynamics/04_surface_phase/run.py --output runs/
 
 ## 分步提示与资料
 
-[ASE VASP/POSCAR 读写](https://ase-lib.org/ase/io/formatoptions.html#vasp)。
+[ASE VASP/POSCAR 读写](https://docs.ase-lib.org/ase/io/formatoptions.html#vasp)。
 
 ## 完成后应能解释什么
 

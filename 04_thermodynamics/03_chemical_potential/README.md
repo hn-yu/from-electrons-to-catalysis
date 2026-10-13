@@ -79,7 +79,7 @@ sbatch scripts/slurm.sh 04_thermodynamics/03_chemical_potential/run.py --output 
 
 ## 分步提示与资料
 
-标准气相热化学的实现可对照 [ASE IdealGasThermo](https://ase-lib.org/ase/thermochemistry/thermochemistry.html)。
+标准气相热化学的实现可对照 [ASE IdealGasThermo](https://docs.ase-lib.org/ase/thermochemistry/thermochemistry.html#ase.thermochemistry.IdealGasThermo)。
 
 ## 完成后应能解释什么
 

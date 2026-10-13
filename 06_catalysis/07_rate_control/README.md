@@ -89,7 +89,7 @@ sbatch scripts/slurm.sh 06_catalysis/07_rate_control/run.py --output runs/07_rat
 
 ## 分步提示与资料
 
-[Cantera 反应倍率接口](https://www.cantera.org/stable/python/kinetics.html)。
+[Cantera 3.2 Kinetics.set_multiplier](https://www.cantera.org/3.2/python/kinetics.html#cantera.Kinetics.set_multiplier) 给出指定反应倍率的接口；本项目用它同时缩放正逆方向，并重新求稳态。
 
 ## 完成后应能解释什么
 

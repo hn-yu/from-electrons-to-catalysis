@@ -94,7 +94,7 @@ sbatch scripts/slurm.sh 06_catalysis/06_microkinetics/run.py --output runs/06_mi
 
 ## 分步提示与资料
 
-[Cantera 表面热力学与覆盖度接口](https://www.cantera.org/stable/python/thermo.html)；[SciPy BDF](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.BDF.html)。
+[Cantera 表面热力学与覆盖度接口](https://www.cantera.org/3.2/python/thermo.html#cantera.InterfacePhase.coverages)；[SciPy BDF](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.BDF.html)。
 
 ## 完成后应能解释什么
 

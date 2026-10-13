@@ -75,7 +75,7 @@ sbatch scripts/slurm.sh 05_kinetics/04_neb/run.py --output runs/04_neb
 
 ## 分步提示与资料
 
-[ASE NEB](https://ase-lib.org/ase/neb.html)。
+[ASE NEB](https://docs.ase-lib.org/ase/neb.html)。
 
 ## 完成后应能解释什么
 

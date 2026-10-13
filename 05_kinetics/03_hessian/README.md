@@ -126,7 +126,7 @@ sbatch scripts/slurm.sh 05_kinetics/03_hessian/run.py
 3. 在二维鞍点找出唯一负模，沿 $\pm\epsilon\mathbf q$ 分别移动并计算能量，确认两侧下降。这个方向是否连向你预期的两个盆地？
 4. 若分子尚有明显残余力，为什么“有六个零模”的理想计数可能失真？
 
-资料：[ASE vibrations](https://ase-lib.org/ase/vibrations/vibrations.html)、[PySCF Hessian 模块](https://pyscf.org/pyscf_api_docs/pyscf.hessian.html)。本项目的“坐标→矩阵→质量加权→频率”步骤参考 ProgrammingProjects 的振动分析组织方式。
+资料：[ASE VibrationsData.from_2d](https://docs.ase-lib.org/ase/vibrations/modes.html#ase.vibrations.VibrationsData.from_2d) 说明如何从 3N×3N Hessian 构造振动数据；[PySCF RHF Hessian](https://pyscf.org/pyscf_api_docs/pyscf.hessian.html#module-pyscf.hessian.rhf) 对应输入矩阵的电子结构来源。本项目的“坐标→矩阵→质量加权→频率”步骤参考 ProgrammingProjects 的振动分析组织方式。
 
 ## 完成后应能解释什么
 

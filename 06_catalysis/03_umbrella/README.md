@@ -82,7 +82,7 @@ sbatch scripts/slurm.sh 06_catalysis/03_umbrella/run.py --output runs/03_umbrell
 
 ## 分步提示与资料
 
-[PyMBAR FES 官方接口](https://pymbar.readthedocs.io/en/4.0.2/fes_with_pymbar.html)。
+[PyMBAR FES 官方接口](https://pymbar.readthedocs.io/en/4.0.3/fes_with_pymbar.html)。
 
 ## 完成后应能解释什么
 

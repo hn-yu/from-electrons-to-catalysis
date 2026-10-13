@@ -79,7 +79,7 @@ sbatch scripts/slurm.sh 03_electronic_structure/05_dft/run.py --output runs/05_d
 
 ## 分步提示与资料
 
-[PySCF DFT](https://pyscf.org/user/dft.html) 与 [FCI](https://pyscf.org/user/ci.html)。
+[PySCF DFT](https://pyscf.org/user/dft.html) 与 [FCI](https://pyscf.org/user/ci.html#full-configuration-interaction-fci)。
 
 ## 完成后应能解释什么
 

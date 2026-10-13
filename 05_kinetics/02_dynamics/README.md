@@ -78,7 +78,7 @@ sbatch scripts/slurm.sh 05_kinetics/02_dynamics/run.py --output runs/02_dynamics
 
 ## 分步提示与资料
 
-[ASE Molecular Dynamics](https://ase-lib.org/ase/md.html)。
+[ASE Molecular Dynamics](https://docs.ase-lib.org/ase/md.html#velocity-verlet-dynamics)。
 
 ## 完成后应能解释什么
 

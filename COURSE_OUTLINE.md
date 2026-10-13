@@ -132,7 +132,7 @@ Use these as documentation and theory support, not as a prerequisite reading que
 - [MIT 5.60 Thermodynamics & Kinetics](https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/) -- thermodynamics and kinetics foundations.
 - [MIT 5.62 Physical Chemistry II](https://ocw.mit.edu/courses/5-62-physical-chemistry-ii-spring-2008/) -- statistical mechanics, molecular partition functions, equilibrium, and transition-state theory.
 - [PySCF](https://pyscf.org/) -- molecular and periodic electronic-structure reference implementation.
-- [ASE](https://ase-lib.org/) -- structures, calculators, optimization, MD, vibrations, NEB, and thermochemistry tooling.
+- [ASE](https://docs.ase-lib.org/) -- structures, calculators, optimization, MD, vibrations, NEB, and thermochemistry tooling.
 - [Cantera](https://cantera.org/) -- reference kinetics / reaction-network implementation.
 - Sholl & Steckel, *Density Functional Theory: A Practical Introduction* -- practical DFT reasoning.
 - Nørskov et al., *Fundamental Concepts in Heterogeneous Catalysis* -- surface thermodynamics, kinetics, and catalytic descriptors.

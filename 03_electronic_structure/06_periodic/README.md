@@ -79,7 +79,7 @@ sbatch scripts/slurm.sh 03_electronic_structure/06_periodic/run.py --output runs
 
 ## 分步提示与资料
 
-[ASE EOS](https://ase-lib.org/ase/eos.html)；[GPAW 平面波模式](https://gpaw.readthedocs.io/documentation/basic.html)。
+[ASE EOS](https://docs.ase-lib.org/ase/eos.html)；[GPAW 平面波模式](https://gpaw.readthedocs.io/documentation/basic.html#plane-wave-lcao-or-finite-difference-mode)。
 
 ## 从当前 CIF 新执行的例子
 

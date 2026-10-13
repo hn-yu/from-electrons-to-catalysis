@@ -82,7 +82,7 @@ sbatch scripts/slurm.sh 04_thermodynamics/02_molecular_thermochemistry/run.py --
 
 ## 分步提示与资料
 
-[ASE thermochemistry](https://ase-lib.org/ase/thermochemistry/thermochemistry.html)；[PySCF Hessian](https://pyscf.org/user/grad.html)。
+[ASE IdealGasThermo](https://docs.ase-lib.org/ase/thermochemistry/thermochemistry.html#ase.thermochemistry.IdealGasThermo) 说明热化学输入与 H/S/G 接口；[PySCF RHF Hessian](https://pyscf.org/pyscf_api_docs/pyscf.hessian.html#module-pyscf.hessian.rhf) 给出本项目所用的解析二阶导数接口。
 
 ## 完成后应能解释什么
 

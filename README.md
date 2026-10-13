@@ -152,4 +152,4 @@ sbatch scripts/slurm.sh 07_real_system/02_real_dft/run.py --calculate --output r
 | [07_real_system/04_bringup_analysis](07_real_system/04_bringup_analysis/README.md) | 04 · 失败的收敛假设怎样产生下一步 |
 | [07_real_system/05_advisor_defense](07_real_system/05_advisor_defense/README.md) | 05 · 对“算一个 NEB 就证明迁移”进行答辩 |
 
-[原课程大纲](COURSE_OUTLINE.md) · [实现边界](docs/IMPLEMENTATION_BOUNDARIES.md) · [安装说明](INSTALL.md)
+[原课程大纲](COURSE_OUTLINE.md) · [实现边界](docs/IMPLEMENTATION_BOUNDARIES.md) · [安装说明](INSTALL.md) · [外链检查与维护](docs/LINK_MAINTENANCE.md)

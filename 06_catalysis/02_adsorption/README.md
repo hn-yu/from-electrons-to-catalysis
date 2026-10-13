@@ -83,7 +83,7 @@ sbatch scripts/slurm.sh 06_catalysis/02_adsorption/run.py --output runs/02_adsor
 
 ## 分步提示与资料
 
-[ASE 表面构造工具](https://ase-lib.org/ase/build/surface.html) 与 [GPAW](https://gpaw.readthedocs.io/)。
+[ASE 表面构造工具](https://docs.ase-lib.org/ase/build/surface.html) 与 [GPAW](https://gpaw.readthedocs.io/)。
 
 ## 完成后应能解释什么
 

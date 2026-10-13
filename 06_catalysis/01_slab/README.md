@@ -86,7 +86,7 @@ sbatch scripts/slurm.sh 06_catalysis/01_slab/run.py --output runs/01_slab
 
 ## 分步提示与资料
 
-[GPAW 表面计算](https://gpaw.readthedocs.io/tutorialsexercises/structureoptimization/surface/surface.html)；[ASE 约束](https://ase-lib.org/ase/constraints.html)。
+[GPAW Al(100) 表面教程](https://gpaw.readthedocs.io/tutorialsexercises/basics/surface/surface.html) 讲解 slab、层数与 k 点检查，可用于理解本项目的收敛设计；[ASE FixAtoms](https://docs.ase-lib.org/ase/constraints.html#ase.constraints.FixAtoms) 说明底层原子约束。教程体系是 Al(100)，本项目的 Cu(111) 参数与结果仍以本仓库输入和日志为准。
 
 ## 完成后应能解释什么
 

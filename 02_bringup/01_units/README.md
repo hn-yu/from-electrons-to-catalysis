@@ -75,7 +75,7 @@ sbatch scripts/slurm.sh 02_bringup/01_units/run.py --output runs/01_units
 
 ## 分步提示与资料
 
-[ASE 单位体系](https://ase-lib.org/ase/units.html)；实际常数版本写入输出记录。
+[ASE 单位体系](https://docs.ase-lib.org/ase/units.html)；实际常数版本写入输出记录。
 
 ## 完成后应能解释什么
 

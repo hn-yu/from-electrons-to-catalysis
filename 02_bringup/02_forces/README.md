@@ -73,7 +73,7 @@ sbatch scripts/slurm.sh 02_bringup/02_forces/run.py --output runs/02_forces
 
 ## 分步提示与资料
 
-[ASE MorsePotential 源码](https://ase-lib.org/_modules/ase/calculators/morse.html)。
+[ASE MorsePotential 源码](https://docs.ase-lib.org/_modules/ase/calculators/morse.html#MorsePotential)。
 
 ## 完成后应能解释什么
 
